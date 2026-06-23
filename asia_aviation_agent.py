@@ -34,7 +34,7 @@ KEYWORDS_GSE = [
     "belt loader", "conveyor belt", "staircase", "dolly", "catering truck",
     "lavatory truck", "water truck", "apron", "ramp", "electric ground support",
     "hybrid gse", "lithium battery gse", "autonomous gse", "maintenance gse",
-    "mro ground",
+    "mro ground","loaders","passenger stairs","air conditioning","air starters"
 
     # ========== AÉROPORTS APAC (hors Chine continentale) ==========
     # Northeast Asia (incl. Mongolia, Japan, Korea, Taiwan, HK, Macau)
