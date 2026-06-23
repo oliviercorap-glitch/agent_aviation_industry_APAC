@@ -1,0 +1,47 @@
+name: Veille Aviation APAC (GSE & Marché)
+
+on:
+  schedule:
+    # Tous les jours à 6h00 (UTC) – adaptez selon vos besoins
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    # Permet un déclenchement manuel depuis l'onglet Actions
+
+jobs:
+  run-apac-agent:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # Nécessaire si vous souhaitez committer les rapports
+
+    steps:
+      # 1. Récupération du code du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Récupère tout l'historique (utile pour les rapports)
+
+      # 2. Installation de Python 3.11
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Installation des dépendances
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Exécution du script APAC
+      - name: Run APAC Aviation Agent
+        run: python asia_aviation_agent.py
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+
+      # 5. Upload du rapport généré (artefact)
+      - name: Upload generated report
+        uses: actions/upload-artifact@v4
+        with:
+          name: apac-aviation-report
+          path: rapports/
