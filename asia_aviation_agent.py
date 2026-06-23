@@ -13,8 +13,8 @@ from openai import OpenAI
 
 # --- Configuration -----------------------------------------------------------
 load_dotenv()
-LOG_FILE = Path("logs/agent_gse.log")
-SEEN_FILE = Path("seen_gse_articles.json")
+LOG_FILE = Path("logs/agent_apac.log")
+SEEN_FILE = Path("seen_apac_articles.json")
 Path("logs").mkdir(exist_ok=True)
 
 logging.basicConfig(
@@ -25,7 +25,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # =============================================================================
-#  MOTS-CLÉS APAC (périmètre final)
+#  MOTS-CLÉS APAC (hors Chine continentale)
 # =============================================================================
 KEYWORDS_GSE = [
     # ---------- GSE & ÉQUIPEMENTS ----------
@@ -35,14 +35,11 @@ KEYWORDS_GSE = [
     "lavatory truck", "water truck", "apron", "ramp", "electric ground support",
     "hybrid gse", "lithium battery gse", "autonomous gse", "maintenance gse",
     "mro ground",
-    "地勤设备", "地面支持设备", "行李拖车", "客梯车", "电源车", "气源车",
-    "除冰车", "装载机", "传送带车", "飞机牵引车", "新能源地勤", "电动地勤",
 
-    # ========== AÉROPORTS APAC ==========
-    # Northeast Asia (incl. Mongolia)
-    "Tokyo Haneda", "Tokyo Narita", "Seoul Incheon", "Seoul Gimpo", "Beijing Capital",
-    "Beijing Daxing", "Shanghai Pudong", "Shanghai Hongqiao", "Guangzhou Baiyun",
-    "Shenzhen Bao'an", "Hong Kong International", "Macau International",
+    # ========== AÉROPORTS APAC (hors Chine continentale) ==========
+    # Northeast Asia (incl. Mongolia, Japan, Korea, Taiwan, HK, Macau)
+    "Tokyo Haneda", "Tokyo Narita", "Seoul Incheon", "Seoul Gimpo",
+    "Hong Kong International", "Macau International",
     "Taipei Taoyuan", "Kaohsiung International",
     "Ulaanbaatar Chinggis Khaan", "Ulaanbaatar", "乌兰巴托", "成吉思汗国际机场",
     # Southeast Asia
@@ -63,22 +60,16 @@ KEYWORDS_GSE = [
     "Perth International", "Auckland International", "Christchurch International",
     "Wellington International", "Nadi International", "Port Moresby Jacksons",
     "Honiara International", "Port Vila Bauerfield", "Nauru International",
-    # Chinois (Chine)
-    "北京首都", "北京大兴", "上海浦东", "上海虹桥", "广州白云", "深圳宝安",
-    "成都天府", "重庆江北", "西安咸阳", "杭州萧山", "昆明长水", "厦门高崎",
-    "南京禄口", "武汉天河", "长沙黄花", "郑州新郑", "青岛胶东", "海口美兰",
-    "三亚凤凰", "大连周水子", "沈阳桃仙", "哈尔滨太平", "乌鲁木齐地窝堡",
+    # HK / Macau / Taiwan (en chinois traditionnel)
     "香港国际", "澳门国际", "台北桃园", "高雄国际",
 
-    # ========== COMPAGNIES AÉRIENNES APAC ==========
-    # Northeast Asia (incl. Mongolia)
-    "Air China", "China Eastern", "China Southern", "Hainan Airlines", "Beijing Capital Airlines",
-    "Shanghai Airlines", "XiamenAir", "Shenzhen Airlines", "Sichuan Airlines", "Shandong Airlines",
-    "Juneyao Air", "Spring Airlines", "China United Airlines", "Cathay Pacific", "Cathay Dragon",
-    "HK Express", "Hong Kong Airlines", "Air Macau", "China Airlines", "EVA Air",
-    "Starlux Airlines", "Tigerair Taiwan", "Korean Air", "Asiana Airlines", "Jeju Air",
-    "Jin Air", "Air Busan", "T'way Air", "All Nippon Airways (ANA)", "Japan Airlines (JAL)",
-    "Peach Aviation", "Skymark Airlines", "Solaseed Air", "Air Do", "Spring Airlines Japan",
+    # ========== COMPAGNIES AÉRIENNES APAC (hors Chine continentale) ==========
+    # Northeast Asia (Mongolia, Japan, Korea, Taiwan, HK, Macau)
+    "Cathay Pacific", "Cathay Dragon", "HK Express", "Hong Kong Airlines",
+    "Air Macau", "China Airlines", "EVA Air", "Starlux Airlines", "Tigerair Taiwan",
+    "Korean Air", "Asiana Airlines", "Jeju Air", "Jin Air", "Air Busan", "T'way Air",
+    "All Nippon Airways (ANA)", "Japan Airlines (JAL)", "Peach Aviation",
+    "Skymark Airlines", "Solaseed Air", "Air Do", "Spring Airlines Japan",
     "MIAT Mongolian Airlines", "MIAT", "蒙古航空", "Hunnu Air",
     # Southeast Asia
     "Singapore Airlines", "Scoot", "Jetstar Asia", "Malaysia Airlines", "AirAsia",
@@ -96,37 +87,25 @@ KEYWORDS_GSE = [
     "Qantas", "QantasLink", "Virgin Australia", "Jetstar Airways", "Rex Airlines",
     "Air New Zealand", "Air Chathams", "Fiji Airways", "Nauru Airlines",
     "Air Niugini", "Solomon Airlines", "Air Vanuatu",
-    # Chinois (Chine)
-    "中国国航", "国航", "中国东方航空", "东方航空", "东航",
-    "中国南方航空", "南方航空", "南航", "海南航空", "海航",
-    "厦门航空", "厦航", "深圳航空", "深航", "春秋航空", "春秋",
-    "吉祥航空", "吉祥", "四川航空", "川航", "山东航空", "山航",
-    "北京首都航空", "上海航空", "香港国泰航空", "国泰航空",
-    "香港航空", "澳门航空", "中华航空", "长荣航空",
-    "大韩航空", "韩亚航空", "济州航空", "真航空",
-    "全日空", "日本航空", "新加坡航空", "马来西亚航空",
-    "泰国航空", "越南航空", "菲律宾航空", "宿务太平洋航空",
-    "印尼鹰航", "澳洲航空", "新西兰航空",
-    # Termes génériques
-    "订购", "交付", "机队", "盈利", "亏损", "营收", "净利润",
-    "复航", "停飞", "航线", "新开航线", "恢复", "破产", "重组",
+    # Termes génériques (en anglais principalement, car les sources sont en anglais)
+    "order", "delivery", "fleet", "profit", "loss", "revenue", "net income",
+    "resume flights", "grounding", "route", "new route", "bankruptcy", "restructuring",
 
     # ========== GROUND HANDLERS APAC ==========
     "SATs", "dnata", "Swissport", "Menzies", "Worldwide Flight Services", "WFS",
     "Celebi", "Havas Ground Handling", "Pan Asia Pacific Aviation Services",
-    "Asia Airfreight Terminal", "Beijing CAH SATS Aviation Services",
-    "Bangkok Flight Services", "Gapura Angkasa", "PT Gapura Angkasa",
-    "新加坡新翔集团", "SATS", "北京空港航空地面服务", "BGS",
+    "Asia Airfreight Terminal", "Bangkok Flight Services", "Gapura Angkasa",
+    "PT Gapura Angkasa", "Singapore新翔集团", "SATS",
 
     # ---------- RÉGLEMENTATIONS & SUPPLY CHAIN ----------
     "emission regulation", "electric ramp", "diesel ban",
     "steel price", "aluminium", "lithium", "battery cost",
     "semiconductor", "chip shortage", "supply chain disruption",
-    "碳中和机场", "电动化", "柴油车禁行", "carbon peak",
+    "carbon peak",
 
     # ---------- GÉOPOLITIQUE ----------
     "Belt and Road", "BRI", "tariff", "trade war", "EU tariffs",
-    "一带一路", "关税", "APAC", "Asia Pacific",
+    "APAC", "Asia Pacific",
 
     # ---------- CONCURRENTS ----------
     "TLD Group", "TLD", "Alvest",
@@ -148,7 +127,7 @@ KEYWORDS_GSE = [
     "Red Box International", "Power Systems International", "PSI",
     "GB Barberi", "Jetall GPU", "Aeromax GSE", "Current Power",
     "MRCCS", "Bertoli Power Units",
-    # Chinese competitors
+    # Chinese competitors (but they operate globally, keep them)
     "Weihai Guangtai", "Guangtai", "威海广泰",
     "CIMC Tianda", "中集天达",
     "Jiangsu Tianyi", "Tianyi", "江苏天一",
@@ -166,38 +145,9 @@ KEYWORDS_GSE = [
 ]
 
 # =============================================================================
-#  SOURCES (fonctionnelles + sources APAC)
+#  SOURCES (uniquement celles qui couvrent l'APAC hors Chine continentale)
 # =============================================================================
 SOURCES = [
-    {
-        "nom": "Bidcenter (Chine - Appels d'offres)",
-        "url": "https://www.bidcenter.com.cn",
-        "type": "scrape_bidcenter",
-        "base_url": "https://www.bidcenter.com.cn",
-        "encoding": "utf-8"
-    },
-    {
-        "nom": "China Airport News",
-        "url": "http://fuwu.caacnews.com.cn/1/5/index.html",
-        "type": "scrape_generic",
-        "selector": "div.newsList ul li a, .list li a, a",
-        "base_url": "http://fuwu.caacnews.com.cn",
-        "encoding": "utf-8"
-    },
-    {
-        "nom": "CARNOC.com (China)",
-        "url": "https://www.carnoc.com/",
-        "type": "scrape_generic",
-        "selector": "div.news_list a, .article_list a, a",
-        "base_url": "https://www.carnoc.com",
-        "encoding": "utf-8"
-    },
-    {
-        "nom": "CAAC News (China)",
-        "url": "http://www.caac.gov.cn/PHONE/ZTZL/",
-        "type": "scrape_caac",
-        "base_url": "http://www.caac.gov.cn"
-    },
     {
         "nom": "Ground Handling International",
         "url": "https://www.groundhandling.com/",
@@ -258,7 +208,7 @@ def requeter_avec_retry(url, retries=3, **kwargs):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3"
+        "Accept-Language": "en-US,en;q=0.9,zh;q=0.8"
     }
     if "headers" in kwargs:
         headers.update(kwargs.pop("headers"))
@@ -271,35 +221,6 @@ def requeter_avec_retry(url, retries=3, **kwargs):
             log.warning(f"Tentative {i+1}/{retries} échouée pour {url} : {e}")
             time.sleep(2 ** i)
     return None
-
-def scrape_caac(source):
-    articles = []
-    resp = requeter_avec_retry(source["url"])
-    if not resp:
-        return articles
-    try:
-        soup = BeautifulSoup(resp.content, "html.parser", from_encoding='utf-8')
-        links = soup.find_all('a', href=True)
-        for link in links[:15]:
-            titre = link.get_text(strip=True)
-            if not titre or len(titre) < 10:
-                continue
-            href = link.get('href')
-            if href:
-                href = normaliser_url(href, source["base_url"])
-            if titre and href:
-                articles.append({
-                    "source": source["nom"],
-                    "titre": titre[:150],
-                    "lien": href,
-                    "desc": "",
-                    "date": datetime.now().strftime("%Y-%m-%d"),
-                    "id": hashlib.md5((titre + href).encode()).hexdigest(),
-                })
-        log.info(f"  Scraping {source['nom']}: {len(articles)} articles")
-    except Exception as e:
-        log.warning(f"Erreur parsing {source['nom']} : {e}")
-    return articles
 
 def scrape_generic(source):
     articles = []
@@ -333,57 +254,11 @@ def scrape_generic(source):
         log.warning(f"Erreur scraping {source['nom']} : {e}")
     return articles
 
-def scrape_bidcenter(source):
-    articles = []
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://www.bidcenter.com.cn/",
-        "Accept-Language": "zh-CN,zh;q=0.9"
-    }
-    resp = requeter_avec_retry(source["url"], headers=headers)
-    if not resp:
-        return articles
-    try:
-        soup = BeautifulSoup(resp.content, "html.parser", from_encoding='utf-8')
-        links = soup.select('div.tender_list a, ul.tender-list a, .gg_list a, table a, .list-item a')
-        if not links:
-            links = soup.find_all('a', href=True)
-        unique_links = {}
-        for link in links:
-            href = link.get('href')
-            titre = link.get_text(strip=True)
-            if not href or not titre or len(titre) < 8:
-                continue
-            mots_exclus = ['首页', '上一页', '下一页', '末页', '登录', '注册', '发布', '搜索']
-            if any(mot in titre for mot in mots_exclus):
-                continue
-            href = normaliser_url(href, source["base_url"])
-            if href and 'bidcenter.com.cn' in href:
-                unique_links[href] = titre
-        for href, titre in list(unique_links.items())[:40]:
-            articles.append({
-                "source": source["nom"],
-                "titre": titre[:150],
-                "lien": href,
-                "desc": "",
-                "date": datetime.now().strftime("%Y-%m-%d"),
-                "id": hashlib.md5((titre + href).encode()).hexdigest(),
-            })
-        log.info(f"  Scraping {source['nom']}: {len(articles)} appels d'offres")
-    except Exception as e:
-        log.warning(f"Erreur scraping {source['nom']} : {e}")
-    return articles
-
 def collecter_tous_articles():
     tous_articles = []
     for source in SOURCES:
         log.info(f"Collecte depuis : {source['nom']}")
-        if source["type"] == "scrape_caac":
-            articles = scrape_caac(source)
-        elif source["type"] == "scrape_bidcenter":
-            articles = scrape_bidcenter(source)
-        else:
-            articles = scrape_generic(source)
+        articles = scrape_generic(source)  # toutes les sources sont de type générique maintenant
         tous_articles.extend(articles)
         time.sleep(1.5)
     log.info(f"Total articles bruts collectés: {len(tous_articles)}")
@@ -397,7 +272,7 @@ def filtrer_pertinents(articles, vus):
         texte = (a["titre"] + " " + a.get("desc", "")).lower()
         if any(kw.lower() in texte for kw in KEYWORDS_GSE):
             nouveaux.append(a)
-    log.info(f"Articles pertinents (GSE + APAC) : {len(nouveaux)}")
+    log.info(f"Articles pertinents (GSE + APAC hors Chine) : {len(nouveaux)}")
     return nouveaux
 
 # --- PROMPT DEEPSEEK (APAC) ------------------------------------------------
@@ -405,7 +280,7 @@ SYSTEM_PROMPT_GSE = """Tu es un expert du marché des équipements de support au
 spécialisé en stratégie industrielle et supply chain. Tu conseilles le CEO d'un fabricant / loueur de GSE (TLD Group).
 
 **IMPORTANT** : Ne te limite pas aux articles parlant uniquement d'équipements. 
-- Les ouvertures d'aéroports, les records de trafic, les commandes de flotte et les résultats financiers des compagnies sont des **INDICATEURS AVANCÉS** pour toute la région APAC.
+- Les ouvertures d'aéroports, les records de trafic, les commandes de flotte et les résultats financiers des compagnies sont des **INDICATEURS AVANCÉS** pour toute la région APAC (hors Chine continentale).
 - Les annonces de tes concurrents (JBT, Textron, Guangtai, etc.) sont à analyser comme des menaces ou des opportunités.
 - Traduis systématiquement ces informations en volumes d'équipements potentiels (ex: +5% de trafic à Singapour = +10 tracteurs).
 
@@ -413,7 +288,7 @@ Accorde une attention particulière à :
 1. Les coûts des matières premières (acier, aluminium, lithium, semi-conducteurs)
 2. Les fusions-acquisitions chez les handlers (Swissport, Menzies, dnata, SATs)
 3. Les politiques commerciales (tarifs, Belt and Road)
-4. Les réglementations environnementales en Chine et en APAC
+4. Les réglementations environnementales en APAC
 
 Pour chaque actualité importante, évalue l'impact concret sur :
 1. Demande en équipements (tracteurs, chargeurs, passerelles, GPU)
@@ -441,7 +316,7 @@ def analyser_avec_deepseek(articles):
         articles_txt += f"    Titre : {a['titre']}\n"
         articles_txt += f"    Lien  : {a['lien']}\n"
 
-    prompt = (f"Veille stratégique GSE - Asie-Pacifique — {date_str}\n"
+    prompt = (f"Veille stratégique GSE - Asie-Pacifique (hors Chine) — {date_str}\n"
               f"Nombre d'articles sélectionnés : {len(articles)}\n\n{articles_txt}\n\n"
               "Pour chaque information importante :\n"
               "1. IMPACT : CRITIQUE / IMPORTANT / À SURVEILLER / INFO\n"
@@ -471,7 +346,7 @@ def analyser_avec_deepseek(articles):
 def generer_rapport(articles, analyse):
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     lignes = ["=" * 62,
-              f"  VEILLE STRATÉGIQUE GSE & CONCURRENCE (APAC) — {now}",
+              f"  VEILLE STRATÉGIQUE GSE & CONCURRENCE (APAC hors Chine) — {now}",
               "  Pour : Direction Industrielle & Commerciale", "=" * 62, "",
               f"  {len(articles)} information(s) pertinente(s)", "",
               "  SOURCES SURVEILLÉES :"]
@@ -488,16 +363,16 @@ def generer_rapport(articles, analyse):
     return "\n".join(lignes)
 
 def sauvegarder_rapport(rapport):
-    dossier = Path("rapports")
+    dossier = Path("rapports_apac")
     dossier.mkdir(exist_ok=True, parents=True)
-    fichier = dossier / f"gse_veille_{datetime.now().strftime('%Y%m%d_%H%M')}.txt"
+    fichier = dossier / f"apac_veille_{datetime.now().strftime('%Y%m%d_%H%M')}.txt"
     with open(fichier, "w", encoding="utf-8") as f:
         f.write(rapport)
     log.info(f"Rapport créé : {fichier.absolute()}")
 
 # --- EXÉCUTION ---------------------------------------------------------------
 def executer_agent():
-    log.info("Démarrage agent veille GSE + APAC (périmètre final)")
+    log.info("Démarrage agent veille GSE + APAC (hors Chine continentale)")
     try:
         vus = charger_vus()
         tous_articles = collecter_tous_articles()
