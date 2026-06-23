@@ -63,8 +63,11 @@ KEYWORDS_GSE = [
     # HK / Macau / Taiwan (en chinois traditionnel)
     "香港国际", "澳门国际", "台北桃园", "高雄国际",
 
-    # ========== COMPAGNIES AÉRIENNES APAC (hors Chine continentale) ==========
-    # Northeast Asia (Mongolia, Japan, Korea, Taiwan, HK, Macau)
+    # ========== COMPAGNIES AÉRIENNES APAC ==========
+    # Northeast Asia (incl. Chinese airlines - keep them for outbound tracking)
+    "Air China", "China Eastern", "China Southern", "Hainan Airlines", "Beijing Capital Airlines",
+    "Shanghai Airlines", "XiamenAir", "Shenzhen Airlines", "Sichuan Airlines", "Shandong Airlines",
+    "Juneyao Air", "Spring Airlines", "China United Airlines", 
     "Cathay Pacific", "Cathay Dragon", "HK Express", "Hong Kong Airlines",
     "Air Macau", "China Airlines", "EVA Air", "Starlux Airlines", "Tigerair Taiwan",
     "Korean Air", "Asiana Airlines", "Jeju Air", "Jin Air", "Air Busan", "T'way Air",
@@ -87,27 +90,53 @@ KEYWORDS_GSE = [
     "Qantas", "QantasLink", "Virgin Australia", "Jetstar Airways", "Rex Airlines",
     "Air New Zealand", "Air Chathams", "Fiji Airways", "Nauru Airlines",
     "Air Niugini", "Solomon Airlines", "Air Vanuatu",
-    # Termes génériques (en anglais principalement, car les sources sont en anglais)
+    # Chinese names (to catch international news in Chinese sources)
+    "中国国航", "国航", "中国东方航空", "东方航空", "东航",
+    "中国南方航空", "南方航空", "南航", "海南航空", "海航",
+    "厦门航空", "厦航", "深圳航空", "深航", "春秋航空", "春秋",
+    "吉祥航空", "吉祥", "四川航空", "川航", "山东航空", "山航",
+    "北京首都航空", "上海航空", "香港国泰航空", "国泰航空",
+    "香港航空", "澳门航空", "中华航空", "长荣航空",
+    "大韩航空", "韩亚航空", "济州航空", "真航空",
+    "全日空", "日本航空", "新加坡航空", "马来西亚航空",
+    "泰国航空", "越南航空", "菲律宾航空", "宿务太平洋航空",
+    "印尼鹰航", "澳洲航空", "新西兰航空",
+    # Termes génériques
     "order", "delivery", "fleet", "profit", "loss", "revenue", "net income",
     "resume flights", "grounding", "route", "new route", "bankruptcy", "restructuring",
+    "订购", "交付", "机队", "盈利", "亏损", "营收", "净利润",
+    "复航", "停飞", "航线", "新开航线", "恢复", "破产", "重组",
 
     # ========== GROUND HANDLERS APAC ==========
     "SATs", "dnata", "Swissport", "Menzies", "Worldwide Flight Services", "WFS",
     "Celebi", "Havas Ground Handling", "Pan Asia Pacific Aviation Services",
     "Asia Airfreight Terminal", "Bangkok Flight Services", "Gapura Angkasa",
-    "PT Gapura Angkasa", "Singapore新翔集团", "SATS",
+    "PT Gapura Angkasa", "新加坡新翔集团", "SATS",
 
     # ---------- RÉGLEMENTATIONS & SUPPLY CHAIN ----------
     "emission regulation", "electric ramp", "diesel ban",
     "steel price", "aluminium", "lithium", "battery cost",
     "semiconductor", "chip shortage", "supply chain disruption",
-    "carbon peak",
+    "carbon peak", "碳中和机场", "电动化", "柴油车禁行",
 
     # ---------- GÉOPOLITIQUE ----------
     "Belt and Road", "BRI", "tariff", "trade war", "EU tariffs",
-    "APAC", "Asia Pacific",
+    "APAC", "Asia Pacific", "一带一路", "关税",
 
-    # ---------- CONCURRENTS ----------
+    # ========== CONCURRENTS CHINOIS (prioritaires) ==========
+    "Weihai Guangtai", "Guangtai", "威海广泰",
+    "CIMC Tianda", "中集天达",
+    "Jiangsu Tianyi", "Tianyi", "江苏天一",
+    "Shenzhen TECHKING", "TECHKING", "深圳达航",
+    "Hangfu", "航福",
+    "Shanghai Jiajie", "上海嘉捷",
+    "Guangzhou Jinhaoyang", "广州金浩阳",
+    "Shenyang Tianhua", "沈阳天华",
+    "Shandong Tianhe", "山东天河",
+    "Zhejiang Goodsense", "浙江中力",
+    "Alha GSE", "Shanghai Ifly", "Ifly GSE",
+
+    # ========== CONCURRENTS MONDAUX ==========
     "TLD Group", "TLD", "Alvest",
     "JBT Corporation", "JBT", "Oshkosh AeroTech", "Oshkosh",
     "Textron GSE", "Textron", "Tug Technologies", "Tronair", "ITW GSE",
@@ -127,25 +156,14 @@ KEYWORDS_GSE = [
     "Red Box International", "Power Systems International", "PSI",
     "GB Barberi", "Jetall GPU", "Aeromax GSE", "Current Power",
     "MRCCS", "Bertoli Power Units",
-    # Chinese competitors (but they operate globally, keep them)
-    "Weihai Guangtai", "Guangtai", "威海广泰",
-    "CIMC Tianda", "中集天达",
-    "Jiangsu Tianyi", "Tianyi", "江苏天一",
-    "Shenzhen TECHKING", "TECHKING", "深圳达航",
-    "Hangfu", "航福",
-    "Shanghai Jiajie", "上海嘉捷",
-    "Guangzhou Jinhaoyang", "广州金浩阳",
-    "Shenyang Tianhua", "沈阳天华",
-    "Shandong Tianhe", "山东天河",
-    "Zhejiang Goodsense", "浙江中力",
-    "Alha GSE", "Shanghai Ifly", "Ifly GSE",
-    # Location & Services
+
+    # ---------- LOCATION & SERVICES ----------
     "TCR Group", "TCR", "Mercury GSE", "Lufthansa Technik",
     "GE Aviation", "AFI KLM E&M", "ST Aerospace", "MTU Maintenance"
 ]
 
 # =============================================================================
-#  SOURCES (uniquement celles qui couvrent l'APAC hors Chine continentale)
+#  SOURCES (internationales + APAC - sans Chine continentale)
 # =============================================================================
 SOURCES = [
     {
@@ -154,6 +172,20 @@ SOURCES = [
         "type": "scrape_generic",
         "selector": "article h3 a, .post-title a, a",
         "base_url": "https://www.groundhandling.com",
+    },
+    {
+        "nom": "Aviation Pros - Ground Handling",
+        "url": "https://www.aviationpros.com/ground-handling",
+        "type": "scrape_generic",
+        "selector": "div.article-listing a, h2.article-title a, .listing-title a",
+        "base_url": "https://www.aviationpros.com",
+    },
+    {
+        "nom": "Airport Technology - Ground Support",
+        "url": "https://www.airport-technology.com/sectors/ground-support/",
+        "type": "scrape_generic",
+        "selector": "article h3 a, .card-title a, .post-title a",
+        "base_url": "https://www.airport-technology.com",
     },
     {
         "nom": "CGTN - Aviation",
@@ -258,7 +290,7 @@ def collecter_tous_articles():
     tous_articles = []
     for source in SOURCES:
         log.info(f"Collecte depuis : {source['nom']}")
-        articles = scrape_generic(source)  # toutes les sources sont de type générique maintenant
+        articles = scrape_generic(source)
         tous_articles.extend(articles)
         time.sleep(1.5)
     log.info(f"Total articles bruts collectés: {len(tous_articles)}")
@@ -275,16 +307,16 @@ def filtrer_pertinents(articles, vus):
     log.info(f"Articles pertinents (GSE + APAC hors Chine) : {len(nouveaux)}")
     return nouveaux
 
-# --- PROMPT DEEPSEEK (APAC) ------------------------------------------------
+# --- PROMPT DEEPSEEK (priorisation concurrents chinois) ---------------------
 SYSTEM_PROMPT_GSE = """Tu es un expert du marché des équipements de support au sol (GSE) en Asie-Pacifique, 
 spécialisé en stratégie industrielle et supply chain. Tu conseilles le CEO d'un fabricant / loueur de GSE (TLD Group).
 
-**IMPORTANT** : Ne te limite pas aux articles parlant uniquement d'équipements. 
-- Les ouvertures d'aéroports, les records de trafic, les commandes de flotte et les résultats financiers des compagnies sont des **INDICATEURS AVANCÉS** pour toute la région APAC (hors Chine continentale).
-- Les annonces de tes concurrents (JBT, Textron, Guangtai, etc.) sont à analyser comme des menaces ou des opportunités.
-- Traduis systématiquement ces informations en volumes d'équipements potentiels (ex: +5% de trafic à Singapour = +10 tracteurs).
+**PRIORITÉ ABSOLUE** :
+- Accorde une attention particulière aux **activités internationales des concurrents chinois** (Weihai Guangtai, CIMC Tianda, Jiangsu Tianyi, Shenzhen TECHKING, etc.) en dehors de la Chine continentale : nouveaux contrats dans les aéroports APAC, ouvertures de bureaux/entrepôts, partenariats avec des handlers locaux.
+- Accorde une attention particulière aux **compagnies aériennes chinoises** (Air China, China Southern, China Eastern, Hainan, etc.) lorsqu'elles opèrent hors de Chine : nouvelles routes internationales, commandes de flotte pour l'export, hubs à l'étranger, partenariats avec des aéroports APAC.
+- Ces signaux sont des **INDICATEURS AVANCÉS** : l'expansion d'une compagnie chinoise à Singapour ou Sydney générera une demande de GSE supplémentaire dans 6 à 12 mois.
 
-Accorde une attention particulière à :
+Accorde aussi une attention particulière à :
 1. Les coûts des matières premières (acier, aluminium, lithium, semi-conducteurs)
 2. Les fusions-acquisitions chez les handlers (Swissport, Menzies, dnata, SATs)
 3. Les politiques commerciales (tarifs, Belt and Road)
@@ -294,7 +326,7 @@ Pour chaque actualité importante, évalue l'impact concret sur :
 1. Demande en équipements (tracteurs, chargeurs, passerelles, GPU)
 2. Coûts des intrants (impact sur nos marges)
 3. Appels d'offres et contrats de handling
-4. Positionnement concurrentiel face aux challengers
+4. Positionnement concurrentiel face aux challengers chinois
 
 Ton analyse est en français, orientée décisions commerciales et industrielles.
 Niveau d'impact : CRITIQUE / IMPORTANT / À SURVEILLER / INFO
@@ -316,7 +348,7 @@ def analyser_avec_deepseek(articles):
         articles_txt += f"    Titre : {a['titre']}\n"
         articles_txt += f"    Lien  : {a['lien']}\n"
 
-    prompt = (f"Veille stratégique GSE - Asie-Pacifique (hors Chine) — {date_str}\n"
+    prompt = (f"Veille stratégique GSE - Asie-Pacifique (hors Chine continentale) — {date_str}\n"
               f"Nombre d'articles sélectionnés : {len(articles)}\n\n{articles_txt}\n\n"
               "Pour chaque information importante :\n"
               "1. IMPACT : CRITIQUE / IMPORTANT / À SURVEILLER / INFO\n"
