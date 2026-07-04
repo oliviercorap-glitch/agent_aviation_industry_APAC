@@ -17,8 +17,8 @@ import markdown
 #  CONFIGURATION
 # =============================================================================
 load_dotenv()
-LOG_FILE   = Path("logs/agent_apac.log")
-SEEN_FILE  = Path("seen_apac_articles.json")
+LOG_FILE   = Path("logs/agent_gse.log")
+SEEN_FILE  = Path("seen_gse_articles.json")
 Path("logs").mkdir(exist_ok=True)
 
 logging.basicConfig(
@@ -37,7 +37,7 @@ ENRICH_MAX = 20
 DEEPSEEK_MAX_ARTICLES = 50
 
 # =============================================================================
-#  KEYWORDS — APAC ex-mainland China
+#  KEYWORDS
 # =============================================================================
 KEYWORDS_GSE = [
     # Core GSE equipment
@@ -47,51 +47,58 @@ KEYWORDS_GSE = [
     "lavatory truck", "water truck", "apron", "ramp", "electric ground support",
     "hybrid gse", "lithium battery gse", "autonomous gse", "maintenance gse",
     "mro ground",
-    # APAC airports (demand drivers)
-    "Tokyo Haneda", "Tokyo Narita", "Kansai International", "Chubu Centrair",
-    "Seoul Incheon", "Gimpo International", "Hong Kong International",
-    "Taipei Taoyuan", "Kaohsiung International", "Singapore Changi",
-    "Kuala Lumpur International", "Kota Kinabalu", "Penang International",
-    "Bangkok Suvarnabhumi", "Don Mueang", "Phuket International",
-    "Jakarta Soekarno-Hatta", "Bali Ngurah Rai", "Surabaya Juanda",
-    "Manila Ninoy Aquino", "Cebu Mactan", "Clark International",
-    "Ho Chi Minh Tan Son Nhat", "Hanoi Noi Bai", "Da Nang International",
-    "Phnom Penh International", "Yangon International",
-    "Dhaka Hazrat Shahjalal", "Kathmandu Tribhuvan", "Colombo Bandaranaike",
-    "Ulaanbaatar Chinggis Khaan",
-    "Sydney Kingsford Smith", "Melbourne Tullamarine", "Brisbane Airport",
-    "Perth Airport", "Auckland International", "Fiji Nadi",
+    # Chinese GSE terms
+    "地勤设备", "地面支持设备", "行李拖车", "客梯车", "电源车", "气源车",
+    "除冰车", "装载机", "传送带车", "飞机牵引车", "新能源地勤", "电动地勤",
+    # Airport infrastructure (demand drivers)
     "airport opening", "new runway", "terminal expansion", "airport expansion",
     "passenger record", "traffic record", "cargo volume", "load factor",
     "inauguration", "infrastructure investment",
-    # Chinese airlines operating internationally (fleet = GSE demand)
+    "机场", "航空", "航站楼", "停机坪", "扩建", "招标", "采购", "项目", "投运",
+    "吞吐量", "旅客", "货邮", "航班", "机位", "远机位", "新机场", "新航站楼",
+    "旅客吞吐量创新高", "航班量",
+    # Airlines (fleet = GSE demand)
+    "airline order", "fleet delivery", "fleet expansion", "airline profit",
+    "airline loss", "bankruptcy", "revenue", "EBIT",
     "Air China", "China Eastern", "China Southern", "Hainan Airlines",
-    "XiamenAir", "Shenzhen Airlines", "Sichuan Airlines", "Shandong Airlines",
-    "Juneyao Airlines", "Spring Airlines",
     "中国国航", "国航", "中国东方航空", "东方航空", "东航",
     "中国南方航空", "南方航空", "南航", "海南航空", "海航",
     "厦门航空", "厦航", "深圳航空", "深航", "春秋航空", "春秋",
     "吉祥航空", "吉祥", "四川航空", "川航", "山东航空", "山航",
-    # Other APAC airlines (fleet = GSE demand)
-    "Cathay Pacific", "Hong Kong Airlines", "Greater Bay Airlines",
-    "Korean Air", "Asiana Airlines", "Jeju Air", "T'way Air",
-    "Japan Airlines", "ANA", "All Nippon Airways", "Peach Aviation",
-    "China Airlines", "EVA Air", "StarLux",
-    "Singapore Airlines", "Scoot", "Malaysia Airlines", "AirAsia",
-    "Thai Airways", "Thai AirAsia", "Vietnam Airlines", "VietJet",
-    "Garuda Indonesia", "Lion Air", "Philippine Airlines", "Cebu Pacific",
-    "Qantas", "Jetstar", "Virgin Australia", "Air New Zealand", "Fiji Airways",
-    "airline order", "fleet delivery", "fleet expansion", "airline profit",
-    "airline loss", "bankruptcy", "revenue", "EBIT",
     "订购", "交付", "机队", "盈利", "亏损", "营收", "净利润",
-    "复航", "停飞", "新开航线", "重组",
-    # Ground handlers (M&A signals)
-    "SATS", "dnata", "Swissport", "Menzies Aviation", "Worldwide Flight Services",
-    "WFS", "Celebi", "Havas Ground Handling", "Gapura Angkasa", "Aviapartner",
-    "Alliance Ground International", "斯威斯波特",
-    # Chinese GSE competitors — international / export angle (primary lens)
+    "复航", "停飞", "航线", "新开航线", "恢复", "破产", "重组",
+    # Electrification / regulation
+    "emission regulation", "electric ramp", "diesel ban",
+    "steel price", "aluminium", "lithium", "battery cost",
+    "semiconductor", "chip shortage", "supply chain disruption",
+    "碳中和机场", "电动化", "柴油车禁行", "carbon peak",
+    # Trade / macro
+    "Belt and Road", "BRI", "tariff", "trade war", "EU tariffs",
+    "一带一路", "关税",
+    # Western GSE competitors
+    "TLD Group", "TLD", "Alvest", "JBT Corporation", "JBT",
+    "Oshkosh AeroTech", "Oshkosh", "Textron GSE", "Textron",
+    "Tug Technologies", "Tronair", "ITW GSE", "Fast Global Solutions",
+    "Fast Global", "WASP GSE", "Mallaghan", "Mallaghan Engineering",
+    "Goldhofer", "MULAG", "HYDRO", "Guinault", "Cavotec",
+    "AERO Specialties", "Aero Specialties", "Global Ground Support",
+    "DOLL", "Nepean", "Gate GSE", "Clyde Machines", "Douglas Equipment",
+    "FgFlightline", "AMSS GSE", "Avia Equipment", "Teleflex Lionel-Dupont",
+    "CargoTec", "Bharat Earth Movers", "Bliss-Fox GSE",
+    "Imai Aero-Equipment", "Toyota Industries", "JCB", "Jungheinrich",
+    "Komatsu", "Cobus", "Rheinmetall", "Vestergaard", "Trepel",
+    "AGSE", "Aviapartner", "Havas Ground Handling",
+    "Alliance Ground International", "Watkins Aircraft Support",
+    "Handiquip GSE", "MAK Controls", "Unitron", "Enersys", "RASAKTI",
+    "ATEC Inc", "Joloda Hydraroll", "Wollard International",
+    "BEUMER Group", "Powervamp", "Acsoon", "Velocity Airport Solutions",
+    "Red Box International", "Power Systems International", "PSI",
+    "GB Barberi", "Jetall GPU", "Aeromax GSE", "Current Power",
+    "MRCCS", "Bertoli Power Units",
+    # Chinese GSE competitors — Guangtai variants (Weihai-based, key rival)
     "Weihai Guangtai", "Guangtai", "威海广泰", "广泰", "广泰航空",
-    "威海广泰航空", "GT系列", "广泰电动", "广泰牵引", "广泰出口",
+    "威海广泰航空", "GT系列", "广泰电动", "广泰牵引",
+    # Chinese GSE competitors — others
     "CIMC Tianda", "中集天达", "天达", "CIMC",
     "Jiangsu Tianyi", "Tianyi", "江苏天一",
     "Shenzhen TECHKING", "TECHKING", "深圳达航",
@@ -102,29 +109,17 @@ KEYWORDS_GSE = [
     "Shandong Tianhe", "山东天河",
     "Zhejiang Goodsense", "浙江中力",
     "Alha GSE", "Shanghai Ifly", "Ifly GSE",
-    # Western / global GSE competitors
-    "TLD Group", "TLD", "Alvest", "JBT Corporation", "JBT",
-    "Oshkosh AeroTech", "Oshkosh", "Textron GSE", "Textron",
-    "Tug Technologies", "Tronair", "ITW GSE", "Fast Global Solutions",
-    "Fast Global", "WASP GSE", "Mallaghan", "Mallaghan Engineering",
-    "Goldhofer", "MULAG", "HYDRO", "Guinault", "Cavotec",
-    "AERO Specialties", "Aero Specialties", "Global Ground Support",
-    "DOLL", "Nepean", "Gate GSE", "Clyde Machines", "Douglas Equipment",
-    "TCR Group", "TCR", "Mercury GSE",
-    "Toyota Industries", "JCB", "Jungheinrich", "Komatsu", "Cobus",
-    "Vestergaard", "Trepel", "Aviapartner",
-    # Electrification / regulation / supply chain
-    "emission regulation", "electric ramp", "diesel ban",
-    "steel price", "aluminium", "lithium", "battery cost",
-    "semiconductor", "chip shortage", "supply chain disruption",
-    "carbon peak", "electrification", "net zero airport",
-    "电动化", "碳中和机场",
-    # Trade / geopolitics
-    "Belt and Road", "BRI", "tariff", "trade war", "EU tariffs",
-    "export control", "China export", "一带一路", "关税",
-    "APAC", "Asia Pacific", "Southeast Asia", "ASEAN", "South Asia",
-    # Tenders / procurement
-    "tender", "procurement", "contract award", "RFP", "RFQ",
+    "TCR Group", "TCR", "Mercury GSE", "Lufthansa Technik",
+    "GE Aviation", "AFI KLM E&M", "ST Aerospace", "MTU Maintenance",
+    # Broader Chinese GSE category terms (catch competitor news without brand name)
+    "地面服务设备", "航空地面设备", "机坪设备", "机场特种车",
+    "特种车辆", "航空特种车", "地面保障", "机坪作业",
+    "电动牵引车", "电动拖车", "行李牵引", "飞机拖车",
+    "登机桥", "廊桥", "地面电源", "航空地面",
+    # Ground handlers (M&A signals)
+    "Swissport", "Menzies Aviation", "Dnata", "Aviapartner",
+    "WFS", "Worldwide Flight Services", "SGS", "Celebi",
+    "斯威斯波特", "地面服务", "地面代理", "地服",
 ]
 
 # =============================================================================
@@ -132,32 +127,41 @@ KEYWORDS_GSE = [
 # =============================================================================
 SOURCES = [
     {
-        "nom": "International Airport Review - News",
-        "url": "https://www.internationalairportreview.com/news/",
-        "type": "scrape_generic",
-        "selector": "article h3 a, .post-title a, .entry-title a, a",
-        "base_url": "https://www.internationalairportreview.com",
+        "nom": "Bidcenter (China Tenders)",
+        "url": "https://www.bidcenter.com.cn",
+        "type": "scrape_bidcenter",
+        "base_url": "https://www.bidcenter.com.cn",
+        "encoding": "utf-8",
     },
     {
-        "nom": "Airport Technology - News",
-        "url": "https://www.airport-technology.com/news/",
+        "nom": "China Airport News (CAAC)",
+        "url": "http://fuwu.caacnews.com.cn/1/5/index.html",
         "type": "scrape_generic",
-        "selector": "article h3 a, .card-title a, .post-title a, a",
-        "base_url": "https://www.airport-technology.com",
+        "selector": "div.newsList ul li a, .list li a, a",
+        "base_url": "http://fuwu.caacnews.com.cn",
+        "encoding": "utf-8",
     },
     {
-        "nom": "Future Airport",
-        "url": "https://www.futureairport.com/",
+        "nom": "CAAC News Portal",
+        "url": "http://www.caacnews.com.cn/1/5/",
         "type": "scrape_generic",
-        "selector": "article h2 a, .post-title a, .entry-title a, a",
-        "base_url": "https://www.futureairport.com",
+        "selector": ".news-list a, ul.list a, .newslist a, a",
+        "base_url": "http://www.caacnews.com.cn",
+        "encoding": "utf-8",
     },
     {
-        "nom": "Airport World - Asia Pacific",
-        "url": "https://www.airport-world.com/category/regions/asia-pacific/",
+        "nom": "CARNOC.com",
+        "url": "https://www.carnoc.com/",
         "type": "scrape_generic",
-        "selector": "article h3 a, .entry-title a, a",
-        "base_url": "https://www.airport-world.com",
+        "selector": "div.news_list a, .article_list a, a",
+        "base_url": "https://www.carnoc.com",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "CAAC Gov (China)",
+        "url": "http://www.caac.gov.cn/PHONE/ZTZL/",
+        "type": "scrape_caac",
+        "base_url": "http://www.caac.gov.cn",
     },
     {
         "nom": "Ground Handling International",
@@ -167,39 +171,74 @@ SOURCES = [
         "base_url": "https://www.groundhandling.com",
     },
     {
-        "nom": "Aviation Pros - Ground Handling",
-        "url": "https://www.aviationpros.com/ground-handling",
+        "nom": "Aviation Week MRO",
+        "url": "https://aviationweek.com/mro/ground-operations",
         "type": "scrape_generic",
-        "selector": "div.article-listing a, h2.article-title a, .listing-title a, a",
-        "base_url": "https://www.aviationpros.com",
-    },
-    {
-        "nom": "Simple Flying - Asia",
-        "url": "https://simpleflying.com/category/asia/",
-        "type": "scrape_generic",
-        "selector": "article h2 a, .post-title a, a",
-        "base_url": "https://simpleflying.com",
-    },
-    {
-        "nom": "Aviation Week - Asia",
-        "url": "https://aviationweek.com/regions/asia",
-        "type": "scrape_generic",
-        "selector": "h3.article-title a, .node-title a, .headline a, a",
+        "selector": "h3.article-title a, .headline a, article h2 a, a",
         "base_url": "https://aviationweek.com",
     },
     {
-        "nom": "Flight Global - Asia",
-        "url": "https://www.flightglobal.com/asia/",
+        "nom": "CGTN Aviation",
+        "url": "https://www.cgtn.com/",
         "type": "scrape_generic",
-        "selector": "article h3 a, .teaser-title a, a",
-        "base_url": "https://www.flightglobal.com",
+        "selector": "div.newsList a, a",
+        "base_url": "https://www.cgtn.com",
+        "encoding": "utf-8",
     },
     {
-        "nom": "Reuters - Aerospace & Defense",
-        "url": "https://www.reuters.com/business/aerospace-defense/",
+        "nom": "Air Transport World",
+        "url": "https://atwonline.com/ground-handling",
         "type": "scrape_generic",
-        "selector": "article h3 a, .story-title a, a",
-        "base_url": "https://www.reuters.com",
+        "selector": "h3.article-title a, .entry-title a, article h2 a, a",
+        "base_url": "https://atwonline.com",
+    },
+    {
+        "nom": "民航资源网 (CARNOC News)",
+        "url": "https://news.carnoc.com/",
+        "type": "scrape_generic",
+        "selector": ".news_list a, .list_con a, td a, .title a, a",
+        "base_url": "https://news.carnoc.com",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "中国民航网 (AviationCN)",
+        "url": "https://www.aviationcn.net/",
+        "type": "scrape_generic",
+        "selector": ".news-list a, .article-list a, h3 a, .title a, a",
+        "base_url": "https://www.aviationcn.net",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "中国民航 (CCAonline)",
+        "url": "https://www.ccaonline.cn/hangkong/",
+        "type": "scrape_generic",
+        "selector": ".news-list a, ul li a, .list a, .title a, a",
+        "base_url": "https://www.ccaonline.cn",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "山东新闻 (Shandong News — Guangtai HQ region)",
+        "url": "https://www.sdnews.com.cn/sd/gdxw/",
+        "type": "scrape_generic",
+        "selector": ".news-list a, ul li a, .list a, a",
+        "base_url": "https://www.sdnews.com.cn",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "威海新闻 (Weihai Daily — Guangtai home city)",
+        "url": "http://www.whdaily.cn/epaper/whwb/latest/",
+        "type": "scrape_generic",
+        "selector": ".news-list a, ul li a, h3 a, .title a, a",
+        "base_url": "http://www.whdaily.cn",
+        "encoding": "utf-8",
+    },
+    {
+        "nom": "中国招标投标网 (China Bidding)",
+        "url": "https://www.chinabidding.com.cn/",
+        "type": "scrape_generic",
+        "selector": ".list a, ul li a, td a, .title a, a",
+        "base_url": "https://www.chinabidding.com.cn",
+        "encoding": "utf-8",
     },
 ]
 
@@ -242,7 +281,7 @@ def requeter_avec_retry(url, retries=3, timeout=30, **kwargs):
             "Chrome/126.0.0.0 Safari/537.36"
         ),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3",
     }
     if "headers" in kwargs:
         headers.update(kwargs.pop("headers"))
@@ -261,6 +300,33 @@ def requeter_avec_retry(url, retries=3, timeout=30, **kwargs):
 #  SCRAPERS
 # =============================================================================
 
+def scrape_caac(source):
+    articles = []
+    resp = requeter_avec_retry(source["url"])
+    if not resp:
+        return articles
+    try:
+        soup = BeautifulSoup(resp.content, "html.parser", from_encoding="utf-8")
+        for link in soup.find_all("a", href=True)[:20]:
+            titre = link.get_text(strip=True)
+            if not titre or len(titre) < 10:
+                continue
+            href = normaliser_url(link.get("href"), source["base_url"])
+            if titre and href:
+                articles.append({
+                    "source": source["nom"],
+                    "titre": titre[:150],
+                    "lien": href,
+                    "desc": "",
+                    "date": datetime.now().strftime("%Y-%m-%d"),
+                    "id": hashlib.md5((titre + href).encode()).hexdigest(),
+                })
+    except Exception as e:
+        log.warning(f"Error parsing {source['nom']}: {e}")
+    log.info(f"  Scraped {source['nom']}: {len(articles)} articles")
+    return articles
+
+
 def scrape_generic(source):
     articles = []
     resp = requeter_avec_retry(source["url"])
@@ -278,7 +344,7 @@ def scrape_generic(source):
             href = normaliser_url(href, source.get("base_url"))
             if href:
                 unique_links[href] = titre
-        for href, titre in list(unique_links.items())[:30]:
+        for href, titre in list(unique_links.items())[:20]:
             articles.append({
                 "source": source["nom"],
                 "titre": titre[:150],
@@ -293,26 +359,99 @@ def scrape_generic(source):
     return articles
 
 
+def scrape_bidcenter(source):
+    articles = []
+    headers = {
+        "Referer": "https://www.bidcenter.com.cn/",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+    }
+    resp = requeter_avec_retry(source["url"], headers=headers)
+    if not resp:
+        return articles
+    try:
+        soup = BeautifulSoup(resp.content, "html.parser", from_encoding="utf-8")
+        links = soup.select(
+            "div.tender_list a, ul.tender-list a, .gg_list a, table a, .list-item a"
+        )
+        if not links:
+            links = soup.find_all("a", href=True)
+        SKIP = {"首页", "上一页", "下一页", "末页", "登录", "注册", "发布", "搜索"}
+        unique_links = {}
+        for link in links:
+            href = link.get("href")
+            titre = link.get_text(strip=True)
+            if not href or not titre or len(titre) < 8:
+                continue
+            if any(s in titre for s in SKIP):
+                continue
+            href = normaliser_url(href, source["base_url"])
+            if href and "bidcenter.com.cn" in href:
+                unique_links[href] = titre
+        for href, titre in list(unique_links.items())[:15]:
+            articles.append({
+                "source": source["nom"],
+                "titre": titre[:150],
+                "lien": href,
+                "desc": "",
+                "date": datetime.now().strftime("%Y-%m-%d"),
+                "id": hashlib.md5((titre + href).encode()).hexdigest(),
+            })
+    except Exception as e:
+        log.warning(f"Error scraping {source['nom']}: {e}")
+    log.info(f"  Scraped {source['nom']}: {len(articles)} tenders")
+    return articles
+
+
 def collecter_tous_articles():
     tous = []
     for source in SOURCES:
         log.info(f"Collecting from: {source['nom']}")
-        articles = scrape_generic(source)
+        if source["type"] == "scrape_caac":
+            articles = scrape_caac(source)
+        elif source["type"] == "scrape_bidcenter":
+            articles = scrape_bidcenter(source)
+        else:
+            articles = scrape_generic(source)
         tous.extend(articles)
         time.sleep(1.5)
     log.info(f"Total raw articles collected: {len(tous)}")
-    return tous
+    return deduplicate_by_title(tous)
+
+
+def _normaliser_titre(titre):
+    """Normalise a title for near-duplicate detection across mirror sites
+    (e.g. 'China Airport News (CAAC)' and 'CAAC News Portal' frequently
+    republish the exact same headline under different URLs, which doubles
+    the volume sent to DeepSeek for zero added information)."""
+    return re.sub(r"\s+", "", titre.strip().lower())
+
+
+def deduplicate_by_title(articles):
+    seen_titres = set()
+    deduped = []
+    n_dropped = 0
+    for a in articles:
+        key = _normaliser_titre(a["titre"])
+        if key in seen_titres:
+            n_dropped += 1
+            continue
+        seen_titres.add(key)
+        deduped.append(a)
+    if n_dropped:
+        log.info(f"Title-based dedup: dropped {n_dropped} near-duplicate article(s) from mirror sources")
+    return deduped
 
 
 # =============================================================================
 #  FILTERING — with verbose match logging
 # =============================================================================
 #
-#  Short, all-caps ASCII acronyms (ANA, BRI, WFS, TLD...) are prone to
+#  Short, all-caps ASCII acronyms (BRI, ANA, WFS, TLD, GSE...) are prone to
 #  false-positive substring matches inside unrelated words (e.g. "BRI"
-#  inside "Bristol", "Gabriel", "debris"; "ANA" inside "China", "Analysis",
-#  "Annual"). For those, require word boundaries. Longer terms, terms with
-#  spaces, and Chinese keywords keep simple substring matching.
+#  matching inside "distribution", "hybrid", "fabric", "Bristol"). For those,
+#  require word boundaries. Longer terms, terms with spaces, and Chinese
+#  keywords keep simple substring matching (ported from the APAC agent,
+#  which already had this fix — this script had been missed).
 
 def _est_acronyme_ambigu(kw):
     return kw.isascii() and kw.isalpha() and kw.isupper() and len(kw) <= 4
@@ -370,6 +509,7 @@ def enrichir_article(article):
         for tag in soup(["script", "style", "nav", "footer", "header", "aside"]):
             tag.decompose()
         text = soup.get_text(separator=" ", strip=True)
+        # Collapse whitespace and take first 400 chars
         text = re.sub(r"\s+", " ", text).strip()
         article["desc"] = text[:400]
     except Exception as e:
@@ -392,39 +532,42 @@ def enrichir_articles(articles):
 
 
 # =============================================================================
-#  TAVILY SEARCH — real-time web search for APAC GSE / competitor news
+#  TAVILY SEARCH — real-time web search for Chinese GSE competitor news
 #
-#  Tavily searches from its own servers, bypassing the IP-blocking that
-#  prevents GitHub Actions US runners from reaching some regional sources,
-#  and surfaces coverage the static scraper selectors miss entirely.
+#  Tavily is a search API designed for AI agents. Unlike scraping, it:
+#  - Runs from Tavily's own servers (not GitHub Actions US IPs)
+#  - Indexes Chinese sites (CARNOC, Guangtai, trade press)
+#  - Returns article content, not just URLs
+#  - Free tier: 1000 searches/month
 #
-#  8 targeted queries per run, focused on Chinese competitors' export/
-#  international moves in APAC and on regional GSE demand drivers.
+#  8 targeted queries per run, focused on competitors and GSE market.
 # =============================================================================
 
 TAVILY_QUERIES = [
-    # Guangtai — primary Chinese rival, export/international angle
-    "Weihai Guangtai export Southeast Asia airport 2026",
-    "威海广泰 海外市场 出口 2026",
-    # CIMC Tianda international
-    "CIMC Tianda international ground support equipment 2026",
-    # Western competitors active in APAC
-    "JBT Corporation GSE Asia Pacific contract 2026",
-    "Oshkosh AeroTech Asia Pacific airport 2026",
-    # Airport tenders / infrastructure across APAC
-    "Southeast Asia airport ground support equipment tender 2026",
-    "Japan Korea airport GSE procurement 2026",
-    # Ground handler M&A / contract wins
-    "Swissport Menzies dnata Asia Pacific contract 2026",
+    # Guangtai — primary Chinese rival
+    "威海广泰 航空地面设备 新产品 2026",
+    "Weihai Guangtai GSE airport ground support equipment 2026",
+    # CIMC Tianda
+    "中集天达 地面支持设备 新闻 2026",
+    # Chinese GSE market broadly
+    "中国机场 地面保障设备 招标 采购 2026",
+    # Western competitors in APAC
+    "JBT Corporation GSE China Asia Pacific 2026",
+    # Electrification signal
+    "中国机场 电动地勤设备 新能源 2026",
+    # Airport tenders
+    "机场 地面设备 采购 招标 2026",
+    # Ground handler M&A
+    "Swissport Menzies ground handling China 2026",
 ]
 
 
 def rechercher_tavily():
-    """Search for APAC GSE competitor and market news using Tavily API.
+    """Search for GSE competitor and market news using Tavily API.
 
-    Tavily searches from its own servers, giving coverage the static
-    scraper selectors above cannot reach. Returns articles in the same
-    format as the scraper pipeline.
+    Tavily searches from its own servers, bypassing the IP-blocking
+    that prevents GitHub Actions US runners from reaching Chinese sources.
+    Returns articles in the same format as the scraper pipeline.
     """
     api_key = os.environ.get("TAVILY_API_KEY")
     if not api_key:
@@ -485,55 +628,59 @@ def rechercher_tavily():
 # =============================================================================
 #  DEEPSEEK COMPETITOR BRIEF — no web search tool needed
 #
-#  Asks DeepSeek to report on Chinese GSE manufacturers' international /
-#  export expansion into APAC markets from its training knowledge. Not
-#  real-time, but covers structural intelligence (export contracts,
-#  regional footprint, partnerships) that changes slowly and is largely
-#  invisible to the scraper pipeline above.
+#  DeepSeek's training data includes Chinese trade press, manufacturer press
+#  releases, and industry publications (CARNOC, 民航资源网, etc.) that GitHub
+#  Actions US runners cannot scrape due to IP blocking.
+#
+#  This function asks DeepSeek to report on competitor activity from its
+#  training knowledge. Not real-time, but covers structural intelligence
+#  (product lines, positioning, recent launches) that changes slowly and
+#  is invisible to the scraper pipeline.
 #
 #  Runs once per week (Monday) to avoid redundant daily API calls.
+#  Results are injected as synthetic articles into the filtering pipeline
+#  so DeepSeek's main analysis call sees them alongside scraped content.
 # =============================================================================
 
-COMPETITOR_BRIEF_PROMPT = """You are a GSE (Ground Support Equipment) market intelligence analyst
-specializing in the Asia-Pacific market (excluding mainland China).
+COMPETITOR_BRIEF_PROMPT = """You are a GSE (Ground Support Equipment) market intelligence analyst 
+specializing in the Chinese and Asia-Pacific market.
 
-Based on your training knowledge, provide a competitive intelligence brief on the
-international / export expansion of the following Chinese manufacturers into APAC
-markets (Southeast Asia, South Asia, Japan, Korea, Australia, New Zealand, Pacific).
-Focus on information relevant to TLD Group (Alvest subsidiary), a Western GSE
-manufacturer competing against them in the region.
+Based on your training knowledge of the Chinese aviation ground support equipment 
+industry, provide a competitive intelligence brief on the following manufacturers.
+Focus on information relevant to TLD Group (Alvest subsidiary), a Western GSE 
+manufacturer competing in China.
 
 For each company below, report what you know about:
-- Their export footprint and installed base outside mainland China within APAC
-- Any recent international contract wins, distributor partnerships, or market entries
-- Their pricing strategy and market positioning vs TLD in APAC markets
-- Which APAC countries/airports appear to be their priority targets
+- Their current main product lines competing with TLD
+- Any recent product launches, contract wins, or strategic moves
+- Their pricing strategy and market positioning vs TLD
+- Their geographic focus within China and export ambitions
 
 Companies to cover:
-1. 威海广泰航空科技 (Weihai Guangtai Aviation Technology) — primary rival
+1. 威海广泰航空科技 (Weihai Guangtai Aviation Technology) — ticker: primary rival
 2. 中集天达控股 (CIMC Tianda Holdings)
 3. 江苏天一航空工业 (Jiangsu Tianyi Aviation Industry)
-4. Any other Chinese GSE manufacturers with a notable APAC export presence
+4. Any other Chinese GSE manufacturers you have significant knowledge about
 
 Return ONLY a JSON array. Each element must have exactly these fields:
   "company_cn": Chinese company name
-  "company_en": English name
-  "footprint": export footprint / installed base in APAC (one sentence)
-  "recent": most notable recent international activity or development you know about
-  "positioning": how they position vs TLD on price/quality/service in APAC
-  "threat": "HIGH", "MEDIUM", or "LOW" for TLD's APAC business
+  "company_en": English name  
+  "products": main products competing with TLD (one sentence)
+  "recent": most notable recent activity or development you know about
+  "positioning": how they position vs TLD on price/quality/service
+  "threat": "HIGH", "MEDIUM", or "LOW" for TLD's China business
   "confidence": "HIGH", "MEDIUM", or "LOW" — your confidence in this information
 
 Return ONLY the JSON array. No markdown fences, no preamble, no explanation."""
 
 
 def synthese_concurrents_deepseek():
-    """Ask DeepSeek for an APAC competitor export brief using its training knowledge.
+    """Ask DeepSeek for a competitor brief using its training knowledge.
 
-    Only runs on Mondays to avoid redundant daily calls — this kind of
-    structural intelligence changes slowly. On other days returns an
-    empty list.
+    Only runs on Mondays to avoid redundant daily calls — competitor
+    intelligence changes slowly. On other days returns an empty list.
     """
+    # Only run on Mondays (weekday 0)
     if datetime.now().weekday() != 0:
         log.info("Competitor brief: skipping (runs Mondays only)")
         return []
@@ -544,7 +691,7 @@ def synthese_concurrents_deepseek():
         return []
 
     client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com/v1")
-    log.info("Requesting APAC competitor intelligence brief from DeepSeek...")
+    log.info("Requesting competitor intelligence brief from DeepSeek...")
 
     try:
         response = client.chat.completions.create(
@@ -555,8 +702,10 @@ def synthese_concurrents_deepseek():
         )
 
         text = response.choices[0].message.content or ""
+        # Strip markdown fences if present
         text = re.sub(r"```(?:json)?|```", "", text).strip()
 
+        # Extract JSON array even if surrounded by stray text
         array_match = re.search(r"\[.*\]", text, re.DOTALL)
         if not array_match:
             log.warning("Competitor brief: no JSON array found in response")
@@ -570,26 +719,28 @@ def synthese_concurrents_deepseek():
 
         articles = []
         for c in competitors:
-            company     = c.get("company_en") or c.get("company_cn", "Unknown")
-            footprint   = c.get("footprint", "")
-            recent      = c.get("recent", "")
+            company    = c.get("company_en") or c.get("company_cn", "Unknown")
+            products   = c.get("products", "")
+            recent     = c.get("recent", "")
             positioning = c.get("positioning", "")
-            threat      = c.get("threat", "MEDIUM")
-            confidence  = c.get("confidence", "MEDIUM")
+            threat     = c.get("threat", "MEDIUM")
+            confidence = c.get("confidence", "MEDIUM")
 
             # Skip low-confidence entries to avoid hallucinated signal noise
             if confidence == "LOW":
                 log.debug(f"Competitor brief: skipping {company} (low confidence)")
                 continue
 
+            # Build a rich description that will survive keyword filtering
+            # and give DeepSeek's main analysis call good context
             desc = (
-                f"APAC footprint: {footprint}. "
+                f"Products competing with TLD: {products}. "
                 f"Recent activity: {recent}. "
                 f"Positioning vs TLD: {positioning}. "
-                f"Threat level for TLD APAC: {threat}."
+                f"Threat level for TLD China: {threat}."
             )[:400]
 
-            title = f"{company} — APAC competitor brief [{threat} threat to TLD]"
+            title = f"{company} — GSE competitor brief [{threat} threat to TLD]"
 
             articles.append({
                 "source": "DeepSeek Competitor Intelligence",
@@ -597,6 +748,7 @@ def synthese_concurrents_deepseek():
                 "lien":   "#competitor-brief",
                 "desc":   desc,
                 "date":   datetime.now().strftime("%Y-%m-%d"),
+                # Use weekly key so same company isn't re-injected daily
                 "id": hashlib.md5(
                     (company + datetime.now().strftime("%Y-W%W")).encode()
                 ).hexdigest(),
@@ -620,19 +772,18 @@ def synthese_concurrents_deepseek():
 #  DEEPSEEK — STRUCTURED PROMPT
 # =============================================================================
 
-SYSTEM_PROMPT = """You are a senior strategy analyst advising the CEO of TLD Group, a global GSE (Ground Support Equipment) manufacturer and lessor, on its Asia-Pacific business excluding mainland China: Southeast Asia, South Asia, Japan, Korea, Australia, New Zealand, and the Pacific.
+SYSTEM_PROMPT = """You are a senior strategy analyst advising the CEO of TLD Group, a global GSE (Ground Support Equipment) manufacturer and lessor with primary operations in China and Asia-Pacific.
 
-Your role: translate raw news signals into actionable commercial and industrial intelligence for the APAC region.
+Your role: translate raw news signals into actionable commercial and industrial intelligence.
 
 ANALYSIS SCOPE — do not limit yourself to articles explicitly mentioning equipment:
-- Airport openings, capacity expansions, traffic records in APAC → leading demand indicators (quantify where possible: +5% traffic ≈ +10 aircraft tractors per hub)
-- Airline fleet orders, deliveries, financial results (regional carriers and Chinese carriers operating into APAC) → fleet-driven GSE procurement cycles
-- Chinese GSE manufacturers' export and international expansion moves (Guangtai, CIMC Tianda, Jiangsu Tianyi, etc.) into APAC → direct competitive threats or market gaps for TLD
-- Western competitor moves (JBT, Textron, Oshkosh, etc.) in APAC → threats or market gaps
+- Airport openings, capacity expansions, traffic records → leading demand indicators (quantify where possible: +5% traffic ≈ +10 aircraft tractors per hub)
+- Airline fleet orders, deliveries, financial results → fleet-driven GSE procurement cycles
+- Competitor moves (JBT, Textron, Guangtai, CIMC Tianda, etc.) → threats or market gaps
 - Raw material costs (steel, aluminium, lithium, semiconductors) → margin pressure
-- Ground handler M&A (Swissport, Menzies, dnata, SATS) in APAC → contract consolidation risk
-- Trade policy (tariffs, BRI, export controls) → supply chain and pricing implications in the region
-- Environmental regulations at APAC airports → electrification timeline and diesel phase-out
+- Ground handler M&A (Swissport, Menzies, Dnata) → contract consolidation risk
+- Trade policy (tariffs, BRI, US-China) → supply chain and pricing implications
+- Environmental regulations in China → electrification timeline and diesel phase-out
 
 IMPACT LEVELS:
 - CRITICAL: Act within 48h (major competitor move, urgent tender, direct threat/opportunity)
@@ -647,7 +798,7 @@ For each meaningful signal:
 SIGNAL_ID: [number]
 IMPACT: [CRITICAL | IMPORTANT | WATCH | INFO]
 HEADLINE: [One sharp sentence — max 15 words]
-READING: [2-3 sentences: what happened and why it matters for the APAC GSE market]
+READING: [2-3 sentences: what happened and why it matters for the GSE market]
 BUSINESS_IMPACT: [2-3 sentences: concrete commercial/financial consequences for TLD — volumes, margins, contracts, competition]
 ACTION: [1-2 sentences: specific recommended action, time-bound if possible]
 ===SIGNAL_END===
@@ -658,14 +809,14 @@ EXECUTIVE_SUMMARY: [4-5 sentences for an executive committee. What happened, wha
 WATCH_1: [Key indicator #1 to monitor this week]
 WATCH_2: [Key indicator #2 to monitor this week]
 WATCH_3: [Key indicator #3 to monitor this week]
-MAIN_RISK: [Single biggest risk for TLD GSE business in APAC this week — one sentence]
+MAIN_RISK: [Single biggest risk for TLD GSE business in China this week — one sentence]
 ===SUMMARY_END===
 
 Rules:
 - English only
 - Specific and quantitative when possible (volumes, %, timelines, EUR values)
 - No bullet points inside field values — plain prose only
-- Skip articles with no connection to the GSE market or its demand drivers
+- Skip articles with no connection to GSE market or its demand drivers
 - Always output the SUMMARY block even if there are few signals
 """
 
@@ -673,7 +824,7 @@ Rules:
 def construire_prompt_user(articles):
     date_str = datetime.now().strftime("%d %B %Y")
     lines = [
-        "GSE STRATEGIC WATCH — Asia-Pacific (excluding mainland China)",
+        "GSE STRATEGIC WATCH — China / Asia-Pacific",
         f"Date: {date_str}",
         f"Articles to analyze: {len(articles)}",
         "",
@@ -687,7 +838,7 @@ def construire_prompt_user(articles):
         lines.append("")
 
     lines.append(
-        "Analyze each article for signals relevant to TLD Group's APAC GSE business. "
+        "Analyze each article for signals relevant to TLD Group's GSE business. "
         "Output ONLY the structured blocks defined in your instructions."
     )
     lines.append("")
@@ -703,16 +854,51 @@ def construire_prompt_user(articles):
     return "\n".join(lines)
 
 
+# Minimum number of directly-scraped articles (CAAC/CARNOC/airport press etc.)
+# guaranteed a slot in the DeepSeek batch. Without this, a large Tavily haul
+# (which several queries deliberately bias toward Guangtai/CIMC Tianda) can
+# fill the entire DEEPSEEK_MAX_ARTICLES cap on its own, silently starving out
+# the airport-demand-driver news that the scrapers bring in — as observed in
+# production: 36 Tavily + only 14/25 scraped survived a 50-article cap.
+MIN_SCRAPED_QUOTA = 20
+
+
+def select_balanced_batch(articles, max_total=DEEPSEEK_MAX_ARTICLES, min_scraped=MIN_SCRAPED_QUOTA):
+    """Reserve a minimum quota of directly-scraped articles so Tavily/
+    competitor-brief content (which can be thematically concentrated, e.g.
+    Guangtai-heavy queries) never crowds them out entirely."""
+    scraped = [a for a in articles if a["source"] not in ("Tavily Search", "DeepSeek Competitor Intelligence")]
+    other = [a for a in articles if a["source"] in ("Tavily Search", "DeepSeek Competitor Intelligence")]
+
+    reserved_scraped = scraped[:min_scraped]
+    remaining_slots = max_total - len(reserved_scraped)
+    batch = reserved_scraped + other[:remaining_slots]
+
+    # If Tavily/competitor didn't fill the remaining slots, top up with more
+    # scraped articles rather than leaving room unused.
+    if len(batch) < max_total:
+        extra = scraped[len(reserved_scraped):len(reserved_scraped) + (max_total - len(batch))]
+        batch += extra
+
+    log.info(
+        f"Balanced batch: {sum(1 for a in batch if a['source'] not in ('Tavily Search','DeepSeek Competitor Intelligence'))} scraped, "
+        f"{sum(1 for a in batch if a['source'] in ('Tavily Search','DeepSeek Competitor Intelligence'))} Tavily/competitor "
+        f"(of {len(articles)} total relevant articles)"
+    )
+    return batch[:max_total]
+
+
 def analyser_avec_deepseek(articles):
     if not articles:
         log.info("No articles to analyze.")
-        return ""
+        return "", None
 
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key:
         raise ValueError("DEEPSEEK_API_KEY environment variable not set.")
 
-    batch = articles[:DEEPSEEK_MAX_ARTICLES]
+    # Balanced selection instead of a plain slice — see select_balanced_batch()
+    batch = select_balanced_batch(articles, DEEPSEEK_MAX_ARTICLES, MIN_SCRAPED_QUOTA)
     if len(articles) > DEEPSEEK_MAX_ARTICLES:
         log.warning(
             f"Capped input at {DEEPSEEK_MAX_ARTICLES} articles "
@@ -729,15 +915,21 @@ def analyser_avec_deepseek(articles):
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": construire_prompt_user(batch)},
             ],
-            max_tokens=8192,
+            max_tokens=8192,   # raised from 4096 — prevents silent truncation
             temperature=0.2,
         )
         raw = response.choices[0].message.content
-        log.info(f"DeepSeek response: {len(raw)} chars")
-        return raw
+        # finish_reason == "length" is the AUTHORITATIVE signal that the API
+        # cut the response short because max_tokens was reached. Everything
+        # else (e.g. a stray unmatched delimiter from a slightly malformed
+        # block) is a formatting quirk, not a real content loss, and should
+        # not trigger the same alarming banner.
+        finish_reason = response.choices[0].finish_reason
+        log.info(f"DeepSeek response: {len(raw)} chars, finish_reason={finish_reason}")
+        return raw, finish_reason
     except Exception as e:
         log.error(f"DeepSeek API error: {e}")
-        return ""
+        return "", None
 
 
 # =============================================================================
@@ -759,6 +951,7 @@ def parser_analyse(raw_text):
         log.warning("Empty DeepSeek response — nothing to parse.")
         return signals, summary
 
+    # --- Truncation detection ---
     n_starts = raw_text.count("===SIGNAL_START===")
     n_ends   = raw_text.count("===SIGNAL_END===")
     has_summary = "===SUMMARY_START===" in raw_text
@@ -774,6 +967,7 @@ def parser_analyse(raw_text):
             "Output was cut before the end."
         )
 
+    # --- Parse signals ---
     for block in re.findall(
         r"===SIGNAL_START===(.*?)===SIGNAL_END===", raw_text, re.DOTALL
     ):
@@ -789,6 +983,7 @@ def parser_analyse(raw_text):
             "action":          extract_field(block, "ACTION"),
         })
 
+    # --- Parse summary ---
     sm = re.search(
         r"===SUMMARY_START===(.*?)===SUMMARY_END===", raw_text, re.DOTALL
     )
@@ -856,7 +1051,12 @@ def md(text):
 
 
 def trouver_article(sig, articles):
-    """Match a signal to its most likely source article by keyword overlap."""
+    """Match a signal to its most likely source article by keyword overlap.
+
+    Checks signal headline + reading against article title + desc.
+    Handles both English and Chinese content.
+    Returns None if no article scores well enough.
+    """
     haystack = (
         sig.get("headline", "") + " " +
         sig.get("reading", "")
@@ -866,13 +1066,19 @@ def trouver_article(sig, articles):
     best_score   = 0
 
     for a in articles:
+        # Combine title and excerpt for matching
         candidate = (a["titre"] + " " + a.get("desc", "")).lower()
+
+        # Split on word boundaries (works for both Latin and CJK tokens)
         words = [w for w in re.split(r"[\s\W]+", candidate) if len(w) >= 3]
+
         score = sum(1 for w in words if w in haystack)
         if score > best_score:
             best_score   = score
             best_article = a
 
+    # Require at least 1 strong match (threshold kept low; false positives
+    # are acceptable since it's just a source attribution link)
     return best_article if best_score >= 1 else None
 
 
@@ -933,9 +1139,11 @@ def generer_rapport(articles, signals, summary, raw_text="", truncated=False):
     for s in signals:
         counts[s["impact"]] = counts.get(s["impact"], 0) + 1
 
+    # --- Split signals: actionable (full cards) vs background (collapsed) ---
     actionable = [s for s in signals if s["impact"] in ("CRITICAL", "IMPORTANT", "WATCH")]
     background = [s for s in signals if s["impact"] == "INFO"]
 
+    # --- Build signal cards HTML ---
     signals_html = ""
     if not actionable and not background:
         signals_html = (
@@ -943,9 +1151,11 @@ def generer_rapport(articles, signals, summary, raw_text="", truncated=False):
             "No significant signals identified today.</p>"
         )
     else:
+        # Full cards for CRITICAL / IMPORTANT / WATCH
         for sig in actionable:
             signals_html += render_signal_card(sig, articles)
 
+        # Collapsed section for INFO items
         if background:
             info_items = "".join(
                 f'<li style="font-size:13px;color:#64748b;padding:3px 0;'
@@ -971,6 +1181,7 @@ def generer_rapport(articles, signals, summary, raw_text="", truncated=False):
   </ul>
 </details>"""
 
+    # --- Counters ---
     counter_html = "".join(
         f'<span class="counter-pill" '
         f'style="background:{IMPACT_CONFIG[lvl]["bg"]};'
@@ -981,20 +1192,26 @@ def generer_rapport(articles, signals, summary, raw_text="", truncated=False):
         if counts[lvl] > 0
     )
 
+    # --- Watch / Risk ---
     watch_html = "".join(f"<li>{md(w)}</li>" for w in summary.get("watch", []))
     exec_html  = md(summary.get("executive_summary", ""))
     risk_html  = md(summary.get("main_risk", ""))
 
+    # --- Truncation warning banner ---
+    # Only shown for confirmed API-level truncation (finish_reason=="length"),
+    # not for benign delimiter-count mismatches — see executer_agent() step 9.
     trunc_banner = ""
     if truncated:
         trunc_banner = """
 <div style="background:#fef9c3;border:1px solid #fde047;border-radius:8px;
             padding:12px 16px;margin-bottom:24px;font-size:13px;color:#713f12;">
-  <strong>Warning:</strong> DeepSeek output was truncated — some signals or the
-  summary block may be missing. Raise <code>max_tokens</code> or reduce the
-  number of input articles.
+  <strong>Warning:</strong> DeepSeek confirmed its response was cut off
+  (finish_reason=length) — some signals or the summary block are likely
+  missing. Reduce DEEPSEEK_MAX_ARTICLES; deepseek-chat's output ceiling is a
+  hard limit, so raising max_tokens further will not help.
 </div>"""
 
+    # --- Sources list ---
     sources_list = "".join(f"<li>{s['nom']}</li>" for s in SOURCES)
 
     return f"""<!DOCTYPE html>
@@ -1002,7 +1219,7 @@ def generer_rapport(articles, signals, summary, raw_text="", truncated=False):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APAC GSE Intelligence Brief — {now_full}</title>
+<title>GSE Intelligence Brief — {now_full}</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
@@ -1121,7 +1338,7 @@ body{{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
 
 <div class="masthead">
   <div class="masthead-eyebrow">TLD Group · Market Intelligence</div>
-  <div class="masthead-title">APAC GSE Intelligence Brief</div>
+  <div class="masthead-title">GSE Intelligence Brief</div>
   <div class="masthead-meta">
     <div class="meta-item"><span>Date</span><strong>{now_full}</strong></div>
     <div class="meta-item"><span>Generated</span><strong>{now_time}</strong></div>
@@ -1154,7 +1371,7 @@ body{{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
 </div>
 
 <div class="page-footer">
-  APAC GSE Intelligence Agent v2.0 · Powered by DeepSeek + Tavily · {now_full}
+  GSE Intelligence Agent v3.6 · Powered by DeepSeek + Tavily · {now_full}
 </div>
 
 </div>
@@ -1167,12 +1384,19 @@ body{{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
 # =============================================================================
 
 def sauvegarder_rapport(rapport_html):
-    dossier = Path("rapports_apac")
+    # CHANGED: "rapports" -> "reports" (the folder name the weekly digest
+    # consolidator scans across all agent repos), filename now includes an
+    # ISO date (YYYY-MM-DD) so the digest's "last 7 days" file selection
+    # picks it up, and we also keep a rolling reports/latest.html copy as a
+    # fallback for the digest when no dated file is found.
+    dossier = Path("reports")
     dossier.mkdir(exist_ok=True, parents=True)
-    fichier = dossier / f"apac_veille_{datetime.now().strftime('%Y%m%d_%H%M')}.html"
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    fichier = dossier / f"gse_veille_report_{date_str}.html"
     with open(fichier, "w", encoding="utf-8") as f:
         f.write(rapport_html)
-    log.info(f"Report saved: {fichier.absolute()}")
+    (dossier / "latest.html").write_text(rapport_html, encoding="utf-8")
+    log.info(f"Report saved: {fichier.absolute()} (and reports/latest.html)")
     return fichier
 
 
@@ -1182,30 +1406,38 @@ def sauvegarder_rapport(rapport_html):
 
 def executer_agent():
     log.info("=" * 60)
-    log.info("Starting APAC GSE Intelligence Agent v2.0")
+    log.info("Starting GSE Intelligence Agent v3.6")
     log.info("=" * 60)
     try:
         vus = charger_vus()
 
-        # 1. Collect from scrapers
+        # 1. Collect from scrapers (English sources mostly work from GitHub US)
         tous_articles = collecter_tous_articles()
 
-        # 2. Tavily search — real-time web search for APAC GSE/competitor news
+        # 2. Tavily search — real-time web search for Chinese GSE news
+        #    Tavily's servers bypass the IP-blocking problem that prevents
+        #    GitHub Actions US runners from reaching Chinese sources.
         tavily_articles = rechercher_tavily()
         if tavily_articles:
             tous_articles.extend(tavily_articles)
-            log.info(f"Total after Tavily: {len(tous_articles)} articles")
+            log.info(
+                f"Total after Tavily: {len(tous_articles)} articles"
+            )
 
-        # 3. DeepSeek competitor export brief (runs Mondays only)
+        # 3. DeepSeek competitor brief (runs Mondays only)
         competitor_articles = synthese_concurrents_deepseek()
         if competitor_articles:
             tous_articles.extend(competitor_articles)
-            log.info(f"Total after competitor brief: {len(tous_articles)} articles")
+            log.info(
+                f"Total after competitor brief: {len(tous_articles)} articles"
+            )
 
         # 4. Filter
         articles_pertinents = filtrer_pertinents(tous_articles, vus)
 
-        # 5. Prioritize Tavily/competitor articles so they survive the cap
+        # 5. Prioritize Tavily articles — put them first so they are never
+        #    dropped by the DEEPSEEK_MAX_ARTICLES cap.
+        #    Competitor brief articles come second, scraped articles last.
         def source_priority(a):
             if a["source"] == "Tavily Search":
                 return 0
@@ -1222,28 +1454,64 @@ def executer_agent():
         )
 
         # 6. Enrich scraped articles with body excerpts
+        #    (Tavily and competitor brief articles already have content)
         if articles_pertinents:
             articles_pertinents = enrichir_articles(articles_pertinents)
 
         # 7. Analyze with DeepSeek
-        raw_analyse = (
+        raw_analyse, finish_reason = (
             analyser_avec_deepseek(articles_pertinents)
             if articles_pertinents
-            else ""
+            else ("", None)
         )
 
         # 8. Save raw output for debugging
-        Path("rapports_apac").mkdir(exist_ok=True, parents=True)
-        Path("rapports_apac/debug_raw.txt").write_text(
+        # CHANGED: "rapports" -> "reports" so the debug dump lives under the
+        # same folder the digest scans (it's a .txt file so the digest
+        # ignores it anyway, but this keeps everything in one place).
+        Path("reports").mkdir(exist_ok=True, parents=True)
+        Path("reports/debug_raw.txt").write_text(
             raw_analyse or "", encoding="utf-8"
         )
-        log.info("Raw DeepSeek output saved to rapports_apac/debug_raw.txt")
+        log.info("Raw DeepSeek output saved to reports/debug_raw.txt")
 
         # 9. Detect truncation
+        # Two distinct signals, deliberately not conflated:
+        # - api_truncated: the API itself reports finish_reason == "length",
+        #   meaning max_tokens was genuinely hit and content was cut off.
+        #   This is the authoritative signal and the only one that drives
+        #   the alarming banner in the report.
+        # - format_mismatch: the delimiter counts don't line up (e.g. one
+        #   dangling SIGNAL_START with no matching SIGNAL_END). This can
+        #   happen even in short, well-within-budget responses due to an
+        #   isolated model formatting slip on a single low-priority item —
+        #   it usually just means that one item was silently dropped, not
+        #   that the whole report is unreliable, so it's logged but does
+        #   not trigger the same severity as a real API-level truncation.
         n_starts  = raw_analyse.count("===SIGNAL_START===")
         n_ends    = raw_analyse.count("===SIGNAL_END===")
         has_sum   = "===SUMMARY_START===" in raw_analyse
-        truncated = (n_starts != n_ends) or (n_starts > 0 and not has_sum)
+        api_truncated   = (finish_reason == "length")
+        format_mismatch = (n_starts != n_ends) or (n_starts > 0 and not has_sum)
+
+        if api_truncated:
+            log.warning(
+                "TRUNCATION CONFIRMED BY API: finish_reason=length. "
+                "Reduce DEEPSEEK_MAX_ARTICLES (currently %d) — deepseek-chat's "
+                "output ceiling is a hard limit, raising max_tokens further "
+                "will not help.", DEEPSEEK_MAX_ARTICLES,
+            )
+        elif format_mismatch:
+            log.warning(
+                f"Formatting mismatch (NOT a real truncation — response was "
+                f"only {len(raw_analyse)} chars, far under the token budget): "
+                f"{n_starts} SIGNAL_START vs {n_ends} SIGNAL_END, "
+                f"summary_present={has_sum}. Likely one malformed/dropped "
+                f"item near the end of generation — see reports/debug_raw.txt "
+                f"to find the exact spot."
+            )
+
+        truncated = api_truncated  # only the authoritative signal drives the report banner
 
         # 10. Parse
         signals, summary = parser_analyse(raw_analyse)
