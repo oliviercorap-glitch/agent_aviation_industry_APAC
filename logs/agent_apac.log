@@ -236,3 +236,78 @@
 2026-07-04 10:35:25,218 [INFO] Parsed: 9 signals, summary=yes
 2026-07-04 10:35:25,233 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/apac_veille_report_2026-07-04.html (and reports/latest.html)
 2026-07-04 10:35:25,233 [INFO] Done.
+2026-07-04 11:12:31,862 [INFO] ============================================================
+2026-07-04 11:12:31,862 [INFO] Starting APAC GSE Intelligence Agent v2.0
+2026-07-04 11:12:31,862 [INFO] ============================================================
+2026-07-04 11:12:31,862 [INFO] Collecting from: International Airport Review - News
+2026-07-04 11:12:32,490 [INFO]   Scraped International Airport Review - News: 30 articles
+2026-07-04 11:12:33,991 [INFO] Collecting from: Airport Technology - News
+2026-07-04 11:12:34,251 [INFO]   Scraped Airport Technology - News: 30 articles
+2026-07-04 11:12:35,752 [INFO] Collecting from: Future Airport
+2026-07-04 11:12:35,796 [WARNING] Attempt 1/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 11:12:36,832 [WARNING] Attempt 2/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 11:12:38,864 [WARNING] Attempt 3/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 11:12:44,365 [INFO] Collecting from: Airport World - Asia Pacific
+2026-07-04 11:12:46,244 [WARNING] Attempt 1/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 11:12:48,921 [WARNING] Attempt 2/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 11:12:52,539 [WARNING] Attempt 3/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 11:12:58,041 [INFO] Collecting from: Ground Handling International
+2026-07-04 11:12:58,473 [INFO]   Scraped Ground Handling International: 10 articles
+2026-07-04 11:12:59,974 [INFO] Collecting from: Aviation Pros - Ground Handling
+2026-07-04 11:13:00,228 [INFO]   Scraped Aviation Pros - Ground Handling: 28 articles
+2026-07-04 11:13:01,729 [INFO] Collecting from: Simple Flying - Asia
+2026-07-04 11:13:01,983 [INFO]   Scraped Simple Flying - Asia: 30 articles
+2026-07-04 11:13:03,484 [INFO] Collecting from: Aviation Week - Asia
+2026-07-04 11:13:03,611 [WARNING] Attempt 1/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 11:13:04,666 [WARNING] Attempt 2/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 11:13:06,725 [WARNING] Attempt 3/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 11:13:12,227 [INFO] Collecting from: Flight Global - Asia
+2026-07-04 11:13:12,266 [WARNING] Attempt 1/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 11:13:13,302 [WARNING] Attempt 2/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 11:13:15,341 [WARNING] Attempt 3/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 11:13:20,842 [INFO] Collecting from: Reuters - Aerospace & Defense
+2026-07-04 11:13:20,965 [WARNING] Attempt 1/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 11:13:22,012 [WARNING] Attempt 2/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 11:13:24,062 [WARNING] Attempt 3/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 11:13:29,564 [INFO] Total raw articles collected: 128
+2026-07-04 11:13:30,569 [INFO]   Tavily 'Weihai Guangtai export Southeast Asia airport...': 5 results
+2026-07-04 11:13:32,131 [INFO]   Tavily '威海广泰 海外市场 出口 2026...': 5 results
+2026-07-04 11:13:33,804 [INFO]   Tavily 'CIMC Tianda international ground support equi...': 5 results
+2026-07-04 11:13:35,611 [INFO]   Tavily 'JBT Corporation GSE Asia Pacific contract 202...': 5 results
+2026-07-04 11:13:37,243 [INFO]   Tavily 'Oshkosh AeroTech Asia Pacific airport 2026...': 5 results
+2026-07-04 11:13:39,404 [INFO]   Tavily 'Southeast Asia airport ground support equipme...': 5 results
+2026-07-04 11:13:40,772 [INFO]   Tavily 'Japan Korea airport GSE procurement 2026...': 4 results
+2026-07-04 11:13:42,618 [INFO]   Tavily 'Swissport Menzies dnata Asia Pacific contract...': 5 results
+2026-07-04 11:13:43,118 [INFO] Tavily total: 39 articles found
+2026-07-04 11:13:43,119 [INFO] Total after Tavily: 167 articles
+2026-07-04 11:13:43,119 [INFO] Competitor brief: skipping (runs Mondays only)
+2026-07-04 11:13:43,124 [INFO]   KEPT [Simple Flying - Asia] The $22 Billion Airport Saudi Arabia Is Building That Will Process Mor — matched: ['Lion Air']
+2026-07-04 11:13:43,125 [INFO]   KEPT [Tavily Search] 亚太市场订单高速突破，威海广泰海外业务稳步进阶 - 中国经营报 — matched: ['威海广泰', '广泰']
+2026-07-04 11:13:43,125 [INFO]   KEPT [Tavily Search] 威海广泰(SZ002111)股票股价 - 雪球 — matched: ['威海广泰', '广泰', '一带一路']
+2026-07-04 11:13:43,125 [INFO]   KEPT [Tavily Search] 威海广泰空港设备股份有限公司 — matched: ['威海广泰', '广泰']
+2026-07-04 11:13:43,126 [INFO]   KEPT [Tavily Search] Shenzhen CIMC Tianda Airport Support Co., Ltd. — matched: ['CIMC Tianda', 'CIMC']
+2026-07-04 11:13:43,126 [INFO]   KEPT [Tavily Search] Shenzhen CIMC-Tianda Airport Support 2026 Company Profile: Valuation,  — matched: ['CIMC']
+2026-07-04 11:13:43,126 [INFO]   KEPT [Tavily Search] CIMC-TianDa - Passenger Boarding Bridges - Airport Suppliers — matched: ['tractor', 'passenger boarding bridge', 'CIMC']
+2026-07-04 11:13:43,126 [INFO]   KEPT [Tavily Search] CIMC-TianDa Supplier Profile - CAPA - Centre for Aviation — matched: ['tractor', 'CIMC']
+2026-07-04 11:13:43,127 [INFO]   KEPT [Tavily Search] Mercury GSE partners with JBT AeroTech — matched: ['ground support', 'gse', 'JBT']
+2026-07-04 11:13:43,127 [INFO]   KEPT [Tavily Search] Mercury GSE places historic order with JBT AeroTech — matched: ['gse', 'JBT', 'Mercury GSE']
+2026-07-04 11:13:43,127 [INFO]   KEPT [Tavily Search] Oshkosh AeroTech To Showcase Integrated Gate and Airside Technologies  — matched: ['passenger boarding bridge', 'Oshkosh AeroTech', 'Oshkosh']
+2026-07-04 11:13:43,127 [INFO]   KEPT [Tavily Search] Oshkosh Aerotech to Showcase Intelligent Aviation ... — matched: ['Oshkosh AeroTech', 'Oshkosh']
+2026-07-04 11:13:43,128 [INFO]   KEPT [Tavily Search] Oshkosh AeroTech to Showcase Integrated Gate and Airside Technologies  — matched: ['ground support', 'Oshkosh AeroTech', 'Oshkosh']
+2026-07-04 11:13:43,128 [INFO]   KEPT [Tavily Search] Oshkosh Corporation Unveils The Perfect Turn at CES2026 — matched: ['Oshkosh']
+2026-07-04 11:13:43,128 [INFO]   KEPT [Tavily Search] TENDER INVITATION Ground Team Red Sdn Bhd (GTR) is pleased ... — matched: ['tender']
+2026-07-04 11:13:43,128 [INFO]   KEPT [Tavily Search] Global Airport Ground Support Equipment Market to Surge Beyond ... — matched: ['ground support', 'electrification']
+2026-07-04 11:13:43,128 [INFO]   KEPT [Tavily Search] Japan Ground Support Equipment Market Size, Forecast 2034 — matched: ['ground support']
+2026-07-04 11:13:43,129 [INFO]   KEPT [Tavily Search] Instagram — matched: ['dnata']
+2026-07-04 11:13:43,129 [INFO] Relevant articles after filtering: 18
+2026-07-04 11:13:43,129 [INFO] After prioritization: 17 Tavily, 0 competitor, 1 scraped
+2026-07-04 11:13:43,129 [INFO] Enriching up to 35 articles with body excerpts...
+2026-07-04 11:14:15,391 [INFO] Enrichment complete.
+2026-07-04 11:14:15,391 [INFO] Balanced batch: 1 scraped, 17 Tavily/competitor (of 18 total relevant articles)
+2026-07-04 11:14:15,425 [INFO] Sending 18 articles to DeepSeek...
+2026-07-04 11:14:16,308 [INFO] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-04 11:14:45,450 [INFO] DeepSeek response: 11092 chars, finish_reason=stop
+2026-07-04 11:14:45,451 [INFO] Raw DeepSeek output saved to reports/debug_raw.txt
+2026-07-04 11:14:45,453 [INFO] Parsed: 18 signals, summary=yes
+2026-07-04 11:14:45,473 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/apac_veille_report_2026-07-04.html (and reports/latest.html)
+2026-07-04 11:14:45,474 [INFO] Done.
