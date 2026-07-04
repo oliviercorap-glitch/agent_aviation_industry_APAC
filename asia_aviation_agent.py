@@ -307,6 +307,29 @@ def collecter_tous_articles():
 # =============================================================================
 #  FILTERING — with verbose match logging
 # =============================================================================
+#
+#  Short, all-caps ASCII acronyms (ANA, BRI, WFS, TLD...) are prone to
+#  false-positive substring matches inside unrelated words (e.g. "BRI"
+#  inside "Bristol", "Gabriel", "debris"; "ANA" inside "China", "Analysis",
+#  "Annual"). For those, require word boundaries. Longer terms, terms with
+#  spaces, and Chinese keywords keep simple substring matching.
+
+def _est_acronyme_ambigu(kw):
+    return kw.isascii() and kw.isalpha() and kw.isupper() and len(kw) <= 4
+
+
+def _compiler_motifs_keywords():
+    motifs = []
+    for kw in KEYWORDS_GSE:
+        if _est_acronyme_ambigu(kw):
+            motifs.append((kw, re.compile(rf"\b{re.escape(kw)}\b", re.IGNORECASE)))
+        else:
+            motifs.append((kw, None))
+    return motifs
+
+
+KEYWORD_PATTERNS = _compiler_motifs_keywords()
+
 
 def filtrer_pertinents(articles, vus):
     nouveaux = []
@@ -314,7 +337,10 @@ def filtrer_pertinents(articles, vus):
         if a["id"] in vus:
             continue
         texte = (a["titre"] + " " + a.get("desc", "")).lower()
-        matched = [kw for kw in KEYWORDS_GSE if kw.lower() in texte]
+        matched = [
+            kw for kw, motif in KEYWORD_PATTERNS
+            if (motif.search(texte) if motif else kw.lower() in texte)
+        ]
         if matched:
             log.info(
                 f"  KEPT [{a['source']}] {a['titre'][:70]} "
