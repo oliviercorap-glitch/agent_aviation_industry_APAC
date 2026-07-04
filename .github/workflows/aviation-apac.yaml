@@ -34,13 +34,16 @@ jobs:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         run: python asia_aviation_agent.py
 
+      # CORRIGÉ : "rapports_apac/" -> "reports/" (le script écrit maintenant
+      # dans ce dossier, avec un nom de fichier daté + latest.html), pour
+      # que weekly_digest_agent.py puisse le retrouver via l'API GitHub.
       - name: Upload report artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: apac-gse-report-${{ github.run_number }}
           path: |
-            rapports_apac/
+            reports/
             logs/
           retention-days: 30
           if-no-files-found: warn
@@ -50,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add seen_apac_articles.json rapports_apac/ logs/ 2>/dev/null || true
+          git add seen_apac_articles.json reports/ logs/ 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Update APAC GSE intelligence report [skip ci]"
             git push
