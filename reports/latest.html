@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC GSE Intelligence Brief — July 04, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f172a;--ink-2:#334155;--ink-3:#64748b;--ink-4:#94a3b8;
+  --surface:#ffffff;--surface-1:#f8fafc;--border:#e2e8f0;
+  --radius:8px;--radius-lg:12px;
+}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:#f0f2f5;color:var(--ink);line-height:1.6;padding:32px 16px 64px}
+.wrapper{max-width:900px;margin:0 auto}
+
+/* ── MASTHEAD ── */
+.masthead{background:var(--ink);border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+           padding:28px 36px 24px}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;
+                   letter-spacing:.12em;text-transform:uppercase;
+                   color:#64748b;margin-bottom:8px}
+.masthead-title{font-size:22px;font-weight:600;letter-spacing:-.02em;
+                 color:#fff;margin-bottom:12px}
+.masthead-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.meta-item{font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:6px}
+.meta-item strong{color:#e2e8f0;font-weight:500}
+.masthead-counters{display:flex;gap:8px;flex-wrap:wrap;
+                    margin-top:16px;padding-top:16px;border-top:1px solid #1e293b}
+.counter-pill{font-size:11px;font-weight:500;padding:3px 10px;
+               border-radius:20px;letter-spacing:.02em}
+
+/* ── CARD BODY ── */
+.card-body{background:var(--surface);border:1px solid var(--border);
+            border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);
+            padding:36px}
+.section-header{display:flex;align-items:center;gap:10px;
+                 margin-bottom:20px;padding-bottom:12px;
+                 border-bottom:1px solid var(--border)}
+.section-header h2{font-size:13px;font-weight:600;text-transform:uppercase;
+                    letter-spacing:.08em;color:var(--ink-3)}
+.section-divider{margin:36px 0;border:none;border-top:1px solid var(--border)}
+
+/* ── EXEC SUMMARY ── */
+.exec-panel{background:var(--ink);border-radius:var(--radius-lg);
+             padding:24px 28px;margin-bottom:32px;
+             color:#e2e8f0;font-size:15px;line-height:1.75}
+.exec-panel-label{font-family:'IBM Plex Mono',monospace;font-size:10px;
+                   letter-spacing:.1em;text-transform:uppercase;
+                   color:#475569;margin-bottom:10px}
+.exec-panel p{margin:0}
+
+/* ── SIGNAL CARDS ── */
+.signal-card{border:1px solid var(--border);border-radius:var(--radius-lg);
+              margin-bottom:16px;overflow:hidden;
+              transition:box-shadow .15s}
+.signal-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.signal-card-header{padding:16px 20px;background:var(--surface-1);
+                     display:flex;align-items:flex-start;gap:12px}
+.signal-badge{font-size:11px;font-weight:600;padding:3px 9px;
+               border-radius:20px;white-space:nowrap;
+               letter-spacing:.03em;margin-top:2px;flex-shrink:0}
+.signal-headline{font-size:15px;font-weight:600;
+                  color:var(--ink);line-height:1.4}
+.signal-headline p{margin:0}
+.signal-body{padding:20px;display:grid;gap:16px}
+.signal-section-label{font-size:10px;font-weight:600;text-transform:uppercase;
+                        letter-spacing:.1em;color:var(--ink-4);margin-bottom:4px}
+.signal-section-text{font-size:14px;color:var(--ink-2);line-height:1.65}
+.signal-section-text p{margin:0}
+.signal-action .signal-section-text{color:var(--ink);font-weight:500}
+.signal-source{padding-top:12px;border-top:1px dashed var(--border);
+                font-size:12px;color:var(--ink-4);
+                display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.source-label{font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+               font-size:10px;color:var(--ink-4);margin-right:4px}
+.signal-source a{color:#2563eb;text-decoration:none;font-weight:500}
+.signal-source a:hover{text-decoration:underline}
+.source-name{color:var(--ink-4)}
+
+/* ── WATCH / RISK ── */
+.watch-panel{background:#fffbeb;border:1px solid #fde68a;
+              border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:16px}
+.watch-panel-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                    letter-spacing:.08em;color:#92400e;margin-bottom:12px}
+.watch-panel ol{padding-left:20px;display:grid;gap:6px}
+.watch-panel li{font-size:14px;color:#78350f;line-height:1.5}
+.watch-panel li p{margin:0}
+.risk-panel{background:#fef2f2;border:1px solid #fecaca;
+             border-radius:var(--radius-lg);padding:20px 24px}
+.risk-panel-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                   letter-spacing:.08em;color:#991b1b;margin-bottom:8px}
+.risk-panel-text{font-size:14px;color:#7f1d1d;line-height:1.6;font-weight:500}
+.risk-panel-text p{margin:0}
+
+/* ── SOURCES ── */
+.sources-panel{background:var(--surface-1);border:1px solid var(--border);
+                border-radius:var(--radius);padding:16px 20px;margin-top:36px}
+.sources-panel-label{font-size:10px;font-weight:600;text-transform:uppercase;
+                       letter-spacing:.1em;color:var(--ink-4);margin-bottom:10px}
+.sources-panel ul{list-style:none;display:flex;flex-wrap:wrap;
+                   gap:6px 0;column-gap:24px;columns:2}
+.sources-panel li{font-size:12px;color:var(--ink-3);break-inside:avoid}
+.sources-panel li::before{content:"·";margin-right:6px;color:var(--ink-4)}
+
+/* ── FOOTER ── */
+.page-footer{text-align:center;font-size:11px;color:var(--ink-4);
+              margin-top:24px;font-family:'IBM Plex Mono',monospace;
+              letter-spacing:.04em}
+
+@media(max-width:600px){
+  body{padding:12px 8px 48px}
+  .masthead,.card-body{padding:20px 16px}
+  .sources-panel ul{columns:1}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="masthead">
+  <div class="masthead-eyebrow">TLD Group · Market Intelligence</div>
+  <div class="masthead-title">APAC GSE Intelligence Brief</div>
+  <div class="masthead-meta">
+    <div class="meta-item"><span>Date</span><strong>July 04, 2026</strong></div>
+    <div class="meta-item"><span>Generated</span><strong>10:35</strong></div>
+    <div class="meta-item"><span>Articles analyzed</span><strong>18</strong></div>
+    <div class="meta-item"><span>Signals</span><strong>9</strong></div>
+  </div>
+  <div class="masthead-counters"><span class="counter-pill" style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">2 Critical</span><span class="counter-pill" style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">3 Important</span><span class="counter-pill" style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">2 Watch</span><span class="counter-pill" style="background:#f9fafb;color:#374151;border:1px solid #e5e7eb;">2 Info</span></div>
+</div>
+
+<div class="card-body">
+
+  
+
+  <div class="exec-panel"><div class="exec-panel-label">Executive summary</div>This week's signals are dominated by aggressive moves from Chinese GSE manufacturer Weihai Guangtai, which reports rapid order breakthroughs in the Asia-Pacific market and is using its electric product advantage to win business globally. This poses a direct and critical threat to TLD's market share and margins in APAC. Additionally, CIMC Tianda is actively exhibiting at regional trade shows, while ground handlers Swissport and dnata are expanding operations in Australia and Singapore, creating both opportunities and consolidation risks. The global GSE market is projected to grow strongly, validating TLD's APAC focus but intensifying competition. Immediate action is required to counter Guangtai's pricing and product攻势.</div>
+
+  <div class="section-header"><h2>Signals</h2></div>
+  
+<div class="signal-card impact-critical">
+  <div class="signal-card-header" style="border-left:4px solid #dc2626;">
+    <span class="signal-badge"
+          style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">
+      Critical
+    </span>
+    <h3 class="signal-headline">Guangtai reports rapid order breakthroughs in Asia-Pacific market</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Weihai Guangtai has achieved high-speed order growth in the Asia-Pacific market, signaling aggressive expansion beyond China. This directly threatens TLD's market share in Southeast Asia, South Asia, and Oceania, where Guangtai is leveraging competitive pricing and electric product lines.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">TLD faces immediate volume and margin erosion in key APAC hubs like Singapore, Bangkok, and Sydney as Guangtai undercuts pricing on electric GSE. TLD must accelerate its own electric product rollout and consider targeted price adjustments to defend installed base contracts.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Conduct a competitive pricing analysis for Guangtai's electric GSE in APAC within 48 hours and prepare a retention strategy for top 10 accounts in the region.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.globaltenders.com/south-east-asia/sea-airports-tenders" target="_blank" rel="noopener">South East Asia airports tenders get latest South East Asia airports tenders and bids</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-critical">
+  <div class="signal-card-header" style="border-left:4px solid #dc2626;">
+    <span class="signal-badge"
+          style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">
+      Critical
+    </span>
+    <h3 class="signal-headline">Guangtai leverages electrification to drive European business growth</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Guangtai is using its electric product advantages and global service network to win European market share, with a strategy to shift from equipment exporter to global aviation ground system provider. This demonstrates a proven playbook that will be replicated in APAC.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">TLD's premium positioning on electric GSE in APAC is under direct assault. Guangtai's success in Europe validates its ability to displace incumbents, and APAC airports with aggressive electrification timelines (e.g., Singapore Changi, Sydney) are prime targets.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Immediately audit TLD's electric GSE product roadmap for APAC and identify gaps versus Guangtai's offerings; prioritize feature parity and local service support.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://uk.finance.yahoo.com/news/global-airport-ground-support-equipment-090600100.html" target="_blank" rel="noopener">Global Airport Ground Support Equipment Market to Surge Beyond USD 9.42 Billion by 2032 with Electrification and AI Advancements</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">CIMC Tianda exhibiting at inter airport Southeast Asia 2026</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Shenzhen CIMC-TIANDA Airport Support Ltd is listed as an exhibitor at inter airport Southeast Asia 2026, a key regional trade show. This signals active marketing and sales efforts in Southeast Asia, a core TLD market.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">CIMC Tianda's presence at the show will generate direct competitive leads and potentially undercut TLD on pricing for new airport tenders in Thailand, Vietnam, and Indonesia. TLD must ensure strong booth presence and competitive proposals.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Assign a senior sales manager to attend inter airport Southeast Asia 2026 and gather intelligence on CIMC Tianda's product and pricing strategy.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.globaltenders.com/south-east-asia/sea-airports-tenders" target="_blank" rel="noopener">South East Asia airports tenders get latest South East Asia airports tenders and bids</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Oshkosh AeroTech to showcase autonomous robotics at CES 2026</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Oshkosh AeroTech (JBT parent) is demonstrating intelligent aviation technology and autonomous robotics, indicating a push into automation. While not APAC-specific, this technology could be deployed at major APAC hubs seeking efficiency gains.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">If Oshkosh introduces autonomous GSE (e.g., autonomous pushback tractors) in APAC, it could disrupt TLD's traditional equipment sales and create a new competitive dynamic. TLD must monitor adoption timelines.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Track Oshkosh's autonomous GSE announcements and assess potential APAC pilot programs at Singapore Changi or Hong Kong.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://airportimprovement.com/article/oshkosh-aerotech-to-showcase-intelligent-aviation-technology-and-autonomous-robotics-at-ces-2026" target="_blank" rel="noopener">Oshkosh Aerotech to Showcase Intelligent Aviation Technology and Autonomous Robotics at Ces 2026 - Airport Improvement</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">Swissport launches full-service operations for China Eastern in Melbourne</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Swissport has begun ground handling for China Eastern Airlines at Melbourne Airport, expanding its Australian footprint. This increases Swissport's GSE procurement needs and consolidates ground handler buying power.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Swissport is a major TLD customer. This new contract means increased GSE demand in Melbourne, but also potential for Swissport to leverage its scale for lower pricing from TLD or switch to competitors like Guangtai.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Contact Swissport's APAC procurement team to discuss GSE requirements for the Melbourne operation and reinforce TLD's service and reliability advantages.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.swissport.com/en/news/current-news/2026/swissport-launches-full-service-operations-for-china-eastern-airlines-in-melbourne" target="_blank" rel="noopener">Swissport launches full-service operations for China ...</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">dnata wins multi-year cargo handling contract in Singapore</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">dnata secured a multi-year cargo handling contract with Silk Way Group at Singapore Changi Airport. This reinforces dnata's position as a leading ground handler in Singapore and increases its GSE fleet requirements.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">dnata is a key TLD customer in APAC. This contract win signals sustained or growing GSE demand at Changi, but also gives dnata leverage to negotiate better terms. TLD must ensure it remains dnata's preferred supplier.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Schedule a quarterly business review with dnata's Singapore operations to align on upcoming GSE replacement cycles and secure preferred supplier status.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.dnata.com/media-centre/dnata-wins-multi-year-silk-way-group-cargo-handling-contract-in-singapore" target="_blank" rel="noopener">dnata wins multi-year Silk Way Group cargo handling contract in ...</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Mercury GSE makes historic GSE order from JBT AeroTech</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Mercury GSE placed a large order with JBT AeroTech (Oshkosh) for ground support equipment, including pushback tractors. While this is a US-based deal, it demonstrates JBT's manufacturing capacity and potential for similar large-scale deals in APAC.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">JBT's ability to fulfill large orders could be leveraged for APAC tenders, especially for airlines or handlers seeking standardized fleets. TLD must monitor JBT's APAC sales activity.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Monitor JBT's APAC order book and any large tenders where JBT is bidding; prepare counter-proposals.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.prnewswire.com/news-releases/mercury-gse-makes-historic-ground-support-equipment-order-from-jbt-aerotech-301996270.html" target="_blank" rel="noopener">Mercury GSE Makes Historic Ground Support Equipment Order from JBT AeroTech</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<details style="margin-top:12px;">
+  <summary style="font-size:12px;color:#94a3b8;cursor:pointer;
+                  padding:8px 4px;user-select:none;list-style:none;
+                  display:flex;align-items:center;gap:6px;">
+    <span style="font-size:10px;background:#f1f5f9;border:1px solid #e2e8f0;
+                 border-radius:20px;padding:2px 8px;color:#64748b;font-weight:600;
+                 letter-spacing:.04em;">
+      + 2 background items
+    </span>
+    <span style="color:#94a3b8;">— no action required, click to expand</span>
+  </summary>
+  <ul style="list-style:none;padding:12px 16px;margin-top:8px;
+             background:#f8fafc;border:1px solid #e2e8f0;
+             border-radius:8px;">
+    <li style="font-size:13px;color:#64748b;padding:3px 0;line-height:1.5;"><a href="https://www.360iresearch.com/library/intelligence/ground-support-equipment" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none;">Global GSE market projected to reach USD 10.15 billion by 2032</a> <span style="color:#94a3b8;">— Tavily Search</span></li><li style="font-size:13px;color:#64748b;padding:3px 0;line-height:1.5;"><a href="https://www.globaltenders.com/south-east-asia/sea-airports-tenders" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none;">South East Asia airports tenders available on global tenders platform</a> <span style="color:#94a3b8;">— Tavily Search</span></li>
+  </ul>
+</details>
+
+  <hr class="section-divider">
+
+  <div class="section-header"><h2>To watch this week</h2></div><div class="watch-panel"><div class="watch-panel-label">Key indicators</div><ol><li>Guangtai's specific order wins and contract announcements in Southeast Asia and Oceania over the next 30 days.</li><li>CIMC Tianda's product launches and pricing at inter airport Southeast Asia 2026.</li><li>Swissport and dnata's GSE procurement plans for their new contracts in Melbourne and Singapore.</li></ol></div>
+
+  <div class="risk-panel"><div class="risk-panel-label">Main risk</div><div class="risk-panel-text">Weihai Guangtai's aggressive pricing and electric GSE offerings erode TLD's market share and margins in core APAC hubs within the next 6-12 months.</div></div>
+
+  <div class="sources-panel">
+    <div class="sources-panel-label">Monitored sources</div>
+    <ul><li>International Airport Review - News</li><li>Airport Technology - News</li><li>Future Airport</li><li>Airport World - Asia Pacific</li><li>Ground Handling International</li><li>Aviation Pros - Ground Handling</li><li>Simple Flying - Asia</li><li>Aviation Week - Asia</li><li>Flight Global - Asia</li><li>Reuters - Aerospace & Defense</li></ul>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  APAC GSE Intelligence Agent v2.0 · Powered by DeepSeek + Tavily · July 04, 2026
+</div>
+
+</div>
+</body>
+</html>
