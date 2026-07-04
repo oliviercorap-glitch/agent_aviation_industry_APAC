@@ -110,3 +110,54 @@
 2026-07-04 05:07:50,135 [INFO] Parsed: 9 signals, summary=yes
 2026-07-04 05:07:50,150 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/rapports_apac/apac_veille_20260704_0507.html
 2026-07-04 05:07:50,150 [INFO] Done.
+2026-07-04 05:22:41,126 [INFO] ============================================================
+2026-07-04 05:22:41,126 [INFO] Starting APAC GSE Intelligence Agent v2.0
+2026-07-04 05:22:41,126 [INFO] ============================================================
+2026-07-04 05:22:41,127 [INFO] Collecting from: International Airport Review - News
+2026-07-04 05:22:42,174 [INFO]   Scraped International Airport Review - News: 30 articles
+2026-07-04 05:22:43,675 [INFO] Collecting from: Airport Technology - News
+2026-07-04 05:22:43,952 [INFO]   Scraped Airport Technology - News: 30 articles
+2026-07-04 05:22:45,453 [INFO] Collecting from: Future Airport
+2026-07-04 05:22:45,579 [WARNING] Attempt 1/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 05:22:46,691 [WARNING] Attempt 2/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 05:22:48,773 [WARNING] Attempt 3/3 failed for https://www.futureairport.com/: 403 Client Error: Forbidden for url: https://www.futureairport.com/
+2026-07-04 05:22:54,275 [INFO] Collecting from: Airport World - Asia Pacific
+2026-07-04 05:22:56,654 [WARNING] Attempt 1/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 05:22:59,674 [WARNING] Attempt 2/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 05:23:03,554 [WARNING] Attempt 3/3 failed for https://www.airport-world.com/category/regions/asia-pacific/: 404 Client Error: Not Found for url: https://airport-world.com/category/regions/asia-pacific/
+2026-07-04 05:23:09,056 [INFO] Collecting from: Ground Handling International
+2026-07-04 05:23:09,789 [INFO]   Scraped Ground Handling International: 10 articles
+2026-07-04 05:23:11,290 [INFO] Collecting from: Aviation Pros - Ground Handling
+2026-07-04 05:23:11,712 [INFO]   Scraped Aviation Pros - Ground Handling: 28 articles
+2026-07-04 05:23:13,213 [INFO] Collecting from: Simple Flying - Asia
+2026-07-04 05:23:13,640 [INFO]   Scraped Simple Flying - Asia: 30 articles
+2026-07-04 05:23:15,142 [INFO] Collecting from: Aviation Week - Asia
+2026-07-04 05:23:15,477 [WARNING] Attempt 1/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 05:23:16,710 [WARNING] Attempt 2/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 05:23:18,942 [WARNING] Attempt 3/3 failed for https://aviationweek.com/regions/asia: 404 Client Error: Not Found for url: https://aviationweek.com/regions/asia
+2026-07-04 05:23:24,444 [INFO] Collecting from: Flight Global - Asia
+2026-07-04 05:23:24,578 [WARNING] Attempt 1/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 05:23:25,657 [WARNING] Attempt 2/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 05:23:27,737 [WARNING] Attempt 3/3 failed for https://www.flightglobal.com/asia/: 403 Client Error: Forbidden for url: https://www.flightglobal.com/asia/
+2026-07-04 05:23:33,238 [INFO] Collecting from: Reuters - Aerospace & Defense
+2026-07-04 05:23:33,564 [WARNING] Attempt 1/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 05:23:34,727 [WARNING] Attempt 2/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 05:23:36,888 [WARNING] Attempt 3/3 failed for https://www.reuters.com/business/aerospace-defense/: 401 Client Error: HTTP Forbidden for url: https://www.reuters.com/business/aerospace-defense/
+2026-07-04 05:23:42,390 [INFO] Total raw articles collected: 128
+2026-07-04 05:23:42,641 [INFO]   Tavily 'Weihai Guangtai export Southeast Asia airport...': 5 results
+2026-07-04 05:23:43,374 [INFO]   Tavily '威海广泰 海外市场 出口 2026...': 5 results
+2026-07-04 05:23:44,094 [INFO]   Tavily 'CIMC Tianda international ground support equi...': 5 results
+2026-07-04 05:23:44,846 [INFO]   Tavily 'JBT Corporation GSE Asia Pacific contract 202...': 5 results
+2026-07-04 05:23:45,577 [INFO]   Tavily 'Oshkosh AeroTech Asia Pacific airport 2026...': 5 results
+2026-07-04 05:23:46,301 [INFO]   Tavily 'Southeast Asia airport ground support equipme...': 5 results
+2026-07-04 05:23:46,975 [INFO]   Tavily 'Japan Korea airport GSE procurement 2026...': 5 results
+2026-07-04 05:23:47,687 [INFO]   Tavily 'Swissport Menzies dnata Asia Pacific contract...': 5 results
+2026-07-04 05:23:48,188 [INFO] Tavily total: 40 articles found
+2026-07-04 05:23:48,189 [INFO] Total after Tavily: 168 articles
+2026-07-04 05:23:48,189 [INFO] Competitor brief: skipping (runs Mondays only)
+2026-07-04 05:23:48,193 [INFO] Relevant articles after filtering: 0
+2026-07-04 05:23:48,193 [INFO] After prioritization: 0 Tavily, 0 competitor, 0 scraped
+2026-07-04 05:23:48,194 [INFO] Raw DeepSeek output saved to rapports_apac/debug_raw.txt
+2026-07-04 05:23:48,194 [WARNING] Empty DeepSeek response — nothing to parse.
+2026-07-04 05:23:48,194 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/rapports_apac/apac_veille_20260704_0523.html
+2026-07-04 05:23:48,194 [INFO] Done.
