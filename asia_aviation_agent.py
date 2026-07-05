@@ -49,13 +49,26 @@ KEYWORDS_GSE = [
     "机场", "航空", "航站楼", "停机坪", "扩建", "招标", "采购", "项目", "投运",
     "吞吐量", "旅客", "货邮", "航班", "机位", "远机位", "新机场", "新航站楼",
     "旅客吞吐量创新高", "航班量",
+    # Traditional Chinese equivalents (Hong Kong / Taiwan sources)
+    "機場", "航站樓", "停機坪", "擴建", "招標", "採購", "貨郵", "機位",
+    "遠機位", "新機場", "新航站樓",
     "airline order", "fleet delivery", "fleet expansion", "airline profit",
     "airline loss", "bankruptcy", "revenue", "EBIT",
-    "Air China", "China Eastern", "China Southern", "Hainan Airlines",
-    "中国国航", "国航", "中国东方航空", "东方航空", "东航",
-    "中国南方航空", "南方航空", "南航", "海南航空", "海航",
-    "厦门航空", "厦航", "深圳航空", "深航", "春秋航空", "春秋",
-    "吉祥航空", "吉祥", "四川航空", "川航", "山东航空", "山航",
+    # Regional APAC airlines (ex-Mainland China) — fleet-driven GSE demand
+    "ANA", "All Nippon Airways", "JAL", "Japan Airlines",
+    "Korean Air", "Asiana Airlines",
+    "Cathay Pacific", "HK Express",
+    "China Airlines", "EVA Air",  # Taiwan-based carriers (name notwithstanding)
+    "Garuda Indonesia", "Lion Air", "AirAsia", "Batik Air",
+    "Thai Airways", "Bangkok Airways", "Nok Air",
+    "Vietnam Airlines", "VietJet Air", "Bamboo Airways",
+    "Philippine Airlines", "Cebu Pacific", "AirAsia Philippines",
+    "Singapore Airlines", "Scoot",
+    "Malaysia Airlines", "Malindo Air",
+    "Qantas", "Jetstar", "Virgin Australia",
+    "Air New Zealand",
+    "IndiGo", "Air India",
+    "Biman Bangladesh", "SriLankan Airlines", "Nepal Airlines",
     "订购", "交付", "机队", "盈利", "亏损", "营收", "净利润",
     "复航", "停飞", "航线", "新开航线", "恢复", "破产", "重组",
     "emission regulation", "electric ramp", "diesel ban",
@@ -107,49 +120,72 @@ KEYWORDS_GSE = [
 ]
 
 SOURCES = [
-    {"nom": "Bidcenter (China Tenders)", "url": "https://www.bidcenter.com.cn",
-     "type": "scrape_bidcenter", "base_url": "https://www.bidcenter.com.cn", "encoding": "utf-8"},
-    {"nom": "China Airport News (CAAC)", "url": "http://fuwu.caacnews.com.cn/1/5/index.html",
-     "type": "scrape_generic", "selector": "div.newsList ul li a, .list li a, a",
-     "base_url": "http://fuwu.caacnews.com.cn", "encoding": "utf-8"},
-    {"nom": "CAAC News Portal", "url": "http://www.caacnews.com.cn/1/5/",
-     "type": "scrape_generic", "selector": ".news-list a, ul.list a, .newslist a, a",
-     "base_url": "http://www.caacnews.com.cn", "encoding": "utf-8"},
-    {"nom": "CARNOC.com", "url": "https://www.carnoc.com/",
-     "type": "scrape_generic", "selector": "div.news_list a, .article_list a, a",
-     "base_url": "https://www.carnoc.com", "encoding": "utf-8"},
-    {"nom": "CAAC Gov (China)", "url": "http://www.caac.gov.cn/PHONE/ZTZL/",
-     "type": "scrape_caac", "base_url": "http://www.caac.gov.cn"},
+    # --- Global / regional aviation trade press (kept — genuinely covers APAC) ---
     {"nom": "Ground Handling International", "url": "https://www.groundhandling.com/",
      "type": "scrape_generic", "selector": "article h3 a, .post-title a, h2.entry-title a, a",
      "base_url": "https://www.groundhandling.com"},
     {"nom": "Aviation Week MRO", "url": "https://aviationweek.com/mro/ground-operations",
      "type": "scrape_generic", "selector": "h3.article-title a, .headline a, article h2 a, a",
      "base_url": "https://aviationweek.com"},
-    {"nom": "CGTN Aviation", "url": "https://www.cgtn.com/",
-     "type": "scrape_generic", "selector": "div.newsList a, a",
-     "base_url": "https://www.cgtn.com", "encoding": "utf-8"},
     {"nom": "Air Transport World", "url": "https://atwonline.com/ground-handling",
      "type": "scrape_generic", "selector": "h3.article-title a, .entry-title a, article h2 a, a",
      "base_url": "https://atwonline.com"},
-    {"nom": "民航资源网 (CARNOC News)", "url": "https://news.carnoc.com/",
-     "type": "scrape_generic", "selector": ".news_list a, .list_con a, td a, .title a, a",
-     "base_url": "https://news.carnoc.com", "encoding": "utf-8"},
-    {"nom": "中国民航网 (AviationCN)", "url": "https://www.aviationcn.net/",
-     "type": "scrape_generic", "selector": ".news-list a, .article-list a, h3 a, .title a, a",
-     "base_url": "https://www.aviationcn.net", "encoding": "utf-8"},
-    {"nom": "中国民航 (CCAonline)", "url": "https://www.ccaonline.cn/hangkong/",
-     "type": "scrape_generic", "selector": ".news-list a, ul li a, .list a, .title a, a",
-     "base_url": "https://www.ccaonline.cn", "encoding": "utf-8"},
-    {"nom": "山东新闻 (Shandong News — Guangtai HQ region)", "url": "https://www.sdnews.com.cn/sd/gdxw/",
-     "type": "scrape_generic", "selector": ".news-list a, ul li a, .list a, a",
-     "base_url": "https://www.sdnews.com.cn", "encoding": "utf-8"},
-    {"nom": "威海新闻 (Weihai Daily — Guangtai home city)", "url": "http://www.whdaily.cn/epaper/whwb/latest/",
-     "type": "scrape_generic", "selector": ".news-list a, ul li a, h3 a, .title a, a",
-     "base_url": "http://www.whdaily.cn", "encoding": "utf-8"},
-    {"nom": "中国招标投标网 (China Bidding)", "url": "https://www.chinabidding.com.cn/",
-     "type": "scrape_generic", "selector": ".list a, ul li a, td a, .title a, a",
-     "base_url": "https://www.chinabidding.com.cn", "encoding": "utf-8"},
+    {"nom": "CAPA — Centre for Aviation", "url": "https://centreforaviation.com/news",
+     "type": "scrape_generic", "selector": "h3 a, .news-item a, article a, a",
+     "base_url": "https://centreforaviation.com"},
+
+    # --- Japan ---
+    {"nom": "Nikkei Asia — Business", "url": "https://asia.nikkei.com/Business",
+     "type": "scrape_generic", "selector": "article a, h3 a, .article-card a, a",
+     "base_url": "https://asia.nikkei.com"},
+
+    # --- South Korea ---
+    {"nom": "The Korea Herald — Business", "url": "http://www.koreaherald.com/list.php?ct=020500000000",
+     "type": "scrape_generic", "selector": "h4 a, .news_list a, a",
+     "base_url": "http://www.koreaherald.com", "encoding": "utf-8"},
+
+    # --- Vietnam ---
+    {"nom": "VnExpress International", "url": "https://e.vnexpress.net/news/business",
+     "type": "scrape_generic", "selector": "h3 a, .title-news a, a",
+     "base_url": "https://e.vnexpress.net"},
+
+    # --- Thailand ---
+    {"nom": "Bangkok Post — Business", "url": "https://www.bangkokpost.com/business",
+     "type": "scrape_generic", "selector": "h3 a, .article-info a, a",
+     "base_url": "https://www.bangkokpost.com"},
+
+    # --- Indonesia ---
+    {"nom": "The Jakarta Post — Business", "url": "https://www.thejakartapost.com/business",
+     "type": "scrape_generic", "selector": "h2 a, h3 a, .article-title a, a",
+     "base_url": "https://www.thejakartapost.com"},
+
+    # --- Philippines ---
+    {"nom": "Inquirer Business (Philippines)", "url": "https://business.inquirer.net/",
+     "type": "scrape_generic", "selector": "h2 a, h3 a, .river_headline a, a",
+     "base_url": "https://business.inquirer.net"},
+
+    # --- Taiwan ---
+    {"nom": "Taipei Times — Business", "url": "https://www.taipeitimes.com/News/biz",
+     "type": "scrape_generic", "selector": "h3 a, .archives a, a",
+     "base_url": "https://www.taipeitimes.com"},
+
+    # --- Hong Kong ---
+    {"nom": "South China Morning Post — Transport (HK)", "url": "https://www.scmp.com/news/hong-kong/transport",
+     "type": "scrape_generic", "selector": "h2 a, h3 a, .article__title a, a",
+     "base_url": "https://www.scmp.com"},
+
+    # --- Singapore / regional hub ---
+    {"nom": "Channel News Asia — Business", "url": "https://www.channelnewsasia.com/business",
+     "type": "scrape_generic", "selector": "h3 a, .h6__link, article a, a",
+     "base_url": "https://www.channelnewsasia.com"},
+
+    # --- Australia / New Zealand / Oceania ---
+    {"nom": "Australian Aviation", "url": "https://australianaviation.com.au/category/news/",
+     "type": "scrape_generic", "selector": "h2 a, h3 a, .entry-title a, a",
+     "base_url": "https://australianaviation.com.au"},
+    {"nom": "RNZ Pacific", "url": "https://www.rnz.co.nz/international/pacific-news",
+     "type": "scrape_generic", "selector": "h3 a, .o-digest__title a, a",
+     "base_url": "https://www.rnz.co.nz"},
 ]
 
 def normaliser_url(url, base=None):
@@ -202,30 +238,6 @@ def requeter_avec_retry(url, retries=3, timeout=30, **kwargs):
     return None
 
 
-def scrape_caac(source):
-    articles = []
-    resp = requeter_avec_retry(source["url"])
-    if not resp:
-        return articles
-    try:
-        soup = BeautifulSoup(resp.content, "html.parser", from_encoding="utf-8")
-        for link in soup.find_all("a", href=True)[:20]:
-            titre = link.get_text(strip=True)
-            if not titre or len(titre) < 10:
-                continue
-            href = normaliser_url(link.get("href"), source["base_url"])
-            if titre and href:
-                articles.append({
-                    "source": source["nom"], "titre": titre[:150], "lien": href,
-                    "desc": "", "date": datetime.now().strftime("%Y-%m-%d"),
-                    "id": hashlib.md5((titre + href).encode()).hexdigest(),
-                })
-    except Exception as e:
-        log.warning(f"Error parsing {source['nom']}: {e}")
-    log.info(f"  Scraped {source['nom']}: {len(articles)} articles")
-    return articles
-
-
 def scrape_generic(source):
     articles = []
     resp = requeter_avec_retry(source["url"])
@@ -255,51 +267,11 @@ def scrape_generic(source):
     return articles
 
 
-def scrape_bidcenter(source):
-    articles = []
-    headers = {"Referer": "https://www.bidcenter.com.cn/", "Accept-Language": "zh-CN,zh;q=0.9"}
-    resp = requeter_avec_retry(source["url"], headers=headers)
-    if not resp:
-        return articles
-    try:
-        soup = BeautifulSoup(resp.content, "html.parser", from_encoding="utf-8")
-        links = soup.select("div.tender_list a, ul.tender-list a, .gg_list a, table a, .list-item a")
-        if not links:
-            links = soup.find_all("a", href=True)
-        SKIP = {"首页", "上一页", "下一页", "末页", "登录", "注册", "发布", "搜索"}
-        unique_links = {}
-        for link in links:
-            href = link.get("href")
-            titre = link.get_text(strip=True)
-            if not href or not titre or len(titre) < 8:
-                continue
-            if any(s in titre for s in SKIP):
-                continue
-            href = normaliser_url(href, source["base_url"])
-            if href and "bidcenter.com.cn" in href:
-                unique_links[href] = titre
-        for href, titre in list(unique_links.items())[:15]:
-            articles.append({
-                "source": source["nom"], "titre": titre[:150], "lien": href,
-                "desc": "", "date": datetime.now().strftime("%Y-%m-%d"),
-                "id": hashlib.md5((titre + href).encode()).hexdigest(),
-            })
-    except Exception as e:
-        log.warning(f"Error scraping {source['nom']}: {e}")
-    log.info(f"  Scraped {source['nom']}: {len(articles)} tenders")
-    return articles
-
-
 def collecter_tous_articles():
     tous = []
     for source in SOURCES:
         log.info(f"Collecting from: {source['nom']}")
-        if source["type"] == "scrape_caac":
-            articles = scrape_caac(source)
-        elif source["type"] == "scrape_bidcenter":
-            articles = scrape_bidcenter(source)
-        else:
-            articles = scrape_generic(source)
+        articles = scrape_generic(source)
         tous.extend(articles)
         time.sleep(1.5)
     log.info(f"Total raw articles collected: {len(tous)}")
@@ -390,14 +362,61 @@ def enrichir_articles(articles):
 
 
 TAVILY_QUERIES = [
-    "威海广泰 航空地面设备 新产品 2026",
-    "Weihai Guangtai GSE airport ground support equipment 2026",
-    "中集天达 地面支持设备 新闻 2026",
-    "中国机场 地面保障设备 招标 采购 2026",
-    "JBT Corporation GSE China Asia Pacific 2026",
-    "中国机场 电动地勤设备 新能源 2026",
-    "机场 地面设备 采购 招标 2026",
-    "Swissport Menzies ground handling China 2026",
+    # --- Chinese GSE competitors' APAC (ex-Mainland) export activity ---
+    # Kept because Guangtai/CIMC Tianda actively compete for contracts in
+    # Southeast Asia, South Asia and Oceania — this is genuine APAC market
+    # intelligence, not Mainland China domestic news.
+    "Weihai Guangtai GSE Southeast Asia contract 2026",
+    "CIMC Tianda ground support equipment export APAC 2026",
+    "Chinese GSE manufacturer Asia Pacific tender win 2026",
+
+    # --- Primary tier — Japan ---
+    "Japan airport ground handling GSE tender 2026",
+    "ANA JAL fleet ground support equipment 2026",
+
+    # --- Primary tier — South Korea ---
+    "South Korea airport ground support equipment 2026",
+    "Korean Air Asiana fleet GSE 2026",
+
+    # --- Primary tier — Indonesia ---
+    "Indonesia airport ground handling equipment tender 2026",
+    "Garuda Indonesia Lion Air fleet expansion 2026",
+
+    # --- Primary tier — Thailand ---
+    "Thailand airport ground support equipment tender 2026",
+    "Thai Airways Bangkok Airways fleet GSE 2026",
+
+    # --- Primary tier — Vietnam ---
+    "Vietnam airport ground handling equipment tender 2026",
+    "Vietnam Airlines VietJet fleet expansion GSE 2026",
+
+    # --- Primary tier — Philippines ---
+    "Philippines airport ground support equipment tender 2026",
+    "Cebu Pacific Philippine Airlines fleet GSE 2026",
+
+    # --- Primary tier — Hong Kong ---
+    "Hong Kong airport ground handling equipment 2026",
+    "Cathay Pacific ground support fleet 2026",
+
+    # --- Primary tier — Taiwan ---
+    "Taiwan airport ground support equipment tender 2026",
+    "EVA Air China Airlines Taiwan fleet GSE 2026",
+
+    # --- Secondary tier — South Asia (grouped) ---
+    "Bangladesh Sri Lanka Pakistan airport ground handling 2026",
+    "Nepal Bhutan airport infrastructure ground equipment 2026",
+
+    # --- Secondary tier — Southeast Asia mainland/islands (grouped) ---
+    "Malaysia Singapore airport ground support equipment 2026",
+    "Myanmar Cambodia Laos airport infrastructure tender 2026",
+
+    # --- Oceania (grouped) ---
+    "Australia airport ground support equipment tender 2026",
+    "New Zealand Pacific islands airport ground handling 2026",
+
+    # --- Cross-cutting regional themes ---
+    "Asia Pacific ground handler M&A Swissport Menzies Dnata 2026",
+    "Asia Pacific electric GSE diesel ban airport 2026",
 ]
 
 
@@ -445,32 +464,37 @@ def rechercher_tavily():
 
 
 COMPETITOR_BRIEF_PROMPT = """You are a GSE (Ground Support Equipment) market intelligence analyst 
-specializing in the Chinese and Asia-Pacific market.
+specializing in the Asia-Pacific market EXCLUDING Mainland China.
 
-Based on your training knowledge of the Chinese aviation ground support equipment 
-industry, provide a competitive intelligence brief on the following manufacturers.
+Based on your training knowledge, provide a competitive intelligence brief on the 
+following Chinese manufacturers' activity OUTSIDE Mainland China -- specifically 
+their export contracts, regional tenders won, and market entry moves across Japan, 
+South Korea, Indonesia, Thailand, Vietnam, Philippines, Hong Kong, Taiwan, Malaysia, 
+Singapore, South Asia, and Oceania. Do NOT report on their purely domestic Mainland 
+China activity -- that is covered by a separate brief.
 Focus on information relevant to TLD Group (Alvest subsidiary), a Western GSE 
-manufacturer competing in China.
+manufacturer competing in this region.
 
 For each company below, report what you know about:
-- Their current main product lines competing with TLD
-- Any recent product launches, contract wins, or strategic moves
-- Their pricing strategy and market positioning vs TLD
-- Their geographic focus within China and export ambitions
+- Their export/contract activity in the APAC region (ex-Mainland China)
+- Any recent regional product launches, contract wins, or market entry moves
+- Their pricing strategy and market positioning vs TLD in this region
+- Which specific APAC countries they are targeting or already active in
 
 Companies to cover:
 1. 威海广泰航空科技 (Weihai Guangtai Aviation Technology) — ticker: primary rival
 2. 中集天达控股 (CIMC Tianda Holdings)
 3. 江苏天一航空工业 (Jiangsu Tianyi Aviation Industry)
 4. Any other Chinese GSE manufacturers you have significant knowledge about
+   regarding their APAC (ex-Mainland China) export activity
 
 Return ONLY a JSON array. Each element must have exactly these fields:
   "company_cn": Chinese company name
   "company_en": English name  
   "products": main products competing with TLD (one sentence)
-  "recent": most notable recent activity or development you know about
-  "positioning": how they position vs TLD on price/quality/service
-  "threat": "HIGH", "MEDIUM", or "LOW" for TLD's China business
+  "recent": most notable recent APAC (ex-China) activity or development you know about
+  "positioning": how they position vs TLD on price/quality/service in this region
+  "threat": "HIGH", "MEDIUM", or "LOW" for TLD's APAC (ex-China) business
   "confidence": "HIGH", "MEDIUM", or "LOW" — your confidence in this information
 
 Return ONLY the JSON array. No markdown fences, no preamble, no explanation."""
@@ -522,7 +546,7 @@ def synthese_concurrents_deepseek():
                 f"Products competing with TLD: {products}. "
                 f"Recent activity: {recent}. "
                 f"Positioning vs TLD: {positioning}. "
-                f"Threat level for TLD China: {threat}."
+                f"Threat level for TLD APAC (ex-China): {threat}."
             )[:400]
             title = f"{company} — GSE competitor brief [{threat} threat to TLD]"
             articles.append({
@@ -541,7 +565,11 @@ def synthese_concurrents_deepseek():
         return []
 
 
-SYSTEM_PROMPT = """You are a senior strategy analyst advising the CEO of TLD Group, a global GSE (Ground Support Equipment) manufacturer and lessor with primary operations in China and Asia-Pacific.
+SYSTEM_PROMPT = """You are a senior strategy analyst advising the CEO of TLD Group, a global GSE (Ground Support Equipment) manufacturer and lessor, on its Asia-Pacific market EXCLUDING Mainland China (which is covered by a separate China-focused brief).
+
+SCOPE: Japan, South Korea, Indonesia, Thailand, Vietnam, Philippines, Hong Kong, Taiwan (primary markets), plus Malaysia, Singapore, Myanmar, Bangladesh, Nepal, Cambodia, Laos, Bhutan, Sri Lanka, Pakistan (secondary markets), plus Australia, New Zealand and Pacific island nations (Oceania).
+
+Chinese GSE manufacturers (Guangtai, CIMC Tianda, etc.) remain in scope WHEN their activity concerns this APAC region specifically (export contracts, regional tenders, market entry) — but their purely domestic Mainland China activity is out of scope here.
 
 Your role: translate raw news signals into actionable commercial and industrial intelligence.
 
@@ -551,8 +579,8 @@ ANALYSIS SCOPE — do not limit yourself to articles explicitly mentioning equip
 - Competitor moves (JBT, Textron, Guangtai, CIMC Tianda, etc.) → threats or market gaps
 - Raw material costs (steel, aluminium, lithium, semiconductors) → margin pressure
 - Ground handler M&A (Swissport, Menzies, Dnata) → contract consolidation risk
-- Trade policy (tariffs, BRI, US-China) → supply chain and pricing implications
-- Environmental regulations in China → electrification timeline and diesel phase-out
+- Trade policy (tariffs, BRI, regional trade agreements) → supply chain and pricing implications
+- Environmental regulations across APAC markets → electrification timeline and diesel phase-out
 
 IMPACT LEVELS:
 - CRITICAL: Act within 48h (major competitor move, urgent tender, direct threat/opportunity)
@@ -579,7 +607,7 @@ EXECUTIVE_SUMMARY: [4-5 sentences for an executive committee. What happened, wha
 WATCH_1: [Key indicator #1 to monitor this week]
 WATCH_2: [Key indicator #2 to monitor this week]
 WATCH_3: [Key indicator #3 to monitor this week]
-MAIN_RISK: [Single biggest risk for TLD GSE business in China this week — one sentence]
+MAIN_RISK: [Single biggest risk for TLD GSE business in APAC (ex-Mainland China) this week — one sentence]
 ===SUMMARY_END===
 
 Rules:
@@ -597,7 +625,7 @@ Rules:
 def construire_prompt_user(articles):
     date_str = datetime.now().strftime("%d %B %Y")
     lines = [
-        "GSE STRATEGIC WATCH — China / Asia-Pacific",
+        "GSE STRATEGIC WATCH — Asia-Pacific (ex-Mainland China)",
         f"Date: {date_str}",
         f"Articles to analyze: {len(articles)}",
         "",
@@ -1034,7 +1062,7 @@ body{{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
 
 <div class="masthead">
   <div class="masthead-eyebrow">TLD Group · Market Intelligence</div>
-  <div class="masthead-title">GSE Intelligence Brief</div>
+  <div class="masthead-title">GSE Intelligence Brief — Asia-Pacific (ex-Mainland China)</div>
   <div class="masthead-meta">
     <div class="meta-item"><span>Date</span><strong>{now_full}</strong></div>
     <div class="meta-item"><span>Generated</span><strong>{now_time}</strong></div>
