@@ -132,3 +132,135 @@
 2026-07-04 09:53:21,113 [INFO] Parsed: 41 signals, summary=yes
 2026-07-04 09:53:21,162 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-07-04.html (and reports/latest.html)
 2026-07-04 09:53:21,162 [INFO] Done.
+2026-07-05 05:09:22,158 [INFO] ============================================================
+2026-07-05 05:09:22,158 [INFO] Starting GSE Intelligence Agent v3.7
+2026-07-05 05:09:22,158 [INFO] ============================================================
+2026-07-05 05:09:22,158 [INFO] Collecting from: Bidcenter (China Tenders)
+2026-07-05 05:09:24,389 [INFO]   Scraped Bidcenter (China Tenders): 15 tenders
+2026-07-05 05:09:25,890 [INFO] Collecting from: China Airport News (CAAC)
+2026-07-05 05:09:27,970 [INFO]   Scraped China Airport News (CAAC): 20 articles
+2026-07-05 05:09:29,470 [INFO] Collecting from: CAAC News Portal
+2026-07-05 05:09:31,229 [INFO]   Scraped CAAC News Portal: 20 articles
+2026-07-05 05:09:32,730 [INFO] Collecting from: CARNOC.com
+2026-07-05 05:09:32,980 [INFO]   Scraped CARNOC.com: 3 articles
+2026-07-05 05:09:34,481 [INFO] Collecting from: CAAC Gov (China)
+2026-07-05 05:09:36,858 [INFO]   Scraped CAAC Gov (China): 0 articles
+2026-07-05 05:09:38,359 [INFO] Collecting from: Ground Handling International
+2026-07-05 05:09:39,020 [INFO]   Scraped Ground Handling International: 10 articles
+2026-07-05 05:09:40,522 [INFO] Collecting from: Aviation Week MRO
+2026-07-05 05:09:40,975 [WARNING] Attempt 1/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-07-05 05:09:42,346 [WARNING] Attempt 2/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-07-05 05:09:44,841 [WARNING] Attempt 3/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-07-05 05:09:50,343 [INFO] Collecting from: CGTN Aviation
+2026-07-05 05:09:50,776 [INFO]   Scraped CGTN Aviation: 20 articles
+2026-07-05 05:09:52,277 [INFO] Collecting from: Air Transport World
+2026-07-05 05:09:52,884 [INFO]   Scraped Air Transport World: 20 articles
+2026-07-05 05:09:54,386 [INFO] Collecting from: 民航资源网 (CARNOC News)
+2026-07-05 05:09:55,087 [INFO]   Scraped 民航资源网 (CARNOC News): 0 articles
+2026-07-05 05:09:56,588 [INFO] Collecting from: 中国民航网 (AviationCN)
+2026-07-05 05:09:56,660 [WARNING] Attempt 1/3 failed for https://www.aviationcn.net/: HTTPSConnectionPool(host='www.aviationcn.net', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.aviationcn.net', port=443): Failed to resolve 'www.aviationcn.net' ([Errno -2] Name or service not known)"))
+2026-07-05 05:09:57,685 [WARNING] Attempt 2/3 failed for https://www.aviationcn.net/: HTTPSConnectionPool(host='www.aviationcn.net', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.aviationcn.net', port=443): Failed to resolve 'www.aviationcn.net' ([Errno -2] Name or service not known)"))
+2026-07-05 05:09:59,712 [WARNING] Attempt 3/3 failed for https://www.aviationcn.net/: HTTPSConnectionPool(host='www.aviationcn.net', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.aviationcn.net', port=443): Failed to resolve 'www.aviationcn.net' ([Errno -2] Name or service not known)"))
+2026-07-05 05:10:05,213 [INFO] Collecting from: 中国民航 (CCAonline)
+2026-07-05 05:10:05,996 [WARNING] Attempt 1/3 failed for https://www.ccaonline.cn/hangkong/: 403 Client Error: Forbidden for url: https://www.ccaonline.cn/hangkong/
+2026-07-05 05:10:07,615 [WARNING] Attempt 2/3 failed for https://www.ccaonline.cn/hangkong/: 403 Client Error: Forbidden for url: https://www.ccaonline.cn/hangkong/
+2026-07-05 05:10:10,393 [WARNING] Attempt 3/3 failed for https://www.ccaonline.cn/hangkong/: 403 Client Error: Forbidden for url: https://www.ccaonline.cn/hangkong/
+2026-07-05 05:10:15,894 [INFO] Collecting from: 山东新闻 (Shandong News — Guangtai HQ region)
+2026-07-05 05:10:17,233 [WARNING] Attempt 1/3 failed for https://www.sdnews.com.cn/sd/gdxw/: 404 Client Error: Not Found for url: https://www.sdnews.com.cn/sd/gdxw/
+2026-07-05 05:10:20,472 [WARNING] Attempt 2/3 failed for https://www.sdnews.com.cn/sd/gdxw/: 404 Client Error: Not Found for url: https://www.sdnews.com.cn/sd/gdxw/
+2026-07-05 05:10:23,542 [WARNING] Attempt 3/3 failed for https://www.sdnews.com.cn/sd/gdxw/: 404 Client Error: Not Found for url: https://www.sdnews.com.cn/sd/gdxw/
+2026-07-05 05:10:29,044 [INFO] Collecting from: 威海新闻 (Weihai Daily — Guangtai home city)
+2026-07-05 05:10:29,261 [WARNING] Attempt 1/3 failed for http://www.whdaily.cn/epaper/whwb/latest/: HTTPConnectionPool(host='www.whdaily.cn', port=80): Max retries exceeded with url: /epaper/whwb/latest/ (Caused by NameResolutionError("HTTPConnection(host='www.whdaily.cn', port=80): Failed to resolve 'www.whdaily.cn' ([Errno -2] Name or service not known)"))
+2026-07-05 05:10:30,317 [WARNING] Attempt 2/3 failed for http://www.whdaily.cn/epaper/whwb/latest/: HTTPConnectionPool(host='www.whdaily.cn', port=80): Max retries exceeded with url: /epaper/whwb/latest/ (Caused by NameResolutionError("HTTPConnection(host='www.whdaily.cn', port=80): Failed to resolve 'www.whdaily.cn' ([Errno -2] Name or service not known)"))
+2026-07-05 05:10:32,535 [WARNING] Attempt 3/3 failed for http://www.whdaily.cn/epaper/whwb/latest/: HTTPConnectionPool(host='www.whdaily.cn', port=80): Max retries exceeded with url: /epaper/whwb/latest/ (Caused by NameResolutionError("HTTPConnection(host='www.whdaily.cn', port=80): Failed to resolve 'www.whdaily.cn' ([Errno -2] Name or service not known)"))
+2026-07-05 05:10:38,035 [INFO] Collecting from: 中国招标投标网 (China Bidding)
+2026-07-05 05:10:39,281 [WARNING] Attempt 1/3 failed for https://www.chinabidding.com.cn/: 403 Client Error: Forbidden for url: https://www.chinabidding.com.cn/
+2026-07-05 05:10:40,749 [WARNING] Attempt 2/3 failed for https://www.chinabidding.com.cn/: 403 Client Error: Forbidden for url: https://www.chinabidding.com.cn/
+2026-07-05 05:10:43,357 [WARNING] Attempt 3/3 failed for https://www.chinabidding.com.cn/: 403 Client Error: Forbidden for url: https://www.chinabidding.com.cn/
+2026-07-05 05:10:48,858 [INFO] Total raw articles collected: 108
+2026-07-05 05:10:48,859 [INFO] Title-based dedup: dropped 31 near-duplicate article(s) from mirror sources
+2026-07-05 05:10:51,028 [INFO]   Tavily '威海广泰 航空地面设备 新产品 2026...': 5 results
+2026-07-05 05:10:52,522 [INFO]   Tavily 'Weihai Guangtai GSE airport ground support eq...': 5 results
+2026-07-05 05:10:54,110 [INFO]   Tavily '中集天达 地面支持设备 新闻 2026...': 5 results
+2026-07-05 05:10:56,147 [INFO]   Tavily '中国机场 地面保障设备 招标 采购 2026...': 5 results
+2026-07-05 05:10:57,717 [INFO]   Tavily 'JBT Corporation GSE China Asia Pacific 2026...': 5 results
+2026-07-05 05:10:59,595 [INFO]   Tavily '中国机场 电动地勤设备 新能源 2026...': 5 results
+2026-07-05 05:11:01,127 [INFO]   Tavily '机场 地面设备 采购 招标 2026...': 2 results
+2026-07-05 05:11:02,835 [INFO]   Tavily 'Swissport Menzies ground handling China 2026...': 5 results
+2026-07-05 05:11:03,335 [INFO] Tavily total: 37 articles found
+2026-07-05 05:11:03,336 [INFO] Total after Tavily: 114 articles
+2026-07-05 05:11:03,336 [INFO] Competitor brief: skipping (runs Mondays only)
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] 中国铁建大桥工程局集团有限公司哈尔滨集采分中心2026-2027年度东北区域商品混凝土战略框架谈判采购公告 — matched: ['采购']
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] 中铁十九局武汉问津中学项目砌体材料（砌块、砖）采购谈判公告 — matched: ['采购', '项目']
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] 【浙能嘉华维护-阀门一批（关注备注）】采购公告 — matched: ['采购']
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] 【浙能嘉华维护-电动闸阀（有技术规范书）阀门品牌有要求】采购公告 — matched: ['采购']
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] 【浙能嘉华设备-阀门一批】采购公告 — matched: ['采购']
+2026-07-05 05:11:03,337 [INFO]   KEPT [Bidcenter (China Tenders)] [RFX2026070300001][兴安化工][轴承类]招标信息 — matched: ['招标']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 中枢整合指挥效能 庆阳机场运行指挥中心正式投入试运行 — matched: ['机场']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 智慧枢纽的科技再升级 西安咸阳机场远程机坪塔台迈入验证指挥新阶段 — matched: ['机场']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 广州白云机场口岸年内出入境人员总量突破1000万人次 — matched: ['机场']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 首都机场集团召开树立和践行正确政绩观学习教育专题党课报告会暨“两优一先”表彰大会 — matched: ['机场']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 少绕行1.5公里 浦东机场南进出场路地道东线7月4日通车 — matched: ['机场']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 护航旅客暑运无忧出行 武汉天河机场“超级中转”服务再升级 — matched: ['机场', '旅客']
+2026-07-05 05:11:03,338 [INFO]   KEPT [China Airport News (CAAC)] 锡林浩特—上海浦东直飞航线复航 — matched: ['复航', '航线']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 深圳—敦煌航线即将开通 敦煌机场实现一线城市航班同步直达 — matched: ['机场', '航班', '航线']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 沉着应对雷雨来袭 中卫机场高效保障多架次备降航班 — matched: ['机场', '航班']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 青岛机场今年上半年国际及地区旅客量跻身全国前十 — matched: ['机场', '旅客']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 无锡机场进境免税店启动建设 — matched: ['机场']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 五项指标刷新纪录！大兴机场货邮量近期再创新高 — matched: ['机场', '货邮']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 近两月峰值 暑运首日浦东机场口岸出境中国旅客达3.3万 — matched: ['机场', '旅客']
+2026-07-05 05:11:03,339 [INFO]   KEPT [China Airport News (CAAC)] 于田万方机场恢复“浦东快线” 开启“早出晚归”新体验 — matched: ['机场', '恢复']
+2026-07-05 05:11:03,340 [INFO]   KEPT [China Airport News (CAAC)] 深圳机场暑运开通首条国际客运航线 — matched: ['机场', '航线']
+2026-07-05 05:11:03,340 [INFO]   KEPT [China Airport News (CAAC)] 航班加密、中转升级 宁波机场暑运预计运送旅客297万人次 — matched: ['机场', '旅客', '航班']
+2026-07-05 05:11:03,340 [INFO]   KEPT [China Airport News (CAAC)] 天津滨海机场工会开展2026年“安全生产月”暨“安康杯”劳动保护专项检查 — matched: ['机场']
+2026-07-05 05:11:03,340 [INFO]   KEPT [China Airport News (CAAC)] 常州机场携手机场公安分局开展禁毒主题宣传活动 — matched: ['机场']
+2026-07-05 05:11:03,340 [INFO]   KEPT [China Airport News (CAAC)] 常州机场暑运航线再扩容 — matched: ['机场', '航线']
+2026-07-05 05:11:03,342 [INFO]   KEPT [Tavily Search] 威海广泰空港设备股份有限公司 — matched: ['电源车', '飞机牵引车', '机场']
+2026-07-05 05:11:03,342 [INFO]   KEPT [Tavily Search] 亚太市场订单高速突破，威海广泰海外业务稳步进阶 — matched: ['航空', '威海广泰', '广泰']
+2026-07-05 05:11:03,342 [INFO]   KEPT [Tavily Search] 威海广泰空港设备股份有限公司_威海广泰公司基本信息介绍(002111.SZ) - 前瞻眼 — matched: ['Weihai Guangtai', 'Guangtai', '威海广泰']
+2026-07-05 05:11:03,342 [INFO]   KEPT [Tavily Search] 威海广泰空港设备股份有限公司 — matched: ['威海广泰', '广泰']
+2026-07-05 05:11:03,342 [INFO]   KEPT [Tavily Search] 威海广泰：让国产空港装备“飞”向全球更多的机场｜一封家书-经济观察网 — matched: ['机场', '威海广泰', '广泰']
+2026-07-05 05:11:03,343 [INFO]   KEPT [Tavily Search] 27th Annual GHI Conference 2026| Mark Allen 1.0.0 (cloned_5) — matched: ['ground support', 'gse', 'Weihai Guangtai']
+2026-07-05 05:11:03,343 [INFO]   KEPT [Tavily Search] INTERSCHUTZ Exhibitor 2026: Weihai Guangtai Airport Equipment — matched: ['Weihai Guangtai', 'Guangtai']
+2026-07-05 05:11:03,343 [INFO]   KEPT [Tavily Search] Weihai Guangtai Airport Equipment Co., Limited — matched: ['ground support', 'Weihai Guangtai', 'Guangtai']
+2026-07-05 05:11:03,343 [INFO]   KEPT [Tavily Search] Global Airport Ground Support Equipment Market to Surge Beyond USD 9.4 — matched: ['ground support']
+2026-07-05 05:11:03,344 [INFO]   KEPT [Tavily Search] IATA - Weihai Guangtai Airport Equipment Co.,Ltd — matched: ['Weihai Guangtai', 'Guangtai']
+2026-07-05 05:11:03,344 [INFO]   KEPT [Tavily Search] [PDF] 中集天达控股介绍 — matched: ['机场', '旅客', '中集天达']
+2026-07-05 05:11:03,344 [INFO]   KEPT [Tavily Search] 中集天达控股有限公司 — matched: ['中集天达', '天达', 'CIMC']
+2026-07-05 05:11:03,344 [INFO]   KEPT [Tavily Search] 中集天达控股有限公司 — matched: ['中集天达', '天达']
+2026-07-05 05:11:03,344 [INFO]   KEPT [Tavily Search] 中集天达控股有限公司 — matched: ['机场', '航站楼', '扩建']
+2026-07-05 05:11:03,345 [INFO]   KEPT [Tavily Search] 首都机场集团有限公司-招投标-寻标宝 - 招标公告 — matched: ['机场', '招标']
+2026-07-05 05:11:03,345 [INFO]   KEPT [Tavily Search] 中国航空集团有限公司采购管理平台 — matched: ['装载机', '航空', '招标']
+2026-07-05 05:11:03,345 [INFO]   KEPT [Tavily Search] 民用航空物资设备招标投标管理规定 — matched: ['机场', '航空', '招标']
+2026-07-05 05:11:03,345 [INFO]   KEPT [Tavily Search] 采购公告 — matched: ['采购', '项目', '厦航']
+2026-07-05 05:11:03,346 [INFO]   KEPT [Tavily Search] 通知公告 -湖南机场官方网站 — matched: ['机场', '航站楼', '招标']
+2026-07-05 05:11:03,346 [INFO]   KEPT [Tavily Search] Asia-Pacific Powered Ground Support Equipment Market 2026-2034 — matched: ['ground support']
+2026-07-05 05:11:03,346 [INFO]   KEPT [Tavily Search] JBT Corporation Announces GSE Order in China | Aviation Pros — matched: ['ground support', 'gse', 'China Southern']
+2026-07-05 05:11:03,346 [INFO]   KEPT [Tavily Search] ASEAN Ground Support Equipment Market: Growth Drivers & Data — matched: ['ground support', 'gse', 'JBT Corporation']
+2026-07-05 05:11:03,346 [INFO]   KEPT [Tavily Search] Ground Support Equipment (GSE) Market Size, Share, Growth, 2034 — matched: ['ground support', 'gse']
+2026-07-05 05:11:03,347 [INFO]   KEPT [Tavily Search] Ground Support Equipment Market Size, Trends & Forecast, 2026 ... — matched: ['ground support', 'gse']
+2026-07-05 05:11:03,347 [INFO]   KEPT [Tavily Search] 发展空港装备新质生产力推动四型机场建设高质量发展 _光明网 — matched: ['机场', '航空', '电动化']
+2026-07-05 05:11:03,347 [INFO]   KEPT [Tavily Search] 新闻资讯 - 湖南机场官方网站 — matched: ['机场', '招标']
+2026-07-05 05:11:03,348 [INFO]   KEPT [Tavily Search] 机场地面特种车辆“油改电”试点工作启动 — matched: ['机场', '吞吐量', '旅客']
+2026-07-05 05:11:03,348 [INFO]   KEPT [Tavily Search] 机场电动化案例 — matched: ['机场', '航站楼', '电动化']
+2026-07-05 05:11:03,348 [INFO]   KEPT [Tavily Search] 招标-中国机场建设网 — matched: ['机场', '招标']
+2026-07-05 05:11:03,348 [INFO]   KEPT [Tavily Search] 招标招商 - 上海机场(集团)有限公司 — matched: ['机场', '航空', '航站楼']
+2026-07-05 05:11:03,348 [INFO]   KEPT [Tavily Search] Swissport begins cargo handling for China Eastern in Australia - Air C — matched: ['China Eastern', 'Swissport']
+2026-07-05 05:11:03,349 [INFO]   KEPT [Tavily Search] Swissport International AG - Swissport launches full-service operation — matched: ['revenue', 'China Eastern', 'Swissport']
+2026-07-05 05:11:03,349 [INFO]   KEPT [Tavily Search] Read all Latest Updates on and about ground handling — matched: ['Swissport']
+2026-07-05 05:11:03,349 [INFO]   KEPT [Tavily Search] Swissport starts ground handling for China Eastern Airlines in ... — matched: ['China Eastern', 'Swissport']
+2026-07-05 05:11:03,349 [INFO]   KEPT [Tavily Search] Swissport International AG - Asia — matched: ['revenue', 'Swissport']
+2026-07-05 05:11:03,349 [INFO] Relevant articles after filtering: 60
+2026-07-05 05:11:03,349 [INFO] After prioritization: 35 Tavily, 0 competitor, 25 scraped
+2026-07-05 05:11:03,349 [INFO] Enriching up to 20 articles with body excerpts...
+2026-07-05 05:11:26,403 [WARNING] Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2026-07-05 05:11:45,849 [INFO] Enrichment complete.
+2026-07-05 05:11:45,849 [INFO] Balanced batch: 20 scraped, 30 Tavily/competitor (of 60 total relevant articles)
+2026-07-05 05:11:45,849 [WARNING] Capped input at 50 articles (had 60).
+2026-07-05 05:11:45,882 [INFO] Sending 50 articles to DeepSeek...
+2026-07-05 05:11:47,008 [INFO] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-05 05:12:49,167 [INFO] DeepSeek response: 25879 chars, finish_reason=stop
+2026-07-05 05:12:49,167 [INFO] Raw DeepSeek output saved to reports/debug_raw.txt
+2026-07-05 05:12:49,170 [INFO] Parsed: 31 signals, summary=yes
+2026-07-05 05:12:49,202 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-07-05.html (and reports/latest.html)
+2026-07-05 05:12:49,203 [INFO] Done.
