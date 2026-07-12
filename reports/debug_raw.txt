@@ -1,34 +1,25 @@
 ===SIGNAL_START===
 SIGNAL_ID: 1
 IMPACT: INFO
-HEADLINE: Wistron record revenue signals strong electronics demand in Taiwan
-READING: Wistron Corp reported record Q2 revenue of NT$895.44 billion, indicating robust electronics manufacturing activity in Taiwan. This is a general economic indicator with no direct link to aviation or GSE demand.
-BUSINESS_IMPACT: No direct commercial impact on TLD's GSE business in APAC. The signal does not affect airport traffic, airline fleet plans, or GSE procurement cycles.
-ACTION: No action required. Continue monitoring Taiwan's broader economic indicators for any future aviation sector spillover.
+HEADLINE: Wistron record revenue signals Taiwan electronics boom
+READING: Wistron Corp reported record Q2 revenue of NT$895.44 billion, indicating strong electronics manufacturing demand in Taiwan. This drives air cargo volumes for high-value components, which in turn increases ground handling activity at Taiwanese airports.
+BUSINESS_IMPACT: Higher air cargo throughput at Taiwan hubs like Taoyuan International Airport may lead to incremental demand for cargo GSE such as container loaders, pallet dollies, and tow tractors. However, the effect is indirect and likely small relative to passenger-driven demand.
+ACTION: Monitor Taoyuan airport cargo traffic statistics to confirm trend; no immediate action required.
 SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/07/11/2003860550
 ===SIGNAL_END===
 ===SIGNAL_START===
 SIGNAL_ID: 2
-IMPACT: INFO
-HEADLINE: Cathay Pacific topic page offers no new actionable intelligence
-READING: The SCMP topic page for Cathay Pacific is a general aggregation link with no specific article or new data. It provides no signal on fleet orders, traffic growth, or operational changes relevant to GSE demand.
-BUSINESS_IMPACT: No commercial impact. Cathay Pacific remains a key Hong Kong-based airline customer for ground handling, but this signal contains no actionable information.
-ACTION: No action required. Continue to monitor Cathay Pacific's fleet expansion and Hong Kong airport capacity developments through dedicated news sources.
+IMPACT: WATCH
+HEADLINE: Cathay Pacific news hub suggests ongoing airline developments
+READING: The SCMP topic page for Cathay Pacific indicates the carrier remains a key news subject in Hong Kong. Any fleet expansion, route additions, or financial results from Cathay directly drive GSE procurement at its Hong Kong hub.
+BUSINESS_IMPACT: Cathay Pacific is a major customer for TLD through ground handlers at Hong Kong International Airport. Fleet growth or new widebody orders would increase demand for pushback tractors, cargo loaders, and passenger stairs.
+ACTION: Monitor Cathay Pacific announcements for fleet orders or capacity increases; engage sales team to track any upcoming ground support tenders at HKG.
 SOURCE_URL: https://www.scmp.com/topics/cathay-pacific
 ===SIGNAL_END===
-===SIGNAL_START===
-SIGNAL_ID: 3
-IMPACT: WATCH
-HEADLINE: Cathay Pacific tail strike at Hong Kong airport triggers regulatory probe
-READING: A Cathay Pacific aircraft's tail hit the runway at Hong Kong International Airport, and the aviation regulator has ordered the airline to submit a report. This is an operational incident that may lead to temporary aircraft groundings or increased inspection protocols.
-BUSINESS_IMPACT: Potential short-term disruption to Cathay Pacific's flight schedule at HKG could reduce demand for GSE services during the investigation period. However, no long-term impact on GSE procurement or fleet expansion plans is expected. TLD's existing GSE contracts at HKG are unlikely to be affected.
-ACTION: Monitor the investigation outcome and any regulatory changes to ground handling procedures at HKG. No immediate action required unless the incident triggers broader safety reviews affecting GSE operations.
-SOURCE_URL: https://www.scmp.com/news/hong-kong/transport/article/3360022/cathay-pacific-aircrafts-tail-hit-runway-hong-kong-airport-airline-confirms
-===SIGNAL_END===
 ===SUMMARY_START===
-EXECUTIVE_SUMMARY: This week's APAC signals are low in actionable GSE intelligence. A Cathay Pacific tail strike at Hong Kong airport is under regulatory investigation, posing a minor operational risk but no structural impact on GSE demand. Wistron's record revenue in Taiwan is a positive economic indicator but unrelated to aviation. No competitor moves, airline fleet orders, or airport expansion news were captured. TLD should maintain its current market posture across the region.
-WATCH_1: Outcome of Cathay Pacific tail strike investigation and any regulatory changes at HKG.
-WATCH_2: Any new Cathay Pacific fleet order announcements or Hong Kong airport capacity developments.
-WATCH_3: Broader APAC airport traffic data for July to gauge post-pandemic recovery momentum.
-MAIN_RISK: Regulatory fallout from the Cathay Pacific tail strike could temporarily slow ground handling operations at Hong Kong International Airport, affecting GSE utilization rates.
+EXECUTIVE_SUMMARY: Two articles were analyzed for APAC GSE signals. Wistron's record revenue in Taiwan points to strong electronics air cargo flows, a positive but indirect demand driver for cargo GSE at Taiwanese hubs. Cathay Pacific's ongoing news coverage warrants monitoring for fleet and capacity announcements that could trigger GSE procurement at Hong Kong International Airport. No critical competitor moves, pricing signals, or regulatory changes were identified in this batch. The overall APAC GSE market outlook remains stable with no urgent actions required this week.
+WATCH_1: Taoyuan International Airport cargo throughput data for Q2 2026
+WATCH_2: Cathay Pacific fleet order or route expansion announcements
+WATCH_3: Any ground handler tender activity at Hong Kong International Airport
+MAIN_RISK: No immediate risk identified; primary risk is missing a Cathay Pacific fleet expansion that could trigger GSE procurement at HKG.
 ===SUMMARY_END===
