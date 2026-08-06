@@ -4358,3 +4358,177 @@
 2026-08-05 08:37:52,508 [INFO] Parsed: 15 signals, summary=yes
 2026-08-05 08:37:52,525 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-08-05.html (and reports/latest.html)
 2026-08-05 08:37:52,525 [INFO] Done.
+2026-08-06 08:35:06,276 [INFO] ============================================================
+2026-08-06 08:35:06,276 [INFO] Starting GSE Intelligence Agent v3.7
+2026-08-06 08:35:06,276 [INFO] ============================================================
+2026-08-06 08:35:06,276 [INFO] Collecting from: Ground Handling International
+2026-08-06 08:35:06,773 [INFO]   Scraped Ground Handling International: 10 articles
+2026-08-06 08:35:08,274 [INFO] Collecting from: Aviation Week MRO
+2026-08-06 08:35:09,375 [WARNING] Attempt 1/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-08-06 08:35:10,432 [WARNING] Attempt 2/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-08-06 08:35:12,487 [WARNING] Attempt 3/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-08-06 08:35:17,989 [INFO] Collecting from: Air Transport World
+2026-08-06 08:35:20,220 [INFO]   Scraped Air Transport World: 20 articles
+2026-08-06 08:35:21,723 [INFO] Collecting from: CAPA — Centre for Aviation
+2026-08-06 08:35:21,898 [INFO]   Scraped CAPA — Centre for Aviation: 20 articles
+2026-08-06 08:35:23,400 [INFO] Collecting from: Nikkei Asia — Business
+2026-08-06 08:35:23,816 [INFO]   Scraped Nikkei Asia — Business: 20 articles
+2026-08-06 08:35:25,318 [INFO] Collecting from: The Korea Herald — Business
+2026-08-06 08:35:27,329 [INFO]   Scraped The Korea Herald — Business: 20 articles
+2026-08-06 08:35:28,830 [INFO] Collecting from: VnExpress International
+2026-08-06 08:35:30,505 [INFO]   Scraped VnExpress International: 20 articles
+2026-08-06 08:35:32,007 [INFO] Collecting from: Bangkok Post — Business
+2026-08-06 08:35:32,706 [INFO]   Scraped Bangkok Post — Business: 20 articles
+2026-08-06 08:35:34,208 [INFO] Collecting from: The Jakarta Post — Business
+2026-08-06 08:35:34,891 [INFO]   Scraped The Jakarta Post — Business: 20 articles
+2026-08-06 08:35:36,392 [INFO] Collecting from: Inquirer Business (Philippines)
+2026-08-06 08:35:36,511 [WARNING] Attempt 1/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-08-06 08:35:37,552 [WARNING] Attempt 2/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-08-06 08:35:39,592 [WARNING] Attempt 3/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-08-06 08:35:45,094 [INFO] Collecting from: Taipei Times — Business
+2026-08-06 08:35:45,534 [INFO]   Scraped Taipei Times — Business: 20 articles
+2026-08-06 08:35:47,036 [INFO] Collecting from: South China Morning Post — Transport (HK)
+2026-08-06 08:35:47,453 [INFO]   Scraped South China Morning Post — Transport (HK): 20 articles
+2026-08-06 08:35:48,954 [INFO] Collecting from: Channel News Asia — Business
+2026-08-06 08:35:49,280 [INFO]   Scraped Channel News Asia — Business: 20 articles
+2026-08-06 08:35:50,782 [INFO] Collecting from: Australian Aviation
+2026-08-06 08:35:51,861 [WARNING] Attempt 1/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-08-06 08:35:53,152 [WARNING] Attempt 2/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-08-06 08:35:55,456 [WARNING] Attempt 3/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-08-06 08:36:00,957 [INFO] Collecting from: RNZ Pacific
+2026-08-06 08:36:01,446 [INFO]   Scraped RNZ Pacific: 20 articles
+2026-08-06 08:36:02,947 [INFO] Total raw articles collected: 230
+2026-08-06 08:36:02,949 [INFO] Title-based dedup: dropped 26 near-duplicate article(s) from mirror sources
+2026-08-06 08:36:03,870 [INFO]   Tavily 'Weihai Guangtai GSE Southeast Asia contract 2...': 5 results
+2026-08-06 08:36:05,602 [INFO]   Tavily 'CIMC Tianda ground support equipment export A...': 5 results
+2026-08-06 08:36:07,870 [INFO]   Tavily 'Chinese GSE manufacturer Asia Pacific tender ...': 4 results
+2026-08-06 08:36:10,082 [INFO]   Tavily 'Japan airport ground handling GSE tender 2026...': 4 results
+2026-08-06 08:36:12,907 [INFO]   Tavily 'ANA JAL fleet ground support equipment 2026...': 4 results
+2026-08-06 08:36:14,267 [INFO]   Tavily 'South Korea airport ground support equipment ...': 3 results
+2026-08-06 08:36:16,129 [INFO]   Tavily 'Korean Air Asiana fleet GSE 2026...': 5 results
+2026-08-06 08:36:18,094 [INFO]   Tavily 'Indonesia airport ground handling equipment t...': 5 results
+2026-08-06 08:36:19,776 [INFO]   Tavily 'Garuda Indonesia Lion Air fleet expansion 202...': 5 results
+2026-08-06 08:36:22,292 [INFO]   Tavily 'Thailand airport ground support equipment ten...': 4 results
+2026-08-06 08:36:26,149 [INFO]   Tavily 'Thai Airways Bangkok Airways fleet GSE 2026...': 5 results
+2026-08-06 08:36:27,682 [INFO]   Tavily 'Vietnam airport ground handling equipment ten...': 5 results
+2026-08-06 08:36:29,290 [INFO]   Tavily 'Vietnam Airlines VietJet fleet expansion GSE ...': 5 results
+2026-08-06 08:36:30,542 [INFO]   Tavily 'Philippines airport ground support equipment ...': 3 results
+2026-08-06 08:36:32,294 [INFO]   Tavily 'Cebu Pacific Philippine Airlines fleet GSE 20...': 5 results
+2026-08-06 08:36:34,064 [INFO]   Tavily 'Hong Kong airport ground handling equipment 2...': 5 results
+2026-08-06 08:36:35,658 [INFO]   Tavily 'Cathay Pacific ground support fleet 2026...': 5 results
+2026-08-06 08:36:37,029 [INFO]   Tavily 'Taiwan airport ground support equipment tende...': 3 results
+2026-08-06 08:36:39,015 [INFO]   Tavily 'EVA Air China Airlines Taiwan fleet GSE 2026...': 5 results
+2026-08-06 08:36:40,581 [INFO]   Tavily 'Bangladesh Sri Lanka Pakistan airport ground ...': 4 results
+2026-08-06 08:36:41,938 [INFO]   Tavily 'Nepal Bhutan airport infrastructure ground eq...': 4 results
+2026-08-06 08:36:44,610 [INFO]   Tavily 'Malaysia Singapore airport ground support equ...': 2 results
+2026-08-06 08:36:45,881 [INFO]   Tavily 'Myanmar Cambodia Laos airport infrastructure ...': 5 results
+2026-08-06 08:36:47,840 [INFO]   Tavily 'Australia airport ground support equipment te...': 4 results
+2026-08-06 08:36:50,603 [INFO]   Tavily 'New Zealand Pacific islands airport ground ha...': 5 results
+2026-08-06 08:36:52,238 [INFO]   Tavily 'Asia Pacific ground handler M&A Swissport Men...': 5 results
+2026-08-06 08:36:53,903 [INFO]   Tavily 'Asia Pacific electric GSE diesel ban airport ...': 2 results
+2026-08-06 08:36:54,403 [INFO] Tavily total: 116 articles found
+2026-08-06 08:36:54,404 [INFO] Total after Tavily: 320 articles
+2026-08-06 08:36:54,404 [INFO] Competitor brief: skipping (runs Mondays only)
+2026-08-06 08:36:54,407 [INFO]   KEPT [VnExpress International] Southeast Asia's largest aluminium smelter Press Metal is buying from  — matched: ['aluminium']
+2026-08-06 08:36:54,409 [INFO]   KEPT [Taipei Times — Business] Nanya Technology raises expenditures in chip ramp-up2026-08-06Nanya Te — matched: ['ramp']
+2026-08-06 08:36:54,409 [INFO]   KEPT [Taipei Times — Business] Advantech sees solid sales growth2026-08-06GLOBAL TRENDS:Advantech exp — matched: ['revenue']
+2026-08-06 08:36:54,410 [INFO]   KEPT [Taipei Times — Business] Demand prompts Vanguard expansion2026-08-05‘IRREVERSIBLE TREND’:The AI — matched: ['revenue']
+2026-08-06 08:36:54,410 [INFO]   KEPT [Taipei Times — Business] Powerchip says revenue to increase in second half2026-08-05DIVIDEND?Th — matched: ['revenue']
+2026-08-06 08:36:54,410 [INFO]   KEPT [Taipei Times — Business] ADLINK expects revenue momentum to continue2026-08-05Industrial PC mak — matched: ['revenue']
+2026-08-06 08:36:54,411 [INFO]   KEPT [South China Morning Post — Transport (HK)] Cathay Pacific — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,412 [INFO]   KEPT [South China Morning Post — Transport (HK)] Cathay Pacific tail strike in early July classified as ‘abnormal runwa — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,414 [INFO]   KEPT [Tavily Search] 27th Annual GHI Conference 2026| Mark Allen 1.0.0 (cloned_5) — matched: ['ground support', 'gse', 'Weihai Guangtai']
+2026-08-06 08:36:54,414 [INFO]   KEPT [Tavily Search] INTERSCHUTZ Aussteller 2026: Weihai Guangtai Airport Equipment — matched: ['revenue', 'Weihai Guangtai', 'Guangtai']
+2026-08-06 08:36:54,414 [INFO]   KEPT [Tavily Search] Breaking Down Weihai Guangtai Airport Equipment (002111SZ) Financial H — matched: ['Weihai Guangtai', 'Guangtai']
+2026-08-06 08:36:54,414 [INFO]   KEPT [Tavily Search] GuangTai — matched: ['gse', 'Guangtai']
+2026-08-06 08:36:54,415 [INFO]   KEPT [Tavily Search] Aviation Week - Homepage | Aviation Week — matched: ['revenue']
+2026-08-06 08:36:54,415 [INFO]   KEPT [Tavily Search] Shenzhen CIMC - Tianda Airport Support Ltd - PTE Asia 2026 — matched: ['CIMC']
+2026-08-06 08:36:54,415 [INFO]   KEPT [Tavily Search] SHENZHEN CIMC-TIANDA AIRPORT SUPPORT LTD - Create New Value, Driving t — matched: ['CIMC Tianda', 'CIMC']
+2026-08-06 08:36:54,415 [INFO]   KEPT [Tavily Search] Asia-Pacific Powered Ground Support Equipment Market 2026 to 2034 — matched: ['ground support']
+2026-08-06 08:36:54,416 [INFO]   KEPT [Tavily Search] Global Ground Support Equipment Market to Reach $31.7 Billion by 2026 — matched: ['ground support', 'gse', 'JBT Corporation']
+2026-08-06 08:36:54,416 [INFO]   KEPT [Tavily Search] Ground Support Equipment Market Size, Growth [2035] — matched: ['ground support', 'Weihai Guangtai', 'Guangtai']
+2026-08-06 08:36:54,416 [INFO]   KEPT [Tavily Search] Who is the manufacturer of GSE products in China | 2026 — matched: ['gse', 'loader', 'air start unit']
+2026-08-06 08:36:54,417 [INFO]   KEPT [Tavily Search] Global Airport Ground Support Equipment Market to Surge ... — matched: ['ground support', 'gse']
+2026-08-06 08:36:54,417 [INFO]   KEPT [Tavily Search] Japan Airport Ground Support Vehicles Market, Size, Share, Sales, Owne — matched: ['ground support']
+2026-08-06 08:36:54,417 [INFO]   KEPT [Tavily Search] Ground Support Equipment Market Size, Share, Report, 2034 — matched: ['ground support']
+2026-08-06 08:36:54,417 [INFO]   KEPT [Tavily Search] Japan Ground Support Equipment Market Size, Forecast 2034 — matched: ['ground support']
+2026-08-06 08:36:54,418 [INFO]   KEPT [Tavily Search] Mercury GSE Prepares for 2026 Aviation Industry Events | Mercury GSE:  — matched: ['ground support', 'gse', 'ramp']
+2026-08-06 08:36:54,418 [INFO]   KEPT [Tavily Search] Japan Airlines Selects GE Aerospace for Avionics Systems Support of Bo — matched: ['JAL', 'Japan Airlines']
+2026-08-06 08:36:54,418 [INFO]   KEPT [Tavily Search] All Nippon Airways — matched: ['ANA', 'All Nippon Airways']
+2026-08-06 08:36:54,418 [INFO]   KEPT [Tavily Search] Explore the Global Aircraft Ground Support Equipment Market— analysis  — matched: ['ground support', 'tractor', 'loader']
+2026-08-06 08:36:54,419 [INFO]   KEPT [Tavily Search] ANA Group Value Creation Roadmap ... — matched: ['ANA']
+2026-08-06 08:36:54,419 [INFO]   KEPT [Tavily Search] South Korea Ground Support Equipment Market Report 2034 — matched: ['ground support']
+2026-08-06 08:36:54,419 [INFO]   KEPT [Tavily Search] Ground Support Equipment Market Size, Trends & Forecast, 2026-2033 — matched: ['ground support', 'Global Ground Support']
+2026-08-06 08:36:54,419 [INFO]   KEPT [Tavily Search] Airport Ground Support Equipment Companies — matched: ['ground support']
+2026-08-06 08:36:54,420 [INFO]   KEPT [Tavily Search] Korean Air & Asiana Merger 2026: Everything You Need To Know | AwardFa — matched: ['Korean Air', 'Asiana Airlines']
+2026-08-06 08:36:54,420 [INFO]   KEPT [Tavily Search] Korean Air and Asiana Airlines Will Fully Integrate By End of 2026 | T — matched: ['Korean Air', 'Asiana Airlines']
+2026-08-06 08:36:54,420 [INFO]   KEPT [Tavily Search] Asiana Airlines - Wikipedia — matched: ['Asiana Airlines']
+2026-08-06 08:36:54,420 [INFO]   KEPT [Tavily Search] Asiana Airlines will officially end as an independent airline on Decem — matched: ['Korean Air', 'Asiana Airlines']
+2026-08-06 08:36:54,421 [INFO]   KEPT [Tavily Search] Set To Merge: Comparing & Contrasting The Fleets Of Asiana Airlines An — matched: ['Korean Air', 'Asiana Airlines']
+2026-08-06 08:36:54,421 [INFO]   KEPT [Tavily Search] Indonesia Ground Support Equipment Market Share, Companies & Trends Re — matched: ['ground support']
+2026-08-06 08:36:54,422 [INFO]   KEPT [Tavily Search] Lion Air - Strategic Analysis and Outlook Report 2026 (Updated) — matched: ['Lion Air']
+2026-08-06 08:36:54,422 [INFO]   KEPT [Tavily Search] News Indonesia Aero Summit 2026 — matched: ['Garuda Indonesia']
+2026-08-06 08:36:54,422 [INFO]   KEPT [Tavily Search] Lion Air - Wikipedia — matched: ['Lion Air']
+2026-08-06 08:36:54,422 [INFO]   KEPT [Tavily Search] Garuda Indonesia | Aviation Week — matched: ['Garuda Indonesia']
+2026-08-06 08:36:54,423 [INFO]   KEPT [Tavily Search] Lion Mentari Airlines - Lion Air | Indonesia Investments — matched: ['Lion Air']
+2026-08-06 08:36:54,423 [INFO]   KEPT [Tavily Search] The study and detailed design for Ground Support Equipment (GSE) Maint — matched: ['ground support', 'gse', 'Thai Airways']
+2026-08-06 08:36:54,424 [INFO]   KEPT [Tavily Search] Thai Airways Adds New Jets in 2026 to Power Bangkok Hub — matched: ['Thai Airways']
+2026-08-06 08:36:54,424 [INFO]   KEPT [Tavily Search] How Thai Airways is Revolutionizing 2026 Travel with New Routes, Incre — matched: ['Thai Airways']
+2026-08-06 08:36:54,424 [INFO]   KEPT [Tavily Search] Thai Airways adds four Thai Smile Airbus A320s to its fleet — matched: ['Thai Airways']
+2026-08-06 08:36:54,424 [INFO]   KEPT [Tavily Search] The Thai Airways fleet in 2025 | Flightradar24 Blog — matched: ['Thai Airways']
+2026-08-06 08:36:54,425 [INFO]   KEPT [Tavily Search] Travel Topic Thai Airways Fleet — matched: ['Thai Airways']
+2026-08-06 08:36:54,425 [INFO]   KEPT [Tavily Search] INFORMATION OF INVITATION FOR BID OF PROCURING PACKAGE “Provision of G — matched: ['Vietnam Airlines']
+2026-08-06 08:36:54,425 [INFO]   KEPT [Tavily Search] Vanderlande to provide baggage handling systems at two Vietnamese airp — matched: ['baggage']
+2026-08-06 08:36:54,426 [INFO]   KEPT [Tavily Search] Global Airport Ground Support Equipment Market to Surge — matched: ['ground support', 'gse']
+2026-08-06 08:36:54,426 [INFO]   KEPT [Tavily Search] Vietnam Airlines Joins Vietjet, Cebu Pacific, and Sun PhuQuoc Airways  — matched: ['Vietnam Airlines', 'Cebu Pacific']
+2026-08-06 08:36:54,426 [INFO]   KEPT [Tavily Search] Vietnam Airlines to Lease 12 Widebody Aircraft - AeroMorning.com — matched: ['fleet expansion', 'Vietnam Airlines']
+2026-08-06 08:36:54,427 [INFO]   KEPT [Tavily Search] Vietjet welcomes 22 new aircraft during Christmas, continues to break  — matched: ['fleet expansion']
+2026-08-06 08:36:54,427 [INFO]   KEPT [Tavily Search] Vietjet completes 22-aircraft delivery in largest fleet expansion to d — matched: ['fleet expansion']
+2026-08-06 08:36:54,427 [INFO]   KEPT [Tavily Search] Philippines Ground Support Equipment Market Size and Forecasts 2032 — matched: ['ground support', 'gse', 'tug']
+2026-08-06 08:36:54,428 [INFO]   KEPT [Tavily Search] Philippine Airlines, AirAsia, and Cebu Pacific Set to Launch New Fligh — matched: ['fleet expansion', 'AirAsia', 'Philippine Airlines']
+2026-08-06 08:36:54,428 [INFO]   KEPT [Tavily Search] Cebu Pacific - Wikipedia — matched: ['Cebu Pacific']
+2026-08-06 08:36:54,428 [INFO]   KEPT [Tavily Search] Cebu Pacific Enhances Operational Efficiency with New Ground Support E — matched: ['ground support', 'Cebu Pacific']
+2026-08-06 08:36:54,428 [INFO]   KEPT [Tavily Search] Instagram — matched: ['Cebu Pacific']
+2026-08-06 08:36:54,429 [INFO]   KEPT [Tavily Search] Philippine Airlines to order nine more A350-1000s | Airbus — matched: ['Philippine Airlines']
+2026-08-06 08:36:54,429 [INFO]   KEPT [Tavily Search] Hong Kong: The 2026 BizAv Guide – International Ops 2026 – OPSGROUP — matched: ['apron']
+2026-08-06 08:36:54,430 [INFO]   KEPT [Tavily Search] The Cathay Group announces its 2026 Interim Results - Cathay Pacific — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,430 [INFO]   KEPT [Tavily Search] INSIDE CATHAY PACIFIC'S MASSIVE 100+ AIRCRAFT ORDER: Cathay Pacific Ex — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,430 [INFO]   KEPT [Tavily Search] Cathay Pacific fleet - Wikipedia — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,431 [INFO]   KEPT [Tavily Search] 17-Hour Nonstop Flights: Cathay Pacific's 10 New Ultra-Long Routes In  — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,431 [INFO]   KEPT [Tavily Search] Cathay Cargo further expands its Airbus A350F freighter orders to eigh — matched: ['Cathay Pacific']
+2026-08-06 08:36:54,431 [INFO]   KEPT [Tavily Search] Latest Taiwan Airports Tenders — matched: ['baggage', 'passenger boarding bridge']
+2026-08-06 08:36:54,432 [INFO]   KEPT [Tavily Search] Taiwanese Comparison: What Sets EVA Air & China Airlines Apart? — matched: ['China Airlines', 'EVA Air']
+2026-08-06 08:36:54,432 [INFO]   KEPT [Tavily Search] Homepage - EVA Air | North America (English) — matched: ['EVA Air']
+2026-08-06 08:36:54,432 [INFO]   KEPT [Tavily Search] Instagram — matched: ['EVA Air']
+2026-08-06 08:36:54,432 [INFO]   KEPT [Tavily Search] EVA Air - Wikipedia — matched: ['航空', 'China Airlines', 'EVA Air']
+2026-08-06 08:36:54,433 [INFO]   KEPT [Tavily Search] Routes Insights: China Eastern Airlines, Air Canada, EVA Air | Aviatio — matched: ['EVA Air']
+2026-08-06 08:36:54,433 [INFO]   KEPT [Tavily Search] Swissport expresses interest in ground handling at Dhaka Airport — matched: ['Swissport']
+2026-08-06 08:36:54,433 [INFO]   KEPT [Tavily Search] Hazrat Shahjalal International Airport - Wikipedia — matched: ['Biman Bangladesh']
+2026-08-06 08:36:54,434 [INFO]   KEPT [Tavily Search] Electric Ground Support Equipment in 2026 — matched: ['ground support', 'tractor', 'loader']
+2026-08-06 08:36:54,434 [INFO]   KEPT [Tavily Search] Nepal - Airport and Ground Support Equipment — matched: ['ground support']
+2026-08-06 08:36:54,434 [INFO]   KEPT [Tavily Search] Vestergaard Company A/S — matched: ['ground support', 'Vestergaard']
+2026-08-06 08:36:54,435 [INFO]   KEPT [Tavily Search] Australia Ground Support Equipment Market Size, 2034 — matched: ['ground support']
+2026-08-06 08:36:54,436 [INFO]   KEPT [Tavily Search] ground support equipment (GSE) | Airports International — matched: ['ground support', 'gse', 'tug']
+2026-08-06 08:36:54,436 [INFO]   KEPT [Tavily Search] Australia Airport Ground Support Vehicles Market, Size, Share, Sales,  — matched: ['ground support', 'baggage']
+2026-08-06 08:36:54,436 [INFO]   KEPT [Tavily Search] News briefs from July 2026 – Aero South Pacific — matched: ['Lion Air']
+2026-08-06 08:36:54,437 [INFO]   KEPT [Tavily Search] Global Ground and Cargo Handling Services Market Outlook & Forecast Re — matched: ['Swissport', 'Menzies Aviation', 'Dnata']
+2026-08-06 08:36:54,438 [INFO]   KEPT [Tavily Search] Menzies Aviation Appoints Kim Yan As VP Ground Handling — matched: ['baggage', 'ramp', 'Menzies Aviation']
+2026-08-06 08:36:54,438 [INFO]   KEPT [Tavily Search] Swissport acquires majority stake in CV Handling - Air Cargo News — matched: ['Swissport']
+2026-08-06 08:36:54,438 [INFO]   KEPT [Tavily Search] Swissport International AG - APAC Aviation: Where scale meets complexi — matched: ['Swissport']
+2026-08-06 08:36:54,438 [INFO]   KEPT [Tavily Search] Swissport International AG - Swissport launches full-service operation — matched: ['ramp', 'Swissport']
+2026-08-06 08:36:54,439 [INFO]   KEPT [Tavily Search] Sustainability Push at Asian Airports - ITW GSE — matched: ['gse', 'gpu', 'passenger boarding bridge']
+2026-08-06 08:36:54,439 [INFO] Relevant articles after filtering: 88
+2026-08-06 08:36:54,439 [INFO] After prioritization: 80 Tavily, 0 competitor, 8 scraped
+2026-08-06 08:36:54,439 [INFO] Enriching up to 20 articles with body excerpts...
+2026-08-06 08:37:24,822 [INFO] Enrichment complete.
+2026-08-06 08:37:24,823 [INFO] Balanced batch: 8 scraped, 42 Tavily/competitor (of 88 total relevant articles)
+2026-08-06 08:37:24,823 [WARNING] Capped input at 50 articles (had 88).
+2026-08-06 08:37:24,855 [INFO] Sending 50 articles to DeepSeek...
+2026-08-06 08:37:25,846 [INFO] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-06 08:38:00,850 [INFO] DeepSeek response: 16750 chars, finish_reason=stop
+2026-08-06 08:38:00,851 [INFO] Raw DeepSeek output saved to reports/debug_raw.txt
+2026-08-06 08:38:00,851 [WARNING] Formatting mismatch (NOT a real truncation — response was only 16750 chars, far under the token budget): 15 SIGNAL_START vs 0 SIGNAL_END, summary_present=True. Likely one malformed/dropped item near the end of generation — see reports/debug_raw.txt to find the exact spot.
+2026-08-06 08:38:00,851 [WARNING] TRUNCATION DETECTED: 15 signal starts but only 0 ends. Raise max_tokens or reduce input.
+2026-08-06 08:38:00,853 [INFO] Parsed: 0 signals, summary=yes
+2026-08-06 08:38:00,858 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-08-06.html (and reports/latest.html)
+2026-08-06 08:38:00,859 [INFO] Done.
