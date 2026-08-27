@@ -1,37 +1,47 @@
 ===SIGNAL_START===
 SIGNAL_ID: 1
-IMPACT: WATCH
-HEADLINE: Cathay Pacific launches Hong Kong-Almaty non-stop service in January
-READING: Cathay Pacific will operate the only non-stop route between Hong Kong and Almaty, Kazakhstan, starting January 2027. This new long-haul route adds to Cathay's network expansion and signals continued fleet utilization growth at its Hong Kong hub.
-BUSINESS_IMPACT: New routes at Hong Kong International Airport drive incremental ground handling activity, potentially increasing demand for GSE replacements and additions at the hub. TLD's installed base at Cathay's home hub may see modest utilization uptick, supporting aftermarket parts and service revenue.
-ACTION: Monitor Cathay's broader 2027 network plan for additional new routes that could trigger GSE procurement at Hong Kong. No immediate action required this week.
+IMPACT: INFO
+HEADLINE: Cathay Pacific launches Hong Kong-Almaty direct flights in January
+READING: Cathay Pacific will operate the only non-stop service between Hong Kong and Almaty, Kazakhstan, starting January. This is a new route addition for the carrier, expanding its network into Central Asia from its Hong Kong hub.
+BUSINESS_IMPACT: New routes at Hong Kong International Airport incrementally increase aircraft movements and ground handling activity, supporting demand for GSE at the hub. The scale is small (likely narrowbody frequency), so the direct GSE procurement impact is minimal, but it signals Cathay's network growth trajectory.
+ACTION: No immediate action required. Monitor Cathay's broader route expansion plans for larger fleet or hub capacity announcements that would trigger GSE replacement or expansion orders.
 SOURCE_URL: https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3364653/cathay-pacific-launch-direct-flights-between-hong-kong-and-almaty-january
 ===SIGNAL_END===
 
 ===SIGNAL_START===
 SIGNAL_ID: 2
 IMPACT: INFO
-HEADLINE: Hermes targets revenue doubling on thermal management modules
-READING: Taiwan-based Hermes aims to double revenue driven by thermal management modules, a product line relevant to electric vehicle and battery cooling systems. This is a general technology sector signal with no direct aviation or GSE application mentioned.
-BUSINESS_IMPACT: No direct impact on TLD's GSE business. Thermal management technology could theoretically relate to electric GSE battery cooling, but no aviation-specific application is indicated in the article.
-ACTION: No action required. File as background context on Taiwan's technology sector.
-SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/08/26/2003863123
+HEADLINE: IntelliEPI semiconductor revenue near record, no GSE relevance
+READING: IntelliEPI, a Taiwan-based compound semiconductor wafer maker, is approaching record revenue of NT$332 million. This is a semiconductor supply chain story with no direct connection to airport operations, airlines, or ground support equipment.
+BUSINESS_IMPACT: No direct impact on TLD's GSE business in APAC. Semiconductor supply conditions could indirectly affect electronics in GSE products, but this article provides no actionable signal on pricing or availability.
+ACTION: Skip. No action required.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/08/28/2003863247
 ===SIGNAL_END===
 
 ===SIGNAL_START===
 SIGNAL_ID: 3
 IMPACT: INFO
-HEADLINE: Cathay Pacific topic page shows ongoing airline news flow
-READING: The SCMP topic page aggregates Cathay Pacific news, confirming the carrier remains an active player in Hong Kong aviation. No specific operational, fleet, or financial developments are detailed in the excerpt.
-BUSINESS_IMPACT: Cathay Pacific is a key airline customer at Hong Kong International Airport, a major TLD market. However, this article provides no actionable intelligence on fleet orders, GSE tenders, or capacity changes.
-ACTION: No action required. Continue monitoring Cathay-specific news for fleet renewal or ground handling contract signals.
+HEADLINE: Hermes thermal modules growth unrelated to GSE demand
+READING: Hermes, a thermal management module maker, expects to double revenue on growing demand for thermal solutions. The article references a company executive confirming the trend, but the product line is not connected to aviation ground equipment.
+BUSINESS_IMPACT: No direct impact on TLD's GSE business. Thermal management technology could theoretically relate to battery thermal systems in electric GSE, but the article provides no aviation-specific signal.
+ACTION: Skip. No action required.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/08/26/2003863123
+===SIGNAL_END===
+
+===SIGNAL_START===
+SIGNAL_ID: 4
+IMPACT: INFO
+HEADLINE: Cathay Pacific topic page shows no new fleet or GSE news
+READING: The SCMP topic page for Cathay Pacific aggregates general news about the carrier, including its founding history and current operations. No specific article content indicates fleet orders, capacity expansions, or ground handling changes relevant to GSE procurement.
+BUSINESS_IMPACT: No actionable signal for TLD. Cathay remains a key Hong Kong hub customer, but this page provides no new commercial intelligence.
+ACTION: Skip. No action required.
 SOURCE_URL: https://www.scmp.com/topics/cathay-pacific
 ===SIGNAL_END===
 
 ===SUMMARY_START===
-EXECUTIVE_SUMMARY: This week's APAC watch yielded limited actionable intelligence, with only three articles analyzed. The most relevant signal is Cathay Pacific's new Hong Kong-Almaty route launching in January 2027, which modestly supports ground handling activity at Hong Kong International Airport but does not trigger immediate GSE procurement. The Hermes thermal management story and Cathay topic page provide background context only. No competitor moves, major tenders, or pricing signals were identified in this batch. TLD should maintain its current market position while continuing to monitor Cathay's network expansion and broader APAC aviation traffic trends.
-WATCH_1: Cathay Pacific's 2027 network expansion announcements for additional new routes beyond Almaty
-WATCH_2: Hong Kong International Airport monthly passenger and aircraft movement statistics for GSE utilization signals
-WATCH_3: Any GSE tender activity from Hong Kong ground handlers (e.g., HAS, Jardine Aviation Services) tied to Cathay's growth
-MAIN_RISK: The lack of substantive market signals this week creates information asymmetry risk if competitors are active in APAC GSE tenders without TLD's awareness.
+EXECUTIVE_SUMMARY: This week's APAC watch yielded no critical or important signals for TLD's GSE business. The only aviation-relevant item is Cathay Pacific's new Hong Kong-Almaty route, a minor network addition with negligible GSE procurement impact. The remaining three articles concern Taiwan semiconductor and thermal management companies with no connection to ground support equipment demand drivers. No competitor moves, major airport expansions, or fleet orders were identified in the provided sources. We recommend maintaining current market monitoring cadence and focusing attention on higher-signal sources for APAC GSE intelligence.
+WATCH_1: Cathay Pacific's broader network and fleet expansion announcements for 2027, which could trigger GSE orders at Hong Kong hub.
+WATCH_2: Any APAC airport capacity expansion or traffic record announcements that would signal GSE replacement cycles.
+WATCH_3: Competitor activity from Guangtai or CIMC Tianda in Southeast Asian or Oceania tenders.
+MAIN_RISK: The absence of actionable intelligence this week leaves TLD potentially blind to a competitor move in the APAC region that has not been captured by current monitoring sources.
 ===SUMMARY_END===
