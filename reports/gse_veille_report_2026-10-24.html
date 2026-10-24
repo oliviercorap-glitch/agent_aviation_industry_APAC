@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSE Intelligence Brief — October 24, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f172a;--ink-2:#334155;--ink-3:#64748b;--ink-4:#94a3b8;
+  --surface:#ffffff;--surface-1:#f8fafc;--border:#e2e8f0;
+  --radius:8px;--radius-lg:12px;
+}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:#f0f2f5;color:var(--ink);line-height:1.6;padding:32px 16px 64px}
+.wrapper{max-width:900px;margin:0 auto}
+.masthead{background:var(--ink);border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+           padding:28px 36px 24px}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;
+                   letter-spacing:.12em;text-transform:uppercase;
+                   color:#64748b;margin-bottom:8px}
+.masthead-title{font-size:22px;font-weight:600;letter-spacing:-.02em;
+                 color:#fff;margin-bottom:12px}
+.masthead-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.meta-item{font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:6px}
+.meta-item strong{color:#e2e8f0;font-weight:500}
+.masthead-counters{display:flex;gap:8px;flex-wrap:wrap;
+                    margin-top:16px;padding-top:16px;border-top:1px solid #1e293b}
+.counter-pill{font-size:11px;font-weight:500;padding:3px 10px;
+               border-radius:20px;letter-spacing:.02em}
+.card-body{background:var(--surface);border:1px solid var(--border);
+            border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);
+            padding:36px}
+.section-header{display:flex;align-items:center;gap:10px;
+                 margin-bottom:20px;padding-bottom:12px;
+                 border-bottom:1px solid var(--border)}
+.section-header h2{font-size:13px;font-weight:600;text-transform:uppercase;
+                    letter-spacing:.08em;color:var(--ink-3)}
+.section-divider{margin:36px 0;border:none;border-top:1px solid var(--border)}
+.exec-panel{background:var(--ink);border-radius:var(--radius-lg);
+             padding:24px 28px;margin-bottom:32px;
+             color:#e2e8f0;font-size:15px;line-height:1.75}
+.exec-panel-label{font-family:'IBM Plex Mono',monospace;font-size:10px;
+                   letter-spacing:.1em;text-transform:uppercase;
+                   color:#475569;margin-bottom:10px}
+.exec-panel p{margin:0}
+.signal-card{border:1px solid var(--border);border-radius:var(--radius-lg);
+              margin-bottom:16px;overflow:hidden;
+              transition:box-shadow .15s}
+.signal-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.signal-card-header{padding:16px 20px;background:var(--surface-1);
+                     display:flex;align-items:flex-start;gap:12px}
+.signal-badge{font-size:11px;font-weight:600;padding:3px 9px;
+               border-radius:20px;white-space:nowrap;
+               letter-spacing:.03em;margin-top:2px;flex-shrink:0}
+.signal-headline{font-size:15px;font-weight:600;
+                  color:var(--ink);line-height:1.4}
+.signal-headline p{margin:0}
+.signal-body{padding:20px;display:grid;gap:16px}
+.signal-section-label{font-size:10px;font-weight:600;text-transform:uppercase;
+                        letter-spacing:.1em;color:var(--ink-4);margin-bottom:4px}
+.signal-section-text{font-size:14px;color:var(--ink-2);line-height:1.65}
+.signal-section-text p{margin:0}
+.signal-action .signal-section-text{color:var(--ink);font-weight:500}
+.signal-source{padding-top:12px;border-top:1px dashed var(--border);
+                font-size:12px;color:var(--ink-4);
+                display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.source-label{font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+               font-size:10px;color:var(--ink-4);margin-right:4px}
+.signal-source a{color:#2563eb;text-decoration:none;font-weight:500}
+.signal-source a:hover{text-decoration:underline}
+.source-name{color:var(--ink-4)}
+.watch-panel{background:#fffbeb;border:1px solid #fde68a;
+              border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:16px}
+.watch-panel-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                    letter-spacing:.08em;color:#92400e;margin-bottom:12px}
+.watch-panel ol{padding-left:20px;display:grid;gap:6px}
+.watch-panel li{font-size:14px;color:#78350f;line-height:1.5}
+.watch-panel li p{margin:0}
+.risk-panel{background:#fef2f2;border:1px solid #fecaca;
+             border-radius:var(--radius-lg);padding:20px 24px}
+.risk-panel-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                   letter-spacing:.08em;color:#991b1b;margin-bottom:8px}
+.risk-panel-text{font-size:14px;color:#7f1d1d;line-height:1.6;font-weight:500}
+.risk-panel-text p{margin:0}
+.sources-panel{background:var(--surface-1);border:1px solid var(--border);
+                border-radius:var(--radius);padding:16px 20px;margin-top:36px}
+.sources-panel-label{font-size:10px;font-weight:600;text-transform:uppercase;
+                       letter-spacing:.1em;color:var(--ink-4);margin-bottom:10px}
+.sources-panel ul{list-style:none;display:flex;flex-wrap:wrap;
+                   gap:6px 0;column-gap:24px;columns:2}
+.sources-panel li{font-size:12px;color:var(--ink-3);break-inside:avoid}
+.sources-panel li::before{content:"·";margin-right:6px;color:var(--ink-4)}
+.page-footer{text-align:center;font-size:11px;color:var(--ink-4);
+              margin-top:24px;font-family:'IBM Plex Mono',monospace;
+              letter-spacing:.04em}
+@media(max-width:600px){
+  body{padding:12px 8px 48px}
+  .masthead,.card-body{padding:20px 16px}
+  .sources-panel ul{columns:1}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="masthead">
+  <div class="masthead-eyebrow">TLD Group · Market Intelligence</div>
+  <div class="masthead-title">GSE Intelligence Brief — Asia-Pacific (ex-Mainland China)</div>
+  <div class="masthead-meta">
+    <div class="meta-item"><span>Date</span><strong>October 24, 2026</strong></div>
+    <div class="meta-item"><span>Generated</span><strong>10:25</strong></div>
+    <div class="meta-item"><span>Articles analyzed</span><strong>91</strong></div>
+    <div class="meta-item"><span>Signals</span><strong>15</strong></div>
+  </div>
+  <div class="masthead-counters"><span class="counter-pill" style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">1 Critical</span><span class="counter-pill" style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">4 Important</span><span class="counter-pill" style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">8 Watch</span><span class="counter-pill" style="background:#f9fafb;color:#374151;border:1px solid #e5e7eb;">2 Info</span></div>
+</div>
+
+<div class="card-body">
+
+  
+
+  <div class="exec-panel"><div class="exec-panel-label">Executive summary</div>The dominant signal this week is competitive: Guangtai has formalised an innovation collaboration with SATS, Asia's largest ground handler, and is exhibiting aggressively at GHI and INTERSCHUTZ, while CIMC Tianda books a PTE Asia 2027 stand to target regional cargo GSE. Simultaneously, Korean Air's merger with Asiana completes on 17 December alongside a record 103-Boeing order, creating a major GSE standardisation and procurement opportunity at Incheon. Vietnam Airlines' 12-widebody lease tender and Vietjet's 22-aircraft monthly expansion signal a strong Vietnamese procurement and leasing cycle, while Indonesia's market grows toward USD 1,716M by 2031. TLD must defend its SATS and Korean accounts immediately while positioning for Vietnam and Indonesia growth, and manage rare-earth and semiconductor input risk on its electric range.</div>
+
+  <div class="section-header"><h2>Signals</h2></div>
+  
+<div class="signal-card impact-critical">
+  <div class="signal-card-header" style="border-left:4px solid #dc2626;">
+    <span class="signal-badge"
+          style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">
+      Critical
+    </span>
+    <h3 class="signal-headline">Guangtai deepens SATS partnership, embedding Chinese GSE in Singapore hub</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">SATS, the dominant Asian ground handler, has formalised a collaboration with Weihai Guangtai to drive innovation in airport ground support technologies, and Guangtai is simultaneously exhibiting at the 27th Annual GHI Conference (Stand E68) and INTERSCHUTZ 2026. This is a direct competitive incursion into TLD's Singapore/APAC handler base, pairing low-cost Chinese hardware with a local service and innovation narrative.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">SATS controls ground handling across Singapore, Hong Kong and multiple regional airports; a Guangtai framework deal risks displacing TLD from fleet renewal and electrification tenders worth tens of millions of euros over the contract life. Pricing pressure will intensify across tow tractors, loaders and passenger steps where Guangtai already competes on cost.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Within 48 hours, task the APAC sales team to map SATS' current TLD fleet and contract renewal dates, and prepare a counter-proposal emphasising TLD's service network, residual values and electrification roadmap.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.sats.com.sg/media/latest-news/2025/sats-collaborates-with-global-gse-manufacturer-guangtai-to-drive-innovation-in-airport-ground-support-technologies" target="_blank" rel="noopener">SATS collaborates with global GSE manufacturer Guangtai to drive innovation in airport ground support technologies - SATS</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">CIMC Tianda books PTE Asia 2027 stand to target regional cargo GSE</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Shenzhen CIMC-Tianda Airport Support has secured Stand C160 at PTE Asia 2027 in Singapore (24-25 November 2027), positioning itself in cargo handling and HVAC-adjacent airport equipment for the Southeast Asian market. Combined with its CAPA supplier profile and active LinkedIn recruitment (116 employees), Tianda is building a visible regional sales channel.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Tianda's cargo and terminal equipment focus threatens TLD's share in airside cargo handling and terminal-linked GSE across Singapore, Malaysia and Indonesia, where greenfield cargo terminals are being tendered. Expect aggressive pricing on integrated cargo-terminal packages that bundle GSE with infrastructure.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Add Tianda to the competitor watch list with a standing brief; assign a team member to attend PTE Asia 2027 and pre-position TLD's cargo GSE offering to key regional terminal operators before the show.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://pte-asia.com/exhibitors/shenzhen-cimc-tianda-airport-support-ltd" target="_blank" rel="noopener">Shenzhen CIMC - Tianda Airport Support Ltd - PTE Asia 2027</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">Korean Air-Asiana merger completes 17 December, triggering fleet and GSE consolidation</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Asiana will cease to exist as a brand on 17 December 2026, folding into Korean Air after boards signed the final merger agreement in May 2026. The combined carrier will rationalise duplicate ground fleets at Incheon and Gimpo and harmonise GSE standards across the merged network.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Merger integration typically produces a one-off fleet audit and consolidation of GSE contracts, creating both a displacement risk (if TLD equipment sits with the absorbed Asiana ground operation) and a large standardisation opportunity at Incheon. A single harmonised Korean flag carrier will also concentrate purchasing power, pressuring unit pricing.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Immediately open dialogue with Korean Air's ground operations and procurement teams to position TLD as the standardisation partner for post-merger GSE, targeting a fleet audit before year-end.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://awardfares.com/blog/korean-air-asiana-merger" target="_blank" rel="noopener">Korean Air &amp; Asiana Merger 2026: Everything You Need To Know | AwardFares Blog</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">Korean Air orders 103 Boeing jets, driving multi-year GSE demand at Incheon</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Korean Air has committed to a record purchase of 103 Boeing aircraft as the core of its fleet modernisation strategy, with associated GE engine agreements. Each incremental widebody and narrowbody requires tractors, loaders, tugs and servicing equipment, and the order signals a decade-long capex cycle.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">A 103-aircraft order implies a proportional uplift in GSE demand at Korean Air's Incheon hub, potentially hundreds of units across tow tractors, belt loaders and ground power over the delivery window. This is a flagship tender opportunity for TLD in Korea, but Guangtai and Tianda will contest it aggressively on price.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Build a Korean Air fleet-to-GSE demand model this week and schedule a capability presentation to Korean Air's ground equipment planning team within 30 days.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://finance.yahoo.com/news/korean-air-commits-record-purchase-224300655.html" target="_blank" rel="noopener">Korean Air Commits to Record Purchase of 103 Boeing Jets to Modernize Fleet</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-important">
+  <div class="signal-card-header" style="border-left:4px solid #d97706;">
+    <span class="signal-badge"
+          style="background:#fffbeb;color:#92400e;border:1px solid #fde68a;">
+      Important
+    </span>
+    <h3 class="signal-headline">Vietnam Airlines prepares 12-widebody lease tender, expanding GSE footprint</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Vietnam Airlines is launching a formal dry-lease tender for 12 widebody aircraft following a September 2025 market survey, with a further major fleet expansion investment proposal due by end-2026 and an Airbus memorandum signed during the September 2026 Paris state visit. Widebody growth at Hanoi and Ho Chi Minh City drives demand for heavy-duty tractors, catering vehicles and cargo loaders.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Twelve additional widebodies plus a pending narrowbody expansion represent a substantial GSE procurement cycle in Vietnam, a market where TLD faces limited local manufacturing competition but growing Chinese price pressure. Vietnam is one of APAC's fastest-growing aviation markets and a strategic beachhead for TLD's regional leasing book.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Engage Vietnam Airlines' ground services division this week to understand its GSE sourcing plan tied to the widebody deliveries, and prepare a leasing-plus-service proposal.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://aeromorning.com/en/vietnam-airlines-to-lease-12-widebody-aircraft" target="_blank" rel="noopener">Vietnam Airlines to Lease 12 Widebody Aircraft - AeroMorning.com</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Vietjet adds 22 aircraft in one month in record fleet expansion</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Vietjet has added 22 new aircraft within a single month, its largest-ever fleet expansion, with the latest delivery being an Airbus A321neo. Rapid fleet growth at a low-cost carrier typically outpaces ground equipment investment, creating short-term leasing and rental demand.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Vietjet's expansion creates immediate demand for leased GSE — tractors, steps and loaders — at Vietnamese bases where the carrier operates a lean asset model. This favours TLD's leasing business over outright sales and offers a recurring revenue stream, though Vietjet is highly price-sensitive.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Approach Vietjet's ground operations team with a short-term GSE rental package sized to the new aircraft intake; monitor delivery cadence monthly.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.instagram.com/p/DR6vtxqCsQn?hl=en" target="_blank" rel="noopener">Instagram</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Garuda Indonesia $5B fleet overhaul stalls on 49 MAX orders, funding pending</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Garuda is managing a $5B fleet overhaul with unresolved orders for 49 Boeing 737 MAX 8s and 4 A330-800neos, while seeking 737-800 leases and awaiting funding from sovereign wealth fund Danantara. The airline is also exploring COMAC and Irkut alternatives to diversify suppliers.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Garuda's fleet uncertainty delays GSE procurement decisions in Indonesia, a market projected to grow from USD 1,150M in 2025 to USD 1,716M by 2031 at roughly 8% CAGR. If Danantara funding unlocks, a large GSE refresh at Jakarta and Denpasar could follow; if it stalls, TLD should pivot to leasing rather than capex sales.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Track the Danantara funding decision and Garuda's lease finalisation as a leading indicator; prepare both a capex and a leasing scenario for the Indonesian sales team.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.indonesiaaerosummit.com/news" target="_blank" rel="noopener">News Indonesia Aero Summit 2027</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Bangkok Airways adds 12 ATR 72-600s, first deliveries Q4 2026</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Bangkok Airways expects to operate 22-26 aircraft in 2026 and has ordered 12 additional ATR 72-600s, with the first two deliveries in Q4 2026 and the remainder through the following period. Regional turboprop growth at secondary Thai airports drives demand for lighter, lower-cost GSE.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">ATR operations at Samui, Phuket and Chiang Mai require smaller tow tractors, baggage tractors and passenger steps — a volume segment where TLD can compete on total cost of ownership. The order signals steady, modest GSE demand in Thailand's secondary airport network rather than a single large tender.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Include Bangkok Airways in the Thailand account plan and offer a right-sized regional GSE package aligned to the Q4 2026 deliveries.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.ttrweekly.com/site/2026/03/bangkok-airways-sets-out-2026-vision" target="_blank" rel="noopener">Bangkok Airways sets out 2026 vision - TTR Weekly</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Thai Airways resumes full operations after disruption, fleet renewal continues</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Thai Airways announced resumption of full flight operations from 3 October 2026 following operational disruption, and continues a fleet renewal involving leased 787-8s from Avolon alongside A350, 787-9 and A321neo types. Restored full operations support ground equipment utilisation and maintenance demand.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Full operations restoration at Thai Airways supports aftermarket and spare-parts revenue for TLD's installed base at Suvarnabhumi, and the mixed widebody/narrowbody fleet sustains demand for a broad GSE range. The airline's financial recovery improves its appetite for capex and electrification upgrades.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Use the operational recovery as a trigger to pitch TLD's electrification retrofit and service-contract renewal to Thai Airways' ground services division this quarter.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.thaiairways.com/en-us/content/news-and-announcements" target="_blank" rel="noopener">Thai Airways Newsroom | Check the latest news and stories about Thai Airways</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">APAC GSE market forecast at 12.17% CAGR through 2030</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Industry research forecasts the Asia-Pacific ground support equipment market to register a 12.17% CAGR over 2022-2030, while a separate global report values the aircraft GSE market at USD 9.18B in 2025 rising to USD 9.79B in 2026 at roughly 6% CAGR. APAC is clearly outpacing the global average.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">The APAC growth premium validates continued investment in regional sales, service and leasing capacity for TLD, and supports a case for local assembly or partnership to defend share against Chinese cost competition. It also strengthens the argument for expanding TLD's APAC leasing book.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Use the APAC growth differential in the next board capital-allocation review to justify incremental regional investment; validate the forecast against TLD's own order pipeline.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.inkwoodresearch.com/reports/asia-pacific-ground-support-equipment-market" target="_blank" rel="noopener">Asia-Pacific Ground Support Equipment Market | Trends, Size</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Indonesia GSE market to reach USD 1,716M by 2031 at 8% CAGR</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">Indonesia's GSE market is projected to expand from USD 1,150M in 2025 to USD 1,716M by 2031, having grown at 7.8% CAGR during 2020-2025 on post-pandemic recovery, airport modernisation, fleet replacement and stronger cargo handling. This makes Indonesia one of APAC's largest and fastest-growing GSE markets.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Indonesia's scale and growth justify a dedicated in-country sales and service presence for TLD, particularly as airport modernisation programmes at Jakarta, Surabaya and new capital Nusantara create greenfield GSE tenders. Cargo handling growth is a specific segment where Tianda will compete hard.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Commission a focused Indonesia market-entry assessment covering local partner options, service network gaps and the Nusantara airport GSE pipeline.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.kenresearch.com/indonesia-ground-support-equipment-market" target="_blank" rel="noopener">Indonesia Ground Support Equipment Market Share, Companies &amp; Trends Report 2026-2031</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">Electric ramp operations scale globally, setting APAC electrification benchmark</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">LATAM is implementing a 100% electric, combustion-free ramp operation at Mataveri International Airport in 2026, and Schiphol is starting electric TaxiBot operations the same year. These reference deployments accelerate the expectation that APAC hubs will follow with diesel phase-out mandates.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">TLD's electrified product range becomes a competitive differentiator as APAC airports and handlers face pressure to match global zero-emission ramp standards, but Guangtai is also marketing electric GSE at lower price points. Early positioning in Singapore, Hong Kong and Japan electrification tenders is critical to defend margin.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Prepare an APAC electrification readiness dossier mapping which regional airports have published or pending diesel phase-out targets, and align TLD's electric product roadmap to those timelines.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.mordorintelligence.com/industry-reports/airport-ground-handling-systems-market" target="_blank" rel="noopener">Airport Ground Handling Systems Market Overview &amp; Size, 2031</a><span class="source-name"> — Tavily Search</span></div>
+  </div>
+</div>
+<div class="signal-card impact-watch">
+  <div class="signal-card-header" style="border-left:4px solid #0369a1;">
+    <span class="signal-badge"
+          style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;">
+      Watch
+    </span>
+    <h3 class="signal-headline">TSMC seeks rare-earth alternatives as semiconductor supply risk grows</h3>
+  </div>
+  <div class="signal-body">
+    <div class="signal-section">
+      <div class="signal-section-label">Reading</div>
+      <div class="signal-section-text">TSMC is exploring alternatives to rare earth components amid supply concerns, while its semiconductor industry electricity use hit a record 4.5 terawatt-hours. Rare earths and semiconductors are both critical inputs for electric GSE motors, controllers and battery systems.</div>
+    </div>
+    <div class="signal-section">
+      <div class="signal-section-label">Business impact</div>
+      <div class="signal-section-text">Any rare-earth or semiconductor supply disruption raises input costs and lead times for TLD's electric GSE production, squeezing margins on electrified tow tractors and loaders. Taiwan's record semiconductor power demand also signals grid constraints that could slow airport electrification in the region.</div>
+    </div>
+    <div class="signal-section signal-action">
+      <div class="signal-section-label">Recommended action</div>
+      <div class="signal-section-text">Review TLD's rare-earth and semiconductor sourcing exposure this week and assess dual-sourcing or inventory buffers for electric drivetrain components.</div>
+    </div>
+    <div class="signal-source"><span class="source-label">Source</span><a href="https://www.taipeitimes.com/News/biz/archives/2026/10/23/2003866444" target="_blank" rel="noopener">TSMC seeks factory-equipment alternatives2026-10-23Taiwan Semiconductor Manufacturing Co (TSMC, 台積電) is exploring alternatives to rare earth component</a><span class="source-name"> — Taipei Times — Business</span></div>
+  </div>
+</div>
+<details style="margin-top:12px;">
+  <summary style="font-size:12px;color:#94a3b8;cursor:pointer;
+                  padding:8px 4px;user-select:none;list-style:none;
+                  display:flex;align-items:center;gap:6px;">
+    <span style="font-size:10px;background:#f1f5f9;border:1px solid #e2e8f0;
+                 border-radius:20px;padding:2px 8px;color:#64748b;font-weight:600;
+                 letter-spacing:.04em;">
+      + 2 background items
+    </span>
+    <span style="color:#94a3b8;">— no action required, click to expand</span>
+  </summary>
+  <ul style="list-style:none;padding:12px 16px;margin-top:8px;
+             background:#f8fafc;border:1px solid #e2e8f0;
+             border-radius:8px;">
+    <li style="font-size:13px;color:#64748b;padding:3px 0;line-height:1.5;">Global GSE market grows to USD 9.79B in 2026 at 6% CAGR</li><li style="font-size:13px;color:#64748b;padding:3px 0;line-height:1.5;">India civil aviation tender for air-start GSE expired in April 2026</li>
+  </ul>
+</details>
+
+  <hr class="section-divider">
+
+  <div class="section-header"><h2>To watch this week</h2></div><div class="watch-panel"><div class="watch-panel-label">Key indicators</div><ol><li>SATS-Guangtai collaboration scope and any resulting GSE framework tender or pilot deployment in Singapore or Hong Kong.</li><li>Korean Air post-merger GSE fleet audit and standardisation tender timing ahead of the 17 December integration date.</li><li>Vietnam Airlines widebody lease tender award and its associated ground equipment sourcing plan.</li></ol></div>
+
+  <div class="risk-panel"><div class="risk-panel-label">Main risk</div><div class="risk-panel-text">Guangtai leveraging its SATS partnership to win regional handler framework contracts on price, displacing TLD from high-volume APAC fleet renewals.</div></div>
+
+  <div class="sources-panel">
+    <div class="sources-panel-label">Monitored sources</div>
+    <ul><li>Ground Handling International</li><li>Aviation Week MRO</li><li>Air Transport World</li><li>CAPA — Centre for Aviation</li><li>Nikkei Asia — Business</li><li>The Korea Herald — Business</li><li>VnExpress International</li><li>Bangkok Post — Business</li><li>The Jakarta Post — Business</li><li>Inquirer Business (Philippines)</li><li>Taipei Times — Business</li><li>South China Morning Post — Transport (HK)</li><li>Channel News Asia — Business</li><li>Australian Aviation</li><li>RNZ Pacific</li></ul>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  GSE Intelligence Agent v3.7 · Powered by DeepSeek + Tavily · October 24, 2026
+</div>
+
+</div>
+</body>
+</html>
