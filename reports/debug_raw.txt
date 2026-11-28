@@ -1,37 +1,57 @@
 ===SIGNAL_START===
 SIGNAL_ID: 1
 IMPACT: WATCH
-HEADLINE: US tariff on Vietnamese goods to land well below 35%, PM signals
-READING: Vietnam's Prime Minister indicated the final US tariff rate on Vietnamese exports will be materially below the 35% threshold that had been feared, reducing the tail risk of a severe shock to Vietnam's export manufacturing base. Vietnam is a fast-growing aviation market with expanding airport capacity and a manufacturing role in APAC supply chains, so tariff certainty supports continued FDI and air cargo/passenger volumes.
-BUSINESS_IMPACT: Lower-than-feared tariffs reduce the risk of a demand freeze in Vietnam's air cargo and industrial segments that drive GSE procurement, and preserve the case for TLD's Vietnam-linked sales pipeline. However, any residual tariff still pressures cost structures for GSE components sourced or assembled in Vietnam, and could affect pricing competitiveness versus Chinese OEMs.
-ACTION: Confirm the final tariff rate and scope once published, and stress-test Vietnam GSE pricing and sourcing assumptions against a 20-30% tariff scenario within two weeks.
-SOURCE_URL: https://e.vnexpress.net/news/business/economy/us-tariff-on-vietnamese-goods-to-be-well-below-35-pm-5149646.html
+HEADLINE: US tariff blitz pushes Asian states to accelerate Washington trade deals
+READING: A fresh round of US tariffs is pressuring Asian governments to fast-track bilateral trade agreements with Washington, with proposed duties of up to 15 percent on Taiwanese goods under discussion. For GSE, tariff outcomes directly affect the landed cost of APAC-built equipment into the US and the cost of US-origin components (engines, hydraulics, electronics) flowing into APAC assembly.
+BUSINESS_IMPACT: TLD sources significant componentry and competes with Taiwanese and other Asian machinery exporters; a 15 percent tariff band would compress margins on any US-bound APAC production and raise input costs on US-sourced parts. Conversely, favourable bilateral deals could open pricing headroom versus Chinese competitors facing steeper US duties.
+ACTION: Have procurement and trade-compliance model a 10-15 percent tariff scenario on cross-border component flows within two weeks, and map which TLD APAC production sites gain or lose relative cost advantage.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/11/27/2003868454
 ===SIGNAL_END===
 
 ===SIGNAL_START===
 SIGNAL_ID: 2
-IMPACT: WATCH
-HEADLINE: Proposed US tariffs could hit US$7.3bn of Singapore exports
-READING: Singapore's deputy PM flagged that around SGD9.4bn (US$7.3bn) of Singapore exports could be affected by newly proposed US tariffs, a significant exposure for a high-value, aviation-heavy economy. Singapore is a major APAC aviation hub (Changi) and a regional HQ and logistics node for GSE supply chains, so trade friction there has outsized regional relevance.
-BUSINESS_IMPACT: Tariff exposure raises the risk of slower air cargo growth through Changi and could delay ground handler capex decisions, softening near-term GSE order intake in Singapore. It also raises the cost of US-origin components (engines, electronics, hydraulics) flowing through Singapore distribution, pressuring TLD margins on US-sourced content.
-ACTION: Map TLD's Singapore-sourced and US-origin component exposure and quantify tariff cost impact; prepare a mitigation note for the regional sales team within one week.
-SOURCE_URL: https://e.vnexpress.net/news/business/economy/proposed-us-tariffs-could-hit-7-3b-of-singapore-exports-5149456.html
+IMPACT: INFO
+HEADLINE: Taiwanese machinery exporters judge 15 percent US tariff impact as limited
+READING: Taiwanese machinery firms expect proposed US tariffs of up to 15 percent to have only a limited effect on their business, suggesting pricing power and order books remain resilient. This signals that APAC industrial exporters are absorbing tariff friction rather than retreating, keeping regional supply chains and component availability stable.
+BUSINESS_IMPACT: Stable Taiwanese machinery output supports continued availability of hydraulic, electrical and control components used in GSE build, limiting near-term input cost inflation. It also implies Asian capital-goods exporters will keep competing aggressively on price in third markets where TLD sells.
+ACTION: No immediate action; fold this resilience assumption into the Q1 2027 component-cost forecast and revisit if tariff rates exceed 15 percent.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/11/28/2003868513
 ===SIGNAL_END===
 
 ===SIGNAL_START===
 SIGNAL_ID: 3
+IMPACT: WATCH
+HEADLINE: AI-driven semiconductor capacity ramp tightens electronics supply for GSE
+READING: WinWay is continuing an aggressive capacity ramp-up on the back of AI adoption, with key clients projecting strong demand into 2027. Sustained semiconductor and electronics demand keeps pressure on component lead times and pricing for the control systems, telematics and battery-management electronics embedded in electric GSE.
+BUSINESS_IMPACT: Electric GSE margins and delivery schedules are exposed to semiconductor allocation and price escalation; prolonged tightness could delay electrification retrofit programmes at APAC airports and handlers. TLD should expect firmer electronics pricing in 2027 quotations.
+ACTION: Lock in 2027 electronics and controller supply with frame agreements or buffer inventory within 30 days, and add a semiconductor escalation clause to new GSE quotations.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/11/27/2003868450
+===SIGNAL_END===
+
+===SIGNAL_START===
+SIGNAL_ID: 4
 IMPACT: INFO
-HEADLINE: Cathay Pacific news feed unavailable; no actionable GSE signal
-READING: The SCMP Cathay Pacific topic page returned only a JavaScript/cookie gate with no retrievable article content, so no specific fleet, financial or procurement development can be confirmed. Cathay remains a key Hong Kong hub carrier whose fleet and cargo decisions are a leading indicator for HK GSE demand, but this item carries no usable signal today.
-BUSINESS_IMPACT: No direct commercial consequence; the absence of confirmed Cathay news means no change to the Hong Kong GSE demand outlook this week. Continued monitoring is warranted given Cathay's role in driving HK ground handling fleet renewal and electrification.
-ACTION: Re-check the SCMP Cathay Pacific feed and Cathay's own investor/newsroom releases within 48 hours to capture any fleet or results announcement.
+HEADLINE: CASwell signs NT$900m five-year US contract, targets double-digit growth
+READING: Taiwanese networking firm CASwell secured a five-year contract worth roughly NT$900 million with a US customer and is targeting double-digit revenue growth. The deal is outside GSE but confirms that Taiwanese industrial electronics suppliers are winning long-duration US contracts, reinforcing regional component supply depth.
+BUSINESS_IMPACT: No direct GSE volume effect; relevant only as evidence of Taiwanese electronics suppliers prioritising long-term US contracts, which could tighten allocation of networking and embedded modules used in GSE telematics. Monitor for any spillover into component lead times.
+ACTION: No action required; retain as background context for the component-supply watch list.
+SOURCE_URL: https://www.taipeitimes.com/News/biz/archives/2026/11/28/2003868512
+===SIGNAL_END===
+
+===SIGNAL_START===
+SIGNAL_ID: 5
+IMPACT: WATCH
+HEADLINE: Cathay Pacific coverage flagged but article content inaccessible
+READING: The Cathay Pacific topic feed returned no retrievable content, so no specific fleet, traffic or procurement development can be confirmed. Cathay remains a material Hong Kong hub account for GSE, and any fleet or cargo expansion would translate directly into tractor, loader and ground-power demand at HKG.
+BUSINESS_IMPACT: Unverified; if Cathay announces fleet growth or cargo expansion, expect incremental GSE requirements at Hong Kong International Airport and knock-on demand from Swire and HAECO-linked ground operations. No margin or volume impact can be quantified from this signal.
+ACTION: Re-check the Cathay Pacific feed and HKG traffic data within 48 hours before drawing any procurement conclusion.
 SOURCE_URL: https://www.scmp.com/topics/cathay-pacific
 ===SIGNAL_END===
 
 ===SUMMARY_START===
-EXECUTIVE_SUMMARY: This week's APAC ex-China signals are dominated by US trade policy rather than aviation news: Vietnam's PM signalled a final US tariff well below 35%, while Singapore's deputy PM warned that proposed US tariffs could hit US$7.3bn of the city-state's exports. Both point to a more uncertain trade environment across two of APAC's most aviation-intensive economies, with knock-on effects on air cargo growth, ground handler capex confidence and the cost of US-origin GSE components. No competitor move (JBT, Guangtai, CIMC Tianda, Textron) was reported in the available material, and the Cathay Pacific feed was inaccessible, leaving a gap in Hong Kong coverage. The net read is margin and demand-timing risk rather than an immediate volume shock, so the priority is quantifying tariff exposure in our Vietnam and Singapore cost and sales models. We should also close the Hong Kong information gap quickly given Cathay's outsized influence on regional GSE demand.
-WATCH_1: Final published US tariff rate and product scope for Vietnam, and whether GSE or steel/aluminium content is captured.
-WATCH_2: Singapore export exposure detail and any Changi cargo volume or ground handler capex reaction.
-WATCH_3: Cathay Pacific fleet, results or procurement announcements once the SCMP feed is accessible.
-MAIN_RISK: Escalating US tariff scope across Vietnam and Singapore raises TLD's US-origin component costs and delays APAC ground handler capex, compressing margins before electrification volumes scale.
+EXECUTIVE_SUMMARY: This week's APAC ex-China feed is dominated by trade and component-supply signals rather than direct GSE demand news. A fresh US tariff push is forcing Asian governments into accelerated bilateral deals, with a 15 percent band on Taiwanese goods under discussion, while Taiwanese machinery exporters judge the impact limited. In parallel, AI-driven semiconductor capacity ramps at WinWay and long-duration US contracts at CASwell point to continued tightness in the electronics that underpin electric GSE. No competitor GSE manufacturer was named in any article this week, so there is no direct competitive threat to respond to. The priority is defensive: protect electric GSE margins against component and tariff cost escalation while re-verifying the Cathay Pacific/Hong Kong demand picture.
+WATCH_1: Final US tariff rate on Taiwanese machinery and whether it exceeds the 15 percent threshold.
+WATCH_2: Semiconductor and controller lead times and pricing for electric GSE build in Q1 2027.
+WATCH_3: Cathay Pacific fleet, cargo and Hong Kong hub capacity announcements.
+MAIN_RISK: Simultaneous tariff and electronics cost escalation compressing margins on electric GSE sold into APAC and US-linked channels, with limited ability to pass through price in competitive tenders.
 ===SUMMARY_END===

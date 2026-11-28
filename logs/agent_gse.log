@@ -20126,3 +20126,90 @@ https://www.aeror — matched: ['VietJet Air']
 2026-11-27 16:15:53,368 [INFO] Parsed: 3 signals, summary=yes
 2026-11-27 16:15:53,374 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-11-27.html (and reports/latest.html)
 2026-11-27 16:15:53,374 [INFO] Done.
+2026-11-28 15:07:17,080 [INFO] ============================================================
+2026-11-28 15:07:17,080 [INFO] Starting GSE Intelligence Agent v3.7
+2026-11-28 15:07:17,080 [INFO] ============================================================
+2026-11-28 15:07:17,080 [INFO] Collecting from: Ground Handling International
+2026-11-28 15:07:17,674 [INFO]   Scraped Ground Handling International: 9 articles
+2026-11-28 15:07:19,175 [INFO] Collecting from: Aviation Week MRO
+2026-11-28 15:07:19,268 [WARNING] Attempt 1/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-11-28 15:07:20,329 [WARNING] Attempt 2/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-11-28 15:07:22,387 [WARNING] Attempt 3/3 failed for https://aviationweek.com/mro/ground-operations: 404 Client Error: Not Found for url: https://aviationweek.com/mro/ground-operations
+2026-11-28 15:07:27,888 [INFO] Collecting from: Air Transport World
+2026-11-28 15:07:28,088 [INFO]   Scraped Air Transport World: 20 articles
+2026-11-28 15:07:29,590 [INFO] Collecting from: CAPA — Centre for Aviation
+2026-11-28 15:07:29,772 [INFO]   Scraped CAPA — Centre for Aviation: 20 articles
+2026-11-28 15:07:31,273 [INFO] Collecting from: Nikkei Asia — Business
+2026-11-28 15:07:31,725 [INFO]   Scraped Nikkei Asia — Business: 20 articles
+2026-11-28 15:07:33,227 [INFO] Collecting from: The Korea Herald — Business
+2026-11-28 15:07:35,538 [INFO]   Scraped The Korea Herald — Business: 20 articles
+2026-11-28 15:07:37,039 [INFO] Collecting from: VnExpress International
+2026-11-28 15:07:38,471 [INFO]   Scraped VnExpress International: 20 articles
+2026-11-28 15:07:39,973 [INFO] Collecting from: Bangkok Post — Business
+2026-11-28 15:07:45,191 [INFO]   Scraped Bangkok Post — Business: 20 articles
+2026-11-28 15:07:46,692 [INFO] Collecting from: The Jakarta Post — Business
+2026-11-28 15:07:47,310 [INFO]   Scraped The Jakarta Post — Business: 20 articles
+2026-11-28 15:07:48,811 [INFO] Collecting from: Inquirer Business (Philippines)
+2026-11-28 15:07:48,904 [WARNING] Attempt 1/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-11-28 15:07:49,946 [WARNING] Attempt 2/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-11-28 15:07:51,987 [WARNING] Attempt 3/3 failed for https://business.inquirer.net/: 403 Client Error: Forbidden for url: https://business.inquirer.net/
+2026-11-28 15:07:57,489 [INFO] Collecting from: Taipei Times — Business
+2026-11-28 15:07:58,020 [INFO]   Scraped Taipei Times — Business: 20 articles
+2026-11-28 15:07:59,521 [INFO] Collecting from: South China Morning Post — Transport (HK)
+2026-11-28 15:07:59,908 [INFO]   Scraped South China Morning Post — Transport (HK): 20 articles
+2026-11-28 15:08:01,409 [INFO] Collecting from: Channel News Asia — Business
+2026-11-28 15:08:01,723 [INFO]   Scraped Channel News Asia — Business: 20 articles
+2026-11-28 15:08:03,224 [INFO] Collecting from: Australian Aviation
+2026-11-28 15:08:05,605 [WARNING] Attempt 1/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-11-28 15:08:07,315 [WARNING] Attempt 2/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-11-28 15:08:09,598 [WARNING] Attempt 3/3 failed for https://australianaviation.com.au/category/news/: 404 Client Error: Not Found for url: https://australianaviation.com.au/category/news/
+2026-11-28 15:08:15,100 [INFO] Collecting from: RNZ Pacific
+2026-11-28 15:08:15,591 [INFO]   Scraped RNZ Pacific: 20 articles
+2026-11-28 15:08:17,092 [INFO] Total raw articles collected: 229
+2026-11-28 15:08:17,092 [INFO] Title-based dedup: dropped 26 near-duplicate article(s) from mirror sources
+2026-11-28 15:08:17,249 [WARNING] Tavily search failed for 'Weihai Guangtai GSE Southeast Asia contr': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:17,861 [WARNING] Tavily search failed for 'CIMC Tianda ground support equipment exp': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:18,461 [WARNING] Tavily search failed for 'Chinese GSE manufacturer Asia Pacific te': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:19,032 [WARNING] Tavily search failed for 'Japan airport ground handling GSE tender': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:19,611 [WARNING] Tavily search failed for 'ANA JAL fleet ground support equipment 2': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:20,211 [WARNING] Tavily search failed for 'South Korea airport ground support equip': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:20,833 [WARNING] Tavily search failed for 'Korean Air Asiana fleet GSE 2026': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:21,407 [WARNING] Tavily search failed for 'Indonesia airport ground handling equipm': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:22,013 [WARNING] Tavily search failed for 'Garuda Indonesia Lion Air fleet expansio': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:22,594 [WARNING] Tavily search failed for 'Thailand airport ground support equipmen': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:23,154 [WARNING] Tavily search failed for 'Thai Airways Bangkok Airways fleet GSE 2': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:23,743 [WARNING] Tavily search failed for 'Vietnam airport ground handling equipmen': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:24,366 [WARNING] Tavily search failed for 'Vietnam Airlines VietJet fleet expansion': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:24,960 [WARNING] Tavily search failed for 'Philippines airport ground support equip': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:25,538 [WARNING] Tavily search failed for 'Cebu Pacific Philippine Airlines fleet G': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:26,103 [WARNING] Tavily search failed for 'Hong Kong airport ground handling equipm': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:26,672 [WARNING] Tavily search failed for 'Cathay Pacific ground support fleet 2026': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:27,230 [WARNING] Tavily search failed for 'Taiwan airport ground support equipment ': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:27,798 [WARNING] Tavily search failed for 'EVA Air China Airlines Taiwan fleet GSE ': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:28,361 [WARNING] Tavily search failed for 'Bangladesh Sri Lanka Pakistan airport gr': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:28,917 [WARNING] Tavily search failed for 'Nepal Bhutan airport infrastructure grou': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:29,479 [WARNING] Tavily search failed for 'Malaysia Singapore airport ground suppor': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:30,065 [WARNING] Tavily search failed for 'Myanmar Cambodia Laos airport infrastruc': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:30,632 [WARNING] Tavily search failed for 'Australia airport ground support equipme': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:31,239 [WARNING] Tavily search failed for 'New Zealand Pacific islands airport grou': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:31,836 [WARNING] Tavily search failed for 'Asia Pacific ground handler M&A Swisspor': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:32,442 [WARNING] Tavily search failed for 'Asia Pacific electric GSE diesel ban air': 433 Client Error:  for url: https://api.tavily.com/search
+2026-11-28 15:08:32,942 [INFO] Tavily total: 0 articles found
+2026-11-28 15:08:32,944 [INFO] Competitor brief: skipping (runs Mondays only)
+2026-11-28 15:08:32,946 [INFO]   KEPT [Taipei Times — Business] CASwell targets revenue growth2026-11-28DOUBLE DIGITS:The firm this mo — matched: ['revenue']
+2026-11-28 15:08:32,947 [INFO]   KEPT [Taipei Times — Business] Machinery firms see limited tariff hit2026-11-28Proposed US tariffs of — matched: ['tariff']
+2026-11-28 15:08:32,947 [INFO]   KEPT [Taipei Times — Business] WinWay capacity ramp-up continues2026-11-27ROSY PROSPECTS:AI adoption  — matched: ['ramp']
+2026-11-28 15:08:32,947 [INFO]   KEPT [Taipei Times — Business] Fresh tariffs blitz pushes Asian nations to speed up trade deals with  — matched: ['tariff']
+2026-11-28 15:08:32,948 [INFO]   KEPT [South China Morning Post — Transport (HK)] Cathay Pacific — matched: ['Cathay Pacific']
+2026-11-28 15:08:32,949 [INFO] Relevant articles after filtering: 5
+2026-11-28 15:08:32,949 [INFO] After prioritization: 0 Tavily, 0 competitor, 5 scraped
+2026-11-28 15:08:32,949 [INFO] Enriching up to 20 articles with body excerpts...
+2026-11-28 15:08:35,904 [INFO] Enrichment complete.
+2026-11-28 15:08:35,905 [INFO] Balanced batch: 5 scraped, 0 Tavily/competitor (of 5 total relevant articles)
+2026-11-28 15:08:35,922 [INFO] Sending 5 articles to DeepSeek...
+2026-11-28 15:08:36,506 [INFO] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-28 15:08:47,052 [INFO] DeepSeek response: 6460 chars, finish_reason=stop
+2026-11-28 15:08:47,053 [INFO] Raw DeepSeek output saved to reports/debug_raw.txt
+2026-11-28 15:08:47,054 [INFO] Parsed: 5 signals, summary=yes
+2026-11-28 15:08:47,059 [INFO] Report saved: /home/runner/work/agent_aviation_industry_APAC/agent_aviation_industry_APAC/reports/gse_veille_report_2026-11-28.html (and reports/latest.html)
+2026-11-28 15:08:47,059 [INFO] Done.
